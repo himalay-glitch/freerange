@@ -8,6 +8,9 @@ import { CaseStudyTemplate } from "@/components/templates/CaseStudyTemplate";
 import { ResourceTemplate } from "@/components/templates/ResourceTemplate";
 import { JobTemplate } from "@/components/templates/JobTemplate";
 import RdLabPage from "@/components/templates/RdLabPage";
+import { ListingPage } from "@/components/templates/ListingPage";
+import { FILTER_GROUPS, listingItems } from "@/lib/listing-data";
+import { Suspense } from "react";
 import { getCollection } from "@/lib/content";
 import { PageShell, Section, Spacer } from "@/components/site/PageShell";
 import AboutPage from "@/components/templates/AboutPage";
@@ -92,6 +95,29 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       );
     case "job":
       return <JobTemplate entry={entry} bodyHtml={bodyHtml} />;
+    case "blog-listing":
+      return (
+        <Suspense fallback={<main id="main-content" className="body-container-wrapper" />}>
+          <ListingPage
+            variant="blog"
+            headline={<><strong>We imagine</strong> what comes next and bring new ideas to life, combining product thinking with the craft of creative storytelling.</>}
+            filterGroups={FILTER_GROUPS.blog}
+            items={listingItems("blog")}
+          />
+        </Suspense>
+      );
+    case "case-studies-listing":
+      return (
+        <Suspense fallback={<main id="main-content" className="body-container-wrapper" />}>
+          <ListingPage variant="case-studies" filterGroups={FILTER_GROUPS["case-studies"]} items={listingItems("case-studies")} />
+        </Suspense>
+      );
+    case "resources-listing":
+      return (
+        <Suspense fallback={<main id="main-content" className="body-container-wrapper" />}>
+          <ListingPage variant="resources" filterGroups={FILTER_GROUPS.resources} items={listingItems("resources")} />
+        </Suspense>
+      );
     case "rd-lab": {
       const featured = getCollection("case-study").slice(0, 3).map((e, i) => ({ ...toCaseStudyCard(e), wide: i === 2 }));
       return <RdLabPage featured={<CardList variant="case-study" rows={[featured]} />} />;
