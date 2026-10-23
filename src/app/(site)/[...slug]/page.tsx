@@ -11,6 +11,8 @@ import RdLabPage from "@/components/templates/RdLabPage";
 import { ListingPage } from "@/components/templates/ListingPage";
 import { FILTER_GROUPS, listingItems } from "@/lib/listing-data";
 import { Suspense } from "react";
+import ServicePage from "@/components/templates/ServicePage";
+import { SERVICE_PAGES } from "@/lib/data/services-pages";
 import { getCollection } from "@/lib/content";
 import { PageShell, Section, Spacer } from "@/components/site/PageShell";
 import AboutPage from "@/components/templates/AboutPage";
@@ -95,6 +97,11 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       );
     case "job":
       return <JobTemplate entry={entry} bodyHtml={bodyHtml} />;
+    case "service": {
+      const data = SERVICE_PAGES[entry.path];
+      if (!data) notFound();
+      return <ServicePage data={data} />;
+    }
     case "blog-listing":
       return (
         <Suspense fallback={<main id="main-content" className="body-container-wrapper" />}>
