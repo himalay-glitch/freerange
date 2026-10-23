@@ -10,9 +10,9 @@ export default function PodcastPage() {
   return (
     <PageShell>
       <Section n={1}>
-        <h4 className="module custom-heading" style={{ color: "#4a4a4a", borderBottomWidth: 2, borderBottomColor: "#ff4e00", letterSpacing: "-0.5px" }}>
+        <h2 className="module custom-heading" style={{ color: "#4a4a4a", borderBottomWidth: 2, borderBottomColor: "#ff4e00", letterSpacing: "-0.5px" }}>
           The Free Ranger Podcast
-        </h4>
+        </h2>
         <p>Conversations about storytelling, innovation and doing good work.</p>
       </Section>
       <Section n={3}>
