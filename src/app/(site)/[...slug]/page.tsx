@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllEntries, getEntry, getBodyHtml, templateFor, type ContentEntry } from "@/lib/content";
+import { getAllEntries, getEntry, getBodyHtml, getRelated, templateFor, type ContentEntry } from "@/lib/content";
+import { placeholderImage, relatedRow, toCaseStudyCard, toPostCard } from "@/lib/cards";
+import { CardList } from "@/components/cards/CardList";
+import { BlogPostTemplate } from "@/components/templates/BlogPostTemplate";
+import { CaseStudyTemplate } from "@/components/templates/CaseStudyTemplate";
+import { ResourceTemplate } from "@/components/templates/ResourceTemplate";
+import { JobTemplate } from "@/components/templates/JobTemplate";
 import { PageShell, Section, Spacer } from "@/components/site/PageShell";
 import AboutPage from "@/components/templates/AboutPage";
 import JobsListingPage from "@/components/templates/JobsListingPage";
@@ -47,6 +53,43 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   const template = templateFor(entry);
   const bodyHtml = getBodyHtml(entry);
   switch (template) {
+    case "blog-post":
+      return (
+        <BlogPostTemplate
+          entry={entry}
+          bodyHtml={bodyHtml}
+          image={placeholderImage(entry.path, "card")}
+          author="Free Range Team"
+          related={<CardList variant="post" rows={relatedRow(getRelated(entry, 4).map((e) => toPostCard(e)))} />}
+        />
+      );
+    case "case-study": {
+      const card = toCaseStudyCard(entry);
+      return (
+        <CaseStudyTemplate
+          entry={entry}
+          bodyHtml={bodyHtml}
+          image={card.image}
+          logo={card.logo}
+          client={card.client}
+          services={["Storytelling", "Design"]}
+          industries={["Nonprofits"]}
+          causes={["Education"]}
+          related={<CardList variant="case-study" rows={relatedRow(getRelated(entry, 4).map((e) => toCaseStudyCard(e)))} />}
+        />
+      );
+    }
+    case "resource":
+      return (
+        <ResourceTemplate
+          entry={entry}
+          bodyHtml={bodyHtml}
+          image={placeholderImage(entry.path, "card")}
+          related={<CardList variant="post" rows={relatedRow(getRelated(entry, 4).map((e) => toPostCard(e)))} />}
+        />
+      );
+    case "job":
+      return <JobTemplate entry={entry} bodyHtml={bodyHtml} />;
     case "about":
       return <AboutPage />;
     case "jobs-listing":
