@@ -1,0 +1,193 @@
+/*
+  Testimonials ("clients slider") — ported from the Free Range HubSpot theme
+  (docs/research/css/clients-slider.css; the Flickity library stylesheet itself was not
+  loaded on the original, so the theme rules below are the complete styling).
+  The Flickity-generated class names are kept so the original selectors apply verbatim;
+  the slider logic lives in src/components/home/Testimonials.tsx (no Flickity).
+  Breakpoints (em @16px): 29.9375em=479  47.9375em=767  62.4375em=999
+*/
+
+/* ---------- Flickity container (theme rules) ---------- */
+.flickity-enabled {
+  border-radius: 0 !important;
+  outline: 0 !important;
+  overflow: hidden;
+  position: relative;
+}
+.flickity-enabled .flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.flickity-enabled .flickity-viewport .flickity-slider {
+  display: flex;
+  height: 100%;
+}
+.flickity-enabled .flickity-viewport .flickity-slider .slide {
+  transition: opacity 0.5s;
+}
+.flickity-enabled .flickity-viewport .flickity-slider .slide:not(.is-selected) {
+  opacity: 0;
+}
+@media screen and (max-width: 47.9375em) {
+  .flickity-enabled .flickity-viewport .flickity-slider .slide:not(.is-selected) {
+    opacity: 1;
+  }
+}
+
+/* Prev/next buttons: 48px blue squares hugging the outer edges of .slides */
+.flickity-enabled .flickity-button {
+  background-color: #308bf5;
+  display: flex;
+  height: 48px;
+  position: absolute;
+  width: 48px;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: -24px;
+  padding: 5px;
+  top: 50%;
+}
+@media screen and (max-width: 47.9375em) {
+  .flickity-enabled .flickity-button {
+    height: 28px;
+    margin-top: -14px;
+    width: 28px;
+  }
+}
+.flickity-enabled .flickity-button:disabled {
+  display: none;
+}
+.flickity-enabled .flickity-button.previous {
+  left: 0;
+}
+.flickity-enabled .flickity-button.next {
+  right: 0;
+}
+.flickity-enabled .flickity-button svg {
+  height: 16px;
+  vertical-align: unset;
+  width: 16px;
+}
+.flickity-enabled .flickity-button svg path {
+  fill: #fff;
+}
+
+/* ---------- Clients slider module ---------- */
+.clients-slider > .title + .slides {
+  margin-top: 40px;
+}
+.clients-slider .clients-slider-description.module-description {
+  margin-bottom: 40px;
+  /* The theme applies paragraph tracking to text-only divs (`div:not(:has(p))`). */
+  letter-spacing: -0.5px;
+}
+.clients-slider .slides {
+  padding: 0 80px;
+}
+@media screen and (max-width: 47.9375em) {
+  .clients-slider .slides {
+    padding: 0 40px;
+  }
+}
+.clients-slider .slides .flickity-viewport {
+  width: 100%;
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide {
+  display: flex;
+  width: 100%;
+}
+@media screen and (max-width: 62.4375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide img {
+  object-fit: cover;
+  object-position: center;
+  width: 30%;
+  align-self: center;
+}
+@media screen and (max-width: 47.9375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 29.9375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide img {
+    width: 60%;
+  }
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info {
+  padding-left: 30px;
+  width: 70%;
+  align-self: center;
+}
+@media screen and (max-width: 62.4375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info {
+    margin-top: 20px;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+/* Opening double quotation mark (original 15x12 artwork; the theme used a PNG of the same
+   size and colour, #ff4e00). */
+.clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' viewBox='0 0 15 12' fill='%23ff4e00'%3E%3Ccircle cx='3.4' cy='8.6' r='3.2'/%3E%3Cpath d='M.3 8C.3 3.6 3 1.2 6.6.2 5 2 3.9 3.9 3.8 6.1Z'/%3E%3Cg transform='translate(8)'%3E%3Ccircle cx='3.4' cy='8.6' r='3.2'/%3E%3Cpath d='M.3 8C.3 3.6 3 1.2 6.6.2 5 2 3.9 3.9 3.8 6.1Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 12px;
+  margin-bottom: 20px;
+  width: 15px;
+}
+@media screen and (max-width: 47.9375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info::before {
+    margin-bottom: 10px;
+  }
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info p.testimonial {
+  line-height: 28px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 47.9375em) {
+  .clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info p.testimonial {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info p.name {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide .client-info p.title {
+  color: #308bf5;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+/* ---------- React slider plumbing (replaces what Flickity applied inline) ---------- */
+/* Flickity absolutely positioned each cell at the top of the viewport and translated the
+   track; here the track is a flex row of full-width cells anchored to the top, translated by
+   -index * 100%. The viewport height is set inline to the selected slide (adaptiveHeight). */
+.clients-slider .slides .flickity-viewport .flickity-slider {
+  align-items: flex-start;
+  transition: transform 0.4s ease;
+}
+.clients-slider .slides .flickity-viewport .flickity-slider .slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+.clients-slider .slides.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+  user-select: none;
+}
