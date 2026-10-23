@@ -34,7 +34,7 @@ function tagsFor(entry: ContentEntry, variant: ListingVariant): string[] {
   const groups = FILTER_GROUPS[variant];
   let h = 0;
   for (const ch of entry.path) h = (h * 33 + ch.charCodeAt(0)) >>> 0;
-  return groups.map((g, i) => g.options[(h >> (i * 3)) % g.options.length].label);
+  return groups.map((g, i) => g.options[((h >>> (i * 3)) >>> 0) % g.options.length].label);
 }
 
 /** Every indexed entry of a collection as a listing item (newest first). */
