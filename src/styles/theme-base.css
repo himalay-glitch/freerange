@@ -171,3 +171,23 @@
   z-index: 0;
 }
 .hs-button.transparent-bg { color: #308bf5; }
+.hs-button::before {
+  background: #308bf5;
+  bottom: 0;
+  content: "";
+  height: calc(100% + 2px);
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  transform-origin: 50%;
+  transition: transform 0.3s ease-out;
+  width: calc(100% + 2px);
+  z-index: -1;
+}
+.hs-button.transparent-bg::before { transform: scaleY(0); }
+.hs-button.transparent-bg:focus, .hs-button.transparent-bg:hover { color: #fff; }
+.hs-button.transparent-bg:focus::before, .hs-button.transparent-bg:hover::before, .hs-button::before { transform: scaleY(1); }
+.hs-button:focus, .hs-button:hover { border: 2px solid #308bf5; color: #308bf5; outline: 0; }
+.hs-button:focus::before, .hs-button:hover::before { transform: scaleY(0); }
+.hs-button:focus { border-radius: 0; }
