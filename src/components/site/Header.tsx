@@ -106,10 +106,14 @@ export function Header() {
     const raf = requestAnimationFrame(() => body.classList.remove("init"));
 
     lastScrollY.current = window.scrollY;
-    if (window.scrollY > 0) {
-      body.classList.add("navbar-fixed-visible");
-      applyFixed(true);
-    }
+    // Pages that load already scrolled start in the fixed state; deferred one frame so the
+    // state update is not issued synchronously inside the effect.
+    const fixedRaf = window.scrollY > 0
+      ? requestAnimationFrame(() => {
+          body.classList.add("navbar-fixed-visible");
+          applyFixed(true);
+        })
+      : 0;
 
     // Web fonts can change the measured height after first paint.
     let cancelled = false;
@@ -122,6 +126,7 @@ export function Header() {
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
+      if (fixedRaf) cancelAnimationFrame(fixedRaf);
       window.removeEventListener("load", remeasure);
       body.style.paddingTop = "";
       body.classList.remove("init", "header-fixed", "navbar-fixed-visible");
