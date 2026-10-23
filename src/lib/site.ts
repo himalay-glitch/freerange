@@ -8,16 +8,16 @@ export const NAV_ITEMS: NavItem[] = [
     href: "#",
     mega: {
       items: [
-        { label: "Website & Software Development", href: "/websites-software-development", icon: "/hubfs/Icon-Area.svg" },
-        { label: "Design & Brand Identity", href: "/design-brand", icon: "/hubfs/Container.svg" },
-        { label: "Content Writing & Video Production", href: "/content-writing-video-production", icon: "/hubfs/Icon-Area-1.svg" },
-        { label: "Campaign Strategy & Execution", href: "/campaign-strategy-execution", icon: "/hubfs/Icon-Area-2.svg" },
-        { label: "Team Augmentation", href: "/team-augmentation", icon: "/hubfs/Icon-Area-3.svg" },
-        { label: "AI for Operations", href: "/ai-for-operations", icon: "/hubfs/astroid.png" },
+        { label: "Website & Software Development", href: "/websites-software-development", icon: "/placeholders/icon-code.svg" },
+        { label: "Design & Brand Identity", href: "/design-brand", icon: "/placeholders/icon-palette.svg" },
+        { label: "Content Writing & Video Production", href: "/content-writing-video-production", icon: "/placeholders/icon-video.svg" },
+        { label: "Campaign Strategy & Execution", href: "/campaign-strategy-execution", icon: "/placeholders/icon-trend.svg" },
+        { label: "Team Augmentation", href: "/team-augmentation", icon: "/placeholders/icon-people.svg" },
+        { label: "AI for Operations", href: "/ai-for-operations", icon: "/placeholders/icon-sparkle.svg" },
       ],
       preview: {
-        defaultImage: "/hubfs/image-31.png",
-        hoverImage: "/hubfs/image-32.png",
+        defaultImage: "/placeholders/egg.svg",
+        hoverImage: "/placeholders/egg-hover.svg",
         title: "Not sure where to start?",
         description: "No worries. Break out of your shell and give us a call.",
         cta: { label: "Get a Free Consultation →", href: "/contact-us" },
@@ -47,7 +47,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const SITE_NAME = "FREE RANGE";
-export const LOGO_ORANGE = "/hubfs/Free-Range/Chicken.svg";
-export const LOGO_WHITE = "/hubfs/Free-Range/white-chicken-svg.svg";
-export const B_CORP_BADGE = "/hubfs/B-Corp-1.svg";
+export const LOGO_ORANGE = "/placeholders/logo-mark.svg";
+export const LOGO_WHITE = "/placeholders/logo-mark-white.svg";
+export const B_CORP_BADGE = "/placeholders/badge.svg";
 export const COPYRIGHT = `© ${new Date().getFullYear()} Free Range`;
