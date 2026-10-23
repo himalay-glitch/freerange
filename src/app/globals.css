@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Free Range theme base — ported from the HubSpot theme (template_main.css + theme-overrides.css). */
+@import "../styles/theme-base.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-work-sans), "Work Sans", sans-serif;
+  --font-lato: var(--font-lato), Lato, sans-serif;
+  --font-colfax: var(--font-colfax), Colfax, "Work Sans", sans-serif;
+  --font-heading: var(--font-sans);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  /* Free Range brand tokens */
+  --color-fr-blue: var(--fr-blue);
+  --color-fr-blue-dark: var(--fr-blue-dark);
+  --color-fr-orange: var(--fr-orange);
+  --color-fr-orange-alt: var(--fr-orange-alt);
+  --color-fr-text: var(--fr-text);
+  --color-fr-heading: var(--fr-heading);
+  --color-fr-body-alt: var(--fr-body-alt);
+  --color-fr-sky: var(--fr-sky);
+  --color-fr-sky-alt: var(--fr-sky-alt);
+  --color-fr-sky-deep: var(--fr-sky-deep);
+  --color-fr-slate: var(--fr-slate);
+  --color-fr-navy: var(--fr-navy);
+  --color-fr-cloud: var(--fr-cloud);
+  --color-fr-mist: var(--fr-mist);
+  --color-fr-line: var(--fr-line);
+  --color-fr-yellow: var(--fr-yellow);
+  --color-fr-yellow-dark: var(--fr-yellow-dark);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* Brand palette extracted from freerange.com computed styles */
+  --fr-blue: #308bf5;        /* primary action blue (buttons, links, banner) */
+  --fr-blue-dark: #0270e0;   /* theme-override link blue */
+  --fr-orange: #ff4e00;      /* highlight orange (wordmark, heading highlights, title underline) */
+  --fr-orange-alt: #ff5201;  /* orange used on some backgrounds */
+  --fr-text: #4a4a4a;        /* body copy */
+  --fr-heading: #2f2f34;     /* headings */
+  --fr-body-alt: #494a52;    /* theme-override body colour */
+  --fr-sky: #f1f9fc;         /* light blue section background */
+  --fr-sky-alt: #f0f9fd;     /* approach section background */
+  --fr-sky-deep: #cbe8f9;    /* deeper light blue */
+  --fr-slate: #425f80;       /* footer newsletter band */
+  --fr-navy: #032049;        /* footer bottom band */
+  --fr-cloud: #f8fafc;       /* footer / neutral background */
+  --fr-mist: #f2f4f7;        /* neutral background */
+  --fr-line: #dbdbdb;        /* nav divider */
+  --fr-yellow: #f2c135;      /* theme default link colour */
+  --fr-yellow-dark: #b5890c; /* theme default link hover */
+
+  --background: #ffffff;
+  --foreground: var(--fr-text);
+  --card: #ffffff;
+  --card-foreground: var(--fr-text);
+  --popover: #ffffff;
+  --popover-foreground: var(--fr-text);
+  --primary: var(--fr-blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--fr-sky);
+  --secondary-foreground: var(--fr-heading);
+  --muted: var(--fr-mist);
+  --muted-foreground: var(--fr-body-alt);
+  --accent: var(--fr-orange);
+  --accent-foreground: #ffffff;
+  --destructive: var(--fr-orange);
+  --border: var(--fr-line);
+  --input: #d1d6dc;
+  --ring: var(--fr-blue);
+  --radius: 0.375rem;
+}
+
+.dark {
+  --background: var(--fr-navy);
+  --foreground: #ffffff;
+  --card: var(--fr-slate);
+  --card-foreground: #ffffff;
+  --popover: var(--fr-slate);
+  --popover-foreground: #ffffff;
+  --primary: var(--fr-blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--fr-slate);
+  --secondary-foreground: #ffffff;
+  --muted: var(--fr-slate);
+  --muted-foreground: #cbd5e1;
+  --accent: var(--fr-orange);
+  --accent-foreground: #ffffff;
+  --destructive: var(--fr-orange);
+  --border: rgba(255, 255, 255, 0.15);
+  --input: rgba(255, 255, 255, 0.2);
+  --ring: var(--fr-blue);
+}

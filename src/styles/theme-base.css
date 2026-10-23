@@ -1,0 +1,173 @@
+/*
+  Free Range global base styles.
+  Ported from the HubSpot theme (docs/research/theme/theme-main.css + theme-overrides.css).
+  Breakpoints used by the original theme (em at 16px):
+    25em=400  30em=480  47.9375em=767  48em=768  62.4375em=999  62.5em=1000
+    63.9375em=1023  64em=1024  79.9375em=1279  80em=1280  89.9375em=1439  90em=1440
+*/
+@layer base {
+  html {
+    color: #4a4a4a;
+    font-family: var(--font-work-sans), "Work Sans", sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #fff;
+    color: #4a4a4a;
+    font-family: var(--font-work-sans), "Work Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28px;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    transition: padding-top 0.4s;
+  }
+  body.init { transition: none; }
+  p {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin: 0 0 2rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #2f2f34;
+    font-family: var(--font-work-sans), "Work Sans", sans-serif;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+  h1 span, h1 strong, h2 span, h2 strong, h3 span, h3 strong,
+  h4 span, h4 strong, h5 span, h5 strong, h6 span, h6 strong {
+    background-color: #ff4e00;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 15px;
+    text-decoration: none !important;
+  }
+  @media screen and (max-width: 47.9375em) {
+    h1 span, h1 strong, h2 span, h2 strong, h3 span, h3 strong,
+    h4 span, h4 strong, h5 span, h5 strong, h6 span, h6 strong { padding: 0; }
+  }
+  h1 { font-size: 2.1875rem; font-weight: 600; }
+  h2 { font-size: 2.1875rem; font-weight: 600; }
+  h3 { font-size: 1.75rem; font-weight: 600; line-height: 1.3; }
+  h4 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+  h5 { font-size: 1.3125rem; }
+  h6 { font-size: 1.125rem; }
+  @media screen and (min-width: 48em) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.5rem; }
+    h3 { font-size: 2rem; }
+  }
+  @media screen and (min-width: 62.5em) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.8125rem; }
+  }
+  /* Section titles ("Work", "Approach", "Services", …) */
+  h2.title, .h2.title {
+    border-bottom: 2px solid #ff4e00;
+    color: #4a4a4a;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 35px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+  }
+  .title[id]:before { content: ""; display: block; height: 60px; margin: -60px 0 0; }
+  a {
+    color: #f2c135;
+    cursor: pointer;
+    fill: #f2c135;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  a:hover { color: #b5890c; fill: #b5890c; }
+  strong { font-weight: 700; line-height: inherit; }
+  blockquote { font-size: 1.125rem; font-style: italic; margin: 1.5rem 0; }
+  ol, ul {
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+    list-style-position: inside;
+    margin: 0 0 1.5rem 1.5rem;
+    padding: 0;
+  }
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+  li { line-height: 28px; margin-bottom: 0.5rem; }
+  li > ol, li > ul { margin-bottom: 0; margin-left: 1.5rem; margin-top: 0.5rem; }
+  img { height: auto; max-width: 100%; display: inline; vertical-align: middle; transition: opacity 0.5s ease-in-out; }
+  img.lazy { opacity: 0; }
+  img.lazy.loaded { opacity: 1; }
+  button { font-family: inherit; font-size: inherit; line-height: inherit; margin: 0; border-radius: 0; }
+  button:not(:disabled) { cursor: pointer; }
+}
+
+/* Layout containers (Bootstrap-derived in the theme) */
+.container {
+  --bs-gutter-x: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+}
+@media (min-width: 768px)  { .container { max-width: 836px; } }
+@media (min-width: 1000px) { .container { max-width: 900px; } }
+@media (min-width: 1024px) { .container { max-width: 960px; } }
+@media (min-width: 1280px) { .container { max-width: 1140px; } }
+@media (min-width: 1440px) { .container { max-width: 1240px; } }
+.content-wrapper { max-width: 1240px; }
+.d-flex { display: flex !important; }
+.ml-auto { margin-left: auto !important; }
+
+/* HubSpot drag-and-drop section wrapper: 80px vertical rhythm between modules */
+.dnd-section { padding: 80px 20px; }
+.dnd-section > .row-fluid { max-width: 1240px; margin: 0 auto; }
+.dnd-section.no-padding { padding: 0; }
+.widget-type-space { display: block; }
+
+/* Modules */
+.module.full-width { left: 50%; margin-left: -50vw; position: relative; width: 100vw; }
+.module .module-title, .module.remove-bottom-margin { margin-bottom: 0; }
+.module .module-description { margin: 1rem 0 45px; }
+.module .module-description p:last-child { margin-bottom: 0; }
+
+/* Custom headings used across inner pages */
+.custom-heading { border-bottom-style: solid; font-weight: 700; line-height: normal; padding-bottom: 10px; }
+.custom-heading:target:before { height: 45px; margin: -45px 0 0; }
+.custom-heading[data-number] { padding-left: 15px; position: relative; }
+.custom-heading[data-number]:before { content: attr(data-number); font-family: var(--font-colfax), Colfax, sans-serif; font-weight: 900; left: -15px; position: relative; top: 3px; }
+.custom-heading.align-right { text-align: right; }
+.custom-heading.h1, h1.custom-heading { font-size: 40px; }
+.custom-heading.h2, h2.custom-heading { font-size: 35px; }
+.custom-heading.h3, h3.custom-heading { font-size: 30px; }
+.custom-heading.h4, h4.custom-heading { font-size: 25px; }
+.custom-heading.h5, h5.custom-heading { font-size: 22px; }
+.custom-heading.h6, h6.custom-heading { font-size: 20px; }
+
+/* Primary button (header CTA, "See All Case Studies", etc.) */
+.hs-button {
+  border: 2px solid #308bf5;
+  color: #fff;
+  display: flex;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.06px;
+  line-height: 16px;
+  padding: 15px 30px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.hs-button.transparent-bg { color: #308bf5; }

@@ -1,0 +1,20 @@
+[
+ {
+  "remote": "https://freerange.com/hubfs/Maslows_Hierarchy_of_Needs2.svg",
+  "local": "/hubfs/Maslows_Hierarchy_of_Needs2.svg",
+  "pages": 1,
+  "error": "HTTP 404"
+ },
+ {
+  "remote": "https://freerange.com/hubfs/Global_Zero_logo.svg",
+  "local": "/hubfs/Global_Zero_logo.svg",
+  "pages": 6,
+  "error": "HTTP 404"
+ },
+ {
+  "remote": "https://freerange.com/hubfs/1024px-HP_logo_2012.svg",
+  "local": "/hubfs/1024px-HP_logo_2012.svg",
+  "pages": 1,
+  "error": "HTTP 404"
+ }
+]
