@@ -1,0 +1,622 @@
+/*
+  R&D Lab page (/rd-lab) — src/components/templates/RdLabPage.tsx.
+  Ported from:
+    docs/research/css/rdlab.css        .logo-carousel, .cta-card-list (all breakpoints)
+    docs/research/css/rdlab-inline.css page-level HubSpot rules (spacer paddings, button rows,
+                                       featured intro columns, CTA band) — generated ids replaced
+                                       by stable .rdlab-* names, values unchanged
+    docs/research/css/about.css        .half-image-half-wysiwyg (industrial-design split)
+    docs/research/css/base.css         force-full-width dnd-section, .row-fluid [class*=span]
+    docs/research/theme/theme-main.css .row-fluid-wrapper{padding:0}, rich-text heading margin
+  Vendor-prefixed duplicates dropped; the unused `.is-static` / `.invert` module variants are not
+  ported. Breakpoints (em at 16px): 23.75em=380 47.9375em=767 48em=768 62.4375em=999
+  62.5em=1000 63.9375em=1023 79.9375em=1279.
+  Already global in src/styles/theme-base.css (not repeated): .container widths, h1–h6 sizes and
+  the `h2 span` highlight, .custom-heading sizes, .hs-button, p/h3 base type, .dnd-section.
+*/
+
+/* ---------- Page wrapper ---------- */
+/* Theme: `.row-fluid-wrapper{padding:0}` outranks the default `.dnd-section{padding:80px 20px}`,
+   so the sections of this page sit flush against each other (section rects in rdlab-modules.json). */
+.rdlab-page .dnd-section {
+  padding: 0;
+}
+.rdlab-page .row-fluid [class*="span"] {
+  float: none !important;
+  margin: 0;
+  min-height: 0 !important;
+  padding: 0;
+}
+
+/* Every heading module on the page carries the same inline style in the CMS. The live heading is
+   53px tall (35px type at `line-height: normal` = 41px + 10px padding + 2px rule); the self-hosted
+   Work Sans build resolves `normal` to 43px, so the line box is pinned to keep section offsets. */
+.rdlab-page h2.custom-heading {
+  /* CMS inline style is `border-color/border-width`; written out as the bottom rule only because
+     Tailwind's preflight gives every element `border-style: solid`, which would draw all four sides. */
+  border-bottom: 2px solid #4a4a4a;
+  color: #ff4e00;
+  line-height: 41px;
+}
+
+/* Spacer modules (`widget-type-space`): HubSpot inline paddings. */
+.rdlab-spacer-40 {
+  display: block;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.rdlab-spacer-50 {
+  display: block;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+.rdlab-spacer-20 {
+  display: block;
+  padding-top: 20px;
+}
+
+/* Button modules (`widget_…-flexbox-positioning`, inline padding-top 40px). */
+.rdlab-button-row {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+.rdlab-button-row > a {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+/* ---------- 1. Hero banner ---------- */
+/* The CMS rich text opens with an empty <h1> and closes with a <p>&nbsp;</p>; their margins
+   (1rem / 2rem) collapse out of the banner: header bottom 182 → banner 198–433 → heading 465. */
+.rdlab-hero {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.rdlab-hero .background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rdlab-hero .section--hero {
+  background-color: rgba(0, 0, 0, 0.6); /* inline on the original */
+}
+/* A blank <h1>&nbsp;</h1> above and two <p>&nbsp;</p> below the title: one h1 line (1.2em) + 1rem
+   on top, 28px + 32px + 28px underneath → banner 235px tall at 1440, 204px at 390.
+   (Scoped to .rdlab-page so it outranks the `[class*="span"]` padding reset above.) */
+.rdlab-page .rdlab-hero .hubstrap-col {
+  padding-bottom: 88px;
+  padding-top: 58px;
+}
+@media screen and (min-width: 48em) {
+  .rdlab-page .rdlab-hero .hubstrap-col {
+    padding-top: 64px;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .rdlab-page .rdlab-hero .hubstrap-col {
+    padding-top: 73.6px;
+  }
+}
+.rdlab-hero h1 {
+  margin-bottom: 1rem;
+}
+.rdlab-hero h1 span {
+  background-color: transparent; /* inline: color #ffffff, background rgba(0,0,0,0) */
+  color: #fff;
+}
+
+/* ---------- 2. Highlight heading (right-aligned rich text) ---------- */
+.rdlab-intro h2 {
+  font-size: 29px; /* inline style on the original h2 */
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-align: right;
+}
+.rdlab-intro h2 span {
+  background-color: #ff5201; /* inline; colour, weight and padding come from the global `h2 span` rule */
+}
+/* Trailing <p>&nbsp;</p> in the rich text: a 28px line plus its 2rem margin. */
+.rdlab-intro::after {
+  content: "";
+  display: block;
+  height: 60px;
+}
+
+/* ---------- 3. Logo carousels ---------- */
+.logo-carousel {
+  left: 50%;
+  margin-left: calc(-50vw + var(--scrollbar-width, 0px) / 2);
+  max-width: calc(100vw - var(--scrollbar-width, 0px));
+  position: relative;
+  width: calc(100vw - var(--scrollbar-width, 0px));
+}
+/* Splide core (the original loads splide.min.css) — only what the scrolling variant needs. */
+.logo-carousel .splide {
+  position: relative;
+}
+.logo-carousel .splide__track {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+.logo-carousel .slides-container {
+  animation: rdlab-marquee 40s linear infinite;
+  display: flex;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+}
+/* Marquee: the track holds the 16 slides twice and travels half its width per cycle. */
+@keyframes rdlab-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.logo-carousel[data-direction="left-to-right"] .slides-container {
+  animation-direction: reverse;
+}
+.logo-carousel:hover .slides-container {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel .slides-container {
+    animation: none;
+  }
+}
+/* Slides: Splide `fixedWidth: 156, fixedHeight: 156` from the module's data-splide config. */
+.logo-carousel .slides-container .slide-item {
+  box-sizing: border-box;
+  flex: 0 0 156px;
+  height: 156px;
+  list-style: none;
+  margin: 0;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  position: relative;
+}
+.logo-carousel .slides-container .slide-item .slide-content {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 21px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 36px 16px;
+  width: 100%;
+}
+.logo-carousel .slides-container .slide-item .slide-content.has-grey-bg {
+  background-color: #f2f2f2;
+}
+.logo-carousel .slides-container .slide-item .slide-content img,
+.logo-carousel .slides-container .slide-item .slide-content svg {
+  height: 50px;
+  object-fit: contain;
+  object-position: center;
+  width: auto;
+}
+.logo-carousel .slides-container .slide-item .slide-content .logo-title {
+  color: #676868;
+  font-size: 15.6px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-top: 10.4px;
+}
+.logo-carousel .slides-container .slide-item a {
+  color: #676868;
+}
+
+/* ---------- 4. In-house product cards (`.cta-card-list`) ---------- */
+.cta-card-list {
+  display: flex;
+  margin-bottom: 32px;
+  position: relative;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list {
+    flex-direction: column;
+  }
+}
+.cta-card-list.items-2 .cta-card-list-item {
+  flex: calc(50% - 32px);
+}
+.cta-card-list.items-2 .cta-card-list-item.expanded {
+  flex: 1 0 calc(100% - 75px);
+}
+.cta-card-list.items-3 .cta-card-list-item {
+  flex: calc(33.33333% - 64px);
+}
+.cta-card-list.items-3 .cta-card-list-item.expanded {
+  flex: 1 0 calc(100% - 150px);
+}
+.cta-card-list.items-4 .cta-card-list-item {
+  flex: calc(25% - 96px);
+}
+.cta-card-list.items-4 .cta-card-list-item.expanded {
+  flex: 1 0 calc(100% - 225px);
+}
+.cta-card-list.has-item-expanded .cta-card-list-item .card-content .card-title {
+  display: none;
+}
+.cta-card-list .cta-card-list-item {
+  flex-shrink: 1;
+  height: 212px;
+  margin-left: 32px;
+  min-width: 43px;
+  overflow: hidden;
+  position: relative;
+  transition: flex 0.6s;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item {
+    height: 0;
+    margin-bottom: 32px;
+    margin-left: 0 !important;
+    padding-bottom: 70%;
+  }
+}
+.cta-card-list .cta-card-list-item:first-child {
+  margin-left: 0;
+}
+.cta-card-list .cta-card-list-item::before {
+  background-color: rgba(0, 0, 0, 0.65);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item::before {
+    z-index: 0;
+  }
+  .cta-card-list .cta-card-list-item.expanded {
+    flex: auto !important;
+  }
+}
+.cta-card-list .cta-card-list-item.expanded .card-content {
+  display: none;
+}
+.cta-card-list .cta-card-list-item.expanded .card-expanded-content {
+  display: flex;
+  opacity: 1;
+}
+.cta-card-list .cta-card-list-item.collapsed {
+  flex: 0 0 43px;
+}
+.cta-card-list .cta-card-list-item > img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item > img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}
+.cta-card-list .cta-card-list-item .card-title {
+  color: #fff;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.cta-card-list .cta-card-list-item .card-content {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item .card-content {
+    display: none;
+  }
+}
+.cta-card-list .cta-card-list-item .card-content .card-title {
+  color: #fff;
+  margin-bottom: 0;
+  padding: 10px 14px;
+  text-align: center;
+}
+@media screen and (max-width: 79.9375em) {
+  .cta-card-list .cta-card-list-item .card-content .card-title {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 63.9375em) {
+  .cta-card-list .cta-card-list-item .card-content .card-title {
+    font-size: 19px;
+  }
+}
+.cta-card-list .cta-card-list-item .card-content::after {
+  color: #fff;
+  content: "+";
+  font-size: 42px;
+  position: absolute;
+  top: calc(100% - 12px);
+  transform: translateY(-100%);
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item .card-content::after {
+    display: none;
+  }
+}
+.cta-card-list .cta-card-list-item .card-expanded-content {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  padding: 24px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media screen and (max-width: 79.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content {
+    padding: 16px;
+  }
+}
+@media screen and (max-width: 63.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content {
+    padding: 24px;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content {
+    display: flex;
+    opacity: 1;
+    z-index: 0;
+  }
+}
+.cta-card-list .cta-card-list-item .card-expanded-content .card-title {
+  margin-bottom: auto;
+}
+@media screen and (max-width: 79.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .card-title {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 63.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .card-title {
+    font-size: 19px;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 23.75em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .card-title {
+    font-size: 16px;
+  }
+}
+.cta-card-list .cta-card-list-item .card-expanded-content .description {
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 79.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .description {
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .description {
+    margin-bottom: 8px;
+  }
+}
+@media screen and (max-width: 23.75em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .description {
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+.cta-card-list .cta-card-list-item .card-expanded-content .cta {
+  background-color: #fff;
+  color: #2f2f34;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-right: auto;
+  padding: 9px 17px;
+  text-align: center;
+}
+@media screen and (max-width: 47.9375em) {
+  .cta-card-list .cta-card-list-item .card-expanded-content .cta {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px 17px;
+  }
+}
+
+/* ---------- 5. Featured case studies ---------- */
+/* Two-column rich-text row (`dnd_area-row-10-vertical-alignment`): the heading on the left, a 40px
+   spacer module on the right; both cells vertically centred from 768px up. */
+@media (min-width: 768px) {
+  .rdlab-featured-intro > .row-fluid {
+    display: flex;
+    flex-direction: row;
+  }
+  .rdlab-featured-intro > .row-fluid > .dnd-column {
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+  }
+  .rdlab-featured-intro > .row-fluid > .dnd-column > * {
+    flex-shrink: 0;
+  }
+}
+.rdlab-featured-intro h3 {
+  line-height: 1; /* inline style on both headings */
+  margin-bottom: 0;
+  text-align: left;
+}
+.rdlab-featured-intro h3 span {
+  background-color: #fff; /* inline: colour #3497ff, white background, bold, no padding */
+  color: #3497ff;
+  font-weight: 700;
+  padding: 0;
+}
+
+/* Card-list module wrapper (card-list.css `.card-list-module-container`): the grid injected through
+   the `featured` slot sits 40px below the heading row. */
+.rdlab-page .card-list-module-container {
+  position: relative;
+}
+.rdlab-page .card-list-module-container .filters-and-cards-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 40px;
+  position: relative;
+}
+.rdlab-page .card-list-module-container .filters-and-cards-wrapper .card-list-container {
+  width: 100%;
+}
+/* Stand-in for the 390px-tall card row when no `featured` content is passed. */
+.rdlab-featured-placeholder {
+  height: 390px;
+  outline: 2px dashed #dbdbdb;
+  outline-offset: -2px;
+}
+
+/* ---------- 6. Industrial design (about.css `.half-image-half-wysiwyg`) ---------- */
+.half-image-half-wysiwyg {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 0;
+}
+.half-image-half-wysiwyg .module-content {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 47.9375em) {
+  .half-image-half-wysiwyg .module-content {
+    flex-direction: column;
+  }
+}
+.half-image-half-wysiwyg .module-content .image-wrapper,
+.half-image-half-wysiwyg .module-content .wysiwyg-content {
+  flex: 1 1 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  .half-image-half-wysiwyg .module-content .image-wrapper,
+  .half-image-half-wysiwyg .module-content .wysiwyg-content {
+    flex: 1 0 100%;
+  }
+}
+.half-image-half-wysiwyg .module-content .image-wrapper {
+  margin-right: 32px;
+  position: relative;
+}
+@media screen and (max-width: 47.9375em) {
+  .half-image-half-wysiwyg .module-content .image-wrapper {
+    flex: 1 0 100%;
+    margin-bottom: 32px;
+    margin-right: 0;
+  }
+}
+.half-image-half-wysiwyg .module-content .wysiwyg-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Page specifics: the live text column is the taller one (it embeds a 560x315 video the clone
+   omits), so the columns top-align and the image box keeps the live 592x611 proportion. */
+.rdlab-industrial .module-content {
+  align-items: flex-start;
+}
+@media screen and (max-width: 47.9375em) {
+  .rdlab-industrial .module-content {
+    align-items: stretch;
+  }
+}
+.rdlab-industrial .image-wrapper img {
+  aspect-ratio: 592 / 611;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+/* Partner wordmark (a 400x48 logo image inside an <h3> on the live page) rendered as type. */
+.rdlab-industrial .rdlab-partner-mark {
+  color: #2f2f34;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 1rem;
+  padding: 5px 0;
+}
+.rdlab-industrial .rdlab-partner-mark span {
+  background-color: transparent;
+  color: #e0251b;
+  font-weight: inherit;
+  padding: 0;
+}
+/* Lead paragraphs: the CMS marks them up as <h5> (1.3125rem / 1.2, 1rem margin). */
+.rdlab-industrial .wysiwyg-content p {
+  font-size: 1.3125rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.rdlab-industrial .wysiwyg-content a {
+  color: #308bf5;
+}
+.rdlab-industrial .wysiwyg-content a:hover,
+.rdlab-industrial .wysiwyg-content a:focus {
+  color: #0270e0;
+}
+
+/* ---------- 7. CTA band (`dnd_area-row-17-*`: padding, force-full-width, background layer) ---------- */
+.rdlab-page .rdlab-cta-band {
+  background-image: linear-gradient(rgba(223, 246, 255, 0.3), rgba(223, 246, 255, 0.3));
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto;
+  left: 50%;
+  margin-left: calc(-50vw + var(--scrollbar-width, 0px) / 2);
+  max-width: calc(100vw - var(--scrollbar-width, 0px));
+  padding-bottom: 40px;
+  padding-top: 40px;
+  position: relative;
+  width: calc(100vw - var(--scrollbar-width, 0px));
+}
+.rdlab-page .rdlab-cta-band > .row-fluid {
+  max-width: none;
+}
+/* base.css: the band's column gets the `.container` widths and gutters back (the generic
+   `.row-fluid [class*=span]` reset would otherwise zero its margins/padding). */
+.rdlab-page .rdlab-cta-band > .row-fluid > .dnd-column {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.rdlab-cta-band h3 {
+  margin-bottom: 2rem; /* theme: `.hs_cos_wrapper_type_rich_text h3 { margin-bottom: 2rem }` */
+  text-align: center; /* inline */
+}
+.rdlab-cta-band .rdlab-button-row {
+  padding-top: 0;
+}
