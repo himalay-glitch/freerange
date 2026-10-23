@@ -1,0 +1,191 @@
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+
+/* ---- next <style> block ---- */
+#hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url('https://freerange.com/hs-fs/hubfs/Cover%20image%201%201%20%281%29.png?width=4739&quality=high'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url(https://freerange.com/hubfs/Archetype%20Images/Tablet/bg%201%201.jpeg); }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url(https://freerange.com/hubfs/Archetype%20Images/Mobile/intro%20screen.jpeg); }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.1%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.2%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.3%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.4%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.5%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.6%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:url('https://freerange.com/hubfs/Archetype%20Images/Desktop/Q%200.7%20%2816_9%29.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .image-container { background-image:url(https://freerange.com/hubfs/Archetype%20Images/Desktop/result-image.jpg); }
+
+#hs_cos_wrapper_dnd_area-module-2 .result-image { background-image:url(); }
+
+/* ---- next <style> block ---- */
+.dnd_area-row-0-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+
+/* ---- next <style> block ---- */
+@font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
