@@ -28,6 +28,8 @@
     transition: padding-top 0.4s;
   }
   body.init { transition: none; }
+  /* theme: `.p, div:not(:has(p)), p { letter-spacing:-.5px }` */
+  .p, div:not(:has(p)), p { letter-spacing: -0.5px; }
   p {
     font-size: 19px;
     font-weight: 500;
@@ -124,6 +126,8 @@
 @media (min-width: 1024px) { .container { max-width: 960px; } }
 @media (min-width: 1280px) { .container { max-width: 1140px; } }
 @media (min-width: 1440px) { .container { max-width: 1240px; } }
+/* Tailwind's layered `.container` utility caps width at 40rem between 640–767px; the theme is fluid there. */
+@media (max-width: 767px) { .container { max-width: none; } }
 .content-wrapper { max-width: 1240px; }
 .d-flex { display: flex !important; }
 .ml-auto { margin-left: auto !important; }

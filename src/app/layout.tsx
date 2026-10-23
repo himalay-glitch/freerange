@@ -33,15 +33,16 @@ const colfax = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "Free Range",
   description:
     "We imagine the future and bring your ideas to life with bold brands, creative stories, and product innovation.",
-  icons: { icon: "/hubfs/Free-Range/Chicken.svg", shortcut: "/hubfs/Free-Range/Chicken.svg" },
+  icons: { icon: "/placeholders/logo-mark.svg", shortcut: "/placeholders/logo-mark.svg" },
   openGraph: {
     title: "Free Range",
     description:
       "We imagine the future and bring your ideas to life with bold brands, creative stories, and product innovation.",
-    images: ["/hubfs/Free-Range-Zoom-Background-Free-Your-Story.png"],
+    images: ["/placeholders/card-1.svg"],
   },
 };
 
