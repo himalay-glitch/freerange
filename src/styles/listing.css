@@ -1,0 +1,434 @@
+/*
+  Listing page template (/blog, /case-studies, /resources): optional hero headline, the
+  "Hide Filters | Search" bar, the sticky checkbox-filter sidebar, the card grid (rows come from
+  CardList + card-list.css) and the Load More button.
+
+  Ported rule-for-rule from docs/research/css/listing.css (vendor-prefixed duplicates dropped,
+  HubSpot-only selectors omitted, `#clear-filters` → `.clear-filters`). The two PNG data-URI icons
+  (`.filters-toggle-button:before`, `.search-input-container:before`) are replaced by inline SVGs
+  with the same 28px box. Values the theme inherits from its global rules (HubSpot blog header
+  boilerplate, `label`, `button`, `input[type=text]`) are inlined here so the template does not
+  depend on globals this clone never ported.
+
+  Breakpoints (em at 16px): 47.9375em = 767px, 48em = 768px.
+*/
+
+/* ---------------------------------------------------------------------------------------------
+   Blog header / hero headline (rendered only when the page has one; hidden on the live
+   case-studies and resources pages)
+   ------------------------------------------------------------------------------------------- */
+.body-container--custom-blog-index .blog-header {
+  background-color: transparent;
+  text-align: center;
+}
+/* HubSpot blog boilerplate: centred inner column */
+.body-container--custom-blog-index .blog-header .blog-header__inner {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 60px 20px;
+}
+.body-container--custom-blog-index.blog .blog-header .blog-header__inner {
+  max-width: 784px;
+  padding-bottom: 30px;
+  padding-top: 100px;
+}
+.hero-no-animation {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 784px;
+  padding-bottom: 30px;
+  padding-top: 100px;
+}
+.body-container--custom-blog-index .blog-header .blog-header__inner .hero-no-animation {
+  max-width: 100%;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+/* The h1 itself uses the global heading rules: 48px/1.2 600 #2f2f34 (40px ≥768, 35px <768) with the
+   orange `h1 strong` highlight. */
+
+/* ---------------------------------------------------------------------------------------------
+   Index section
+   ------------------------------------------------------------------------------------------- */
+.body-container--custom-blog-index .content-wrapper .blog-index {
+  padding-bottom: 80px;
+  padding-top: 40px;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index.no-more-posts {
+  padding-bottom: 40px;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index > .card-list-module-container {
+  width: 100%;
+}
+.body-container--custom-blog-index .content-wrapper .search-filters {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   "Hide Filters | Search" bar
+   ------------------------------------------------------------------------------------------- */
+.card-list-module-container .card-list-filters-search .search-filters {
+  display: flex;
+  align-items: center;
+  border: 1px solid #979797;
+  border-left: none;
+  border-right: none;
+  padding: 8px 0;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+.card-list-module-container .card-list-filters-search .search-filters .filters-toggle {
+  cursor: pointer;
+  margin-right: 20px;
+  width: 280px;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters .filters-toggle {
+    margin-right: 0;
+    padding: 10px 0;
+    align-self: flex-start;
+  }
+}
+.card-list-module-container .card-list-filters-search .search-filters .filters-toggle .filters-toggle-button {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters .filters-toggle .filters-toggle-button {
+    min-height: 32px;
+  }
+}
+/* Orange "sliders" icon (was a 28×28 PNG `:before`) */
+.card-list-module-container .card-list-filters-search .search-filters .filters-toggle .filters-toggle-button .filters-toggle-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 28px;
+  margin: 0 20px;
+  width: 28px;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters .filters-toggle .filters-toggle-button .filters-toggle-icon {
+    margin-left: 0;
+  }
+}
+.card-list-module-container .card-list-filters-search .search-filters .filters-toggle .filters-toggle-button span {
+  color: #4a4a4a;
+  user-select: none;
+}
+.card-list-module-container .card-list-filters-search .search-filters .filters-toggle span:not(.filters-toggle-button) {
+  white-space: nowrap;
+}
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container {
+  border-left: 1px solid #979797;
+  display: flex;
+  padding-left: 20px;
+  width: 100%;
+  align-items: center;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters .search-input-container {
+    border-left: none;
+    border-top: 1px solid #979797;
+    padding-left: 0;
+  }
+}
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container:first-child {
+  border: none;
+}
+/* Orange magnifier (was a 28×28 PNG `:before`) */
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container .search-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  height: 28px;
+  width: 28px;
+}
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container form {
+  position: relative;
+  width: 100%;
+}
+/* The theme's global text-input rule (Work Sans 16px/400 #4a4a4a, padding .625rem) plus the module's
+   overrides. The original's `min-height:42px` applies to a content-box input, so the field renders
+   62px tall (52px on mobile); that height is written out here. */
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container form .search-input {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #4a4a4a;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 42px;
+  margin: 0;
+  min-height: 62px;
+  outline: 0;
+  padding: 0.625rem;
+  width: 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .card-list-filters-search .search-filters .search-input-container form .search-input {
+    line-height: 32px;
+    min-height: 52px;
+  }
+}
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container form .search-input::placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+}
+/* Invisible submit laid over the magnifier so clicking the icon submits the search */
+.card-list-module-container .card-list-filters-search .search-filters .search-input-container form [type="submit"] {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 28px;
+  left: -28px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Sidebar + cards wrapper
+   ------------------------------------------------------------------------------------------- */
+.card-list-module-container .filters-and-cards-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 40px;
+  position: relative;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .filters-and-cards-wrapper {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+.card-list-module-container .filters-and-cards-wrapper.show-filters .card-list-search-filters {
+  flex: 1 0 264px;
+  margin-right: 30px;
+  padding: 20px;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .filters-and-cards-wrapper.show-filters .card-list-search-filters {
+    flex: 1 0 auto;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}
+.card-list-module-container .filters-and-cards-wrapper.show-filters .card-list-search-filters * {
+  opacity: 1;
+}
+/* Collapsed state (no `.show-filters` on the wrapper): width animates to 0 and the cards widen */
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters {
+  background-color: #f0f9fd;
+  flex: 0;
+  margin-bottom: auto;
+  max-width: 264px;
+  overflow: hidden;
+  padding: 20px 0;
+  transition: all 0.5s;
+  width: 0;
+}
+@media screen and (min-width: 48em) {
+  .card-list-module-container .filters-and-cards-wrapper .card-list-search-filters {
+    position: sticky;
+    top: 30px;
+  }
+  /* theme: `body.navbar-fixed-visible` — this clone's header toggles `body.header-fixed` */
+  body.header-fixed .filters-and-cards-wrapper .card-list-search-filters,
+  body.navbar-fixed-visible .filters-and-cards-wrapper .card-list-search-filters {
+    top: 110px;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .filters-and-cards-wrapper .card-list-search-filters {
+    margin-bottom: 0;
+    margin-right: 0;
+    flex: 1 0 0;
+    max-width: 100%;
+    padding: 0 20px;
+    width: 100%;
+  }
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters * {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+/* Group heading: the global `h2.title` (25px 700, 2px orange underline) with the sidebar tweaks */
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters .title {
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 12px;
+  padding-bottom: 0;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form {
+  position: relative;
+  width: 224px;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form {
+    width: 100%;
+  }
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters {
+  list-style: none;
+  margin-bottom: 12px;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0;
+}
+@media screen and (max-width: 47.9375em) {
+  .card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters {
+    margin-bottom: 0;
+    margin-top: 24px;
+  }
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li {
+  display: flex;
+  align-items: flex-start;
+  line-height: 28px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li .checkbox-container {
+  padding-left: 0;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li .checkbox-container .checkmark {
+  display: block;
+  left: auto;
+  position: relative;
+  top: auto;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li label {
+  margin-bottom: 0;
+}
+/* Option text: the theme's global `label` rule (16px 400 #6e6e6e, block) + the module's spacing */
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li label:not(.checkbox-container) {
+  color: #6e6e6e;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 10px;
+  user-select: none;
+}
+/* "Clear Filters": theme `button` (white text, padding 15px 53px, inherits 19px/28px 500) + module */
+.card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form .clear-filters {
+  background-color: #308bf5;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+  margin-top: 15px;
+  outline: 0;
+  padding: 15px 53px;
+  width: 100%;
+}
+
+/* Custom checkbox (global theme rules) */
+.checkbox-container {
+  cursor: pointer;
+  display: block;
+  font-size: 22px;
+  margin-bottom: 12px;
+  padding-left: 35px;
+  position: relative;
+  user-select: none;
+}
+.checkbox-container input {
+  cursor: pointer;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkmark {
+  background-color: #eee;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+.checkbox-container .checkmark:after {
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  content: "";
+  display: none;
+  height: 12px;
+  left: 9px;
+  position: absolute;
+  top: 5px;
+  transform: rotate(45deg);
+  width: 7px;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Cards column
+   ------------------------------------------------------------------------------------------- */
+.card-list-module-container .filters-and-cards-wrapper .card-list-container {
+  width: 100%;
+}
+/* CardList renders its own `.module.card-list-module-container > .filters-and-cards-wrapper >
+   .card-list-container` chrome; nested beside the sidebar it must behave like the bare cards column. */
+.card-list-module-container .filters-and-cards-wrapper > .card-list-module-container {
+  min-width: 0;
+  width: 100%;
+}
+.card-list-module-container .filters-and-cards-wrapper > .card-list-module-container > .filters-and-cards-wrapper {
+  margin-top: 0;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-container .no-results-container {
+  display: none;
+}
+.card-list-module-container .filters-and-cards-wrapper .card-list-container .no-results-container.show {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Load More
+   The original keeps this `visibility:hidden` and loads the next page on scroll; the clone shows
+   the button (40px below the last row) and hides it once every item is on the page.
+   ------------------------------------------------------------------------------------------- */
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button {
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button.hide button,
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button.no-more-posts button {
+  opacity: 0;
+  pointer-events: none;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button.no-more-posts {
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button button {
+  background-color: #308bf5;
+  display: inline-flex;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button button:focus,
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button button:hover {
+  color: #fff;
+}
