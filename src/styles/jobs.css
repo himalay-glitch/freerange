@@ -1,0 +1,148 @@
+/*
+  Jobs listing (/jobs): hero rich text inside .blog-header, then "Available Jobs" + job cards.
+  Ported from docs/research/css/jobs.css and listing.css (the `.jobs` / `.job-card` /
+  `.blog-hero-module` / `.hero-no-animation` branches) plus the base `.blog-header__inner,
+  .blog-index { padding: 80px 0 }` rule from theme-overrides.css and the .hs-button fill from
+  theme-main.css. Vendor-prefixed duplicates dropped; the rule order of the originals is kept
+  because several overrides rely on it.
+  Global pieces already provided by src/styles/theme-base.css and NOT repeated here:
+    h2 sizes + the orange span/strong highlight, h2.title, p/ul/li type, .container widths,
+    .content-wrapper max-width, .hs-button base box.
+  Measured at 1440: .blog-header__inner 1240 wide at y 182 (padding 72px 0, h 1151) ->
+  .blog-index at y 1333 (title 47 + 40 margin, cards 382 / 410 with 32px between, 80px bottom).
+*/
+
+/* ---------- Header / hero ---------- */
+.jobs .blog-header__inner,
+.jobs .blog-index { padding: 80px 0; }
+.hero-no-animation {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 784px;
+  padding-bottom: 30px;
+  padding-top: 100px;
+}
+.body-container--custom-blog-index .blog-header { background-color: transparent; }
+.body-container--custom-blog-index .blog-header .blog-header__inner .hero-no-animation {
+  max-width: 100%;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+/* The inner container drops its 12px gutters here; the hero keeps its own .container gutters. */
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner { padding: 72px 0; }
+@media screen and (max-width: 47.9375em) {
+  .body-container--custom-blog-index.jobs .blog-header .blog-header__inner {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    padding-top: 50px;
+  }
+}
+/* Headline: theme h2 size (45px >= 1000px, 40px >= 768px, 35px below) with the editor's
+   inline line-height 1.5 / left alignment. */
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module h2 {
+  line-height: 1.5;
+  text-align: left;
+}
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module .h1,
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module .h2,
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module h1,
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module h2 {
+  font-weight: 600;
+}
+@media screen and (max-width: 47.9375em) {
+  .body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module .h1,
+  .body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module .h2,
+  .body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module h1,
+  .body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module h2 {
+    line-height: 1.2 !important;
+  }
+}
+.body-container--custom-blog-index.jobs .blog-header .blog-header__inner .blog-hero-module p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Listing ---------- */
+.body-container--custom-blog-index .content-wrapper .blog-index { padding-top: 40px; }
+.body-container--custom-blog-index .content-wrapper .blog-index.no-more-posts { padding-bottom: 40px; }
+.body-container--custom-blog-index.jobs .blog-index {
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+}
+
+/* ---------- Job card ---------- */
+.tags { display: block; }
+.job-card {
+  background-color: #f1f9fc;
+  padding: 40px;
+}
+@media screen and (max-width: 47.9375em) {
+  .job-card { padding: 26px; }
+}
+.job-card + .job-card { margin-top: 32px; }
+.job-card .job-title {
+  color: #2f2f34;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.job-card .job-title a { color: #2f2f34; }
+/* Live page: `.body-wrapper a:not(.hs-button):hover` (blue, 80% opacity) wins on hover. */
+.job-card .job-title a:hover,
+.job-card .job-title a:focus {
+  color: #308bf5;
+  opacity: 0.8;
+}
+.job-card .tags { margin-bottom: 22px; }
+/* Skill chips are inline-blocks separated by whitespace (the gap is a space character). */
+.job-card .tags span {
+  border: 1px solid #308bf5;
+  color: #308bf5;
+  display: inline-block;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-bottom: 6px;
+  padding: 4px 6px;
+}
+.job-card .excerpt { margin-bottom: 32px; }
+.job-card .excerpt p { margin-bottom: 0; }
+.job-card .excerpt p + p { margin-top: 32px; }
+.job-card .hs-button {
+  display: inline-block;
+  font-weight: 400;
+  padding: 9px 17px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Primary button fill + hover (theme-main .hs-button:before), scoped to this page ---------- */
+.jobs .hs-button:before {
+  background: #308bf5;
+  bottom: 0;
+  content: "";
+  height: calc(100% + 2px);
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  transform: scaleY(1);
+  transform-origin: 50%;
+  transition: transform 0.3s ease-out;
+  width: calc(100% + 2px);
+  z-index: -1;
+}
+.jobs .hs-button:focus,
+.jobs .hs-button:hover {
+  border: 2px solid #308bf5;
+  color: #308bf5;
+  outline: 0;
+}
+.jobs .hs-button:focus:before,
+.jobs .hs-button:hover:before { transform: scaleY(0); }
+.jobs .hs-button:focus { border-radius: 0; }
