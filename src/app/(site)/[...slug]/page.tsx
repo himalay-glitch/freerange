@@ -7,6 +7,8 @@ import { BlogPostTemplate } from "@/components/templates/BlogPostTemplate";
 import { CaseStudyTemplate } from "@/components/templates/CaseStudyTemplate";
 import { ResourceTemplate } from "@/components/templates/ResourceTemplate";
 import { JobTemplate } from "@/components/templates/JobTemplate";
+import RdLabPage from "@/components/templates/RdLabPage";
+import { getCollection } from "@/lib/content";
 import { PageShell, Section, Spacer } from "@/components/site/PageShell";
 import AboutPage from "@/components/templates/AboutPage";
 import JobsListingPage from "@/components/templates/JobsListingPage";
@@ -90,6 +92,10 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       );
     case "job":
       return <JobTemplate entry={entry} bodyHtml={bodyHtml} />;
+    case "rd-lab": {
+      const featured = getCollection("case-study").slice(0, 3).map((e, i) => ({ ...toCaseStudyCard(e), wide: i === 2 }));
+      return <RdLabPage featured={<CardList variant="case-study" rows={[featured]} />} />;
+    }
     case "about":
       return <AboutPage />;
     case "jobs-listing":
