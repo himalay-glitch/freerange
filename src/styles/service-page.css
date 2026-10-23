@@ -1,0 +1,427 @@
+/*
+  Service page template (six /service URLs).
+  Ported from:
+    - docs/research/css/service-page.css   (theme rules: .subservices-grid, .faq-*, .bg-section-decorator)
+    - docs/research/css/service-inline.css (page-level HubSpot CSS: row margins/paddings, cell alignment,
+                                            CTA band background layer, module overrides)
+  HubSpot-generated ids/classes (#hs_cos_wrapper_widget_…, .dnd_area-row-N-…, .cell_…) are replaced by the
+  stable `.service-*` classes below with the same values. Vendor-prefixed duplicates are dropped.
+  Breakpoints (em at 16px): 47.9375em=767, 48em=768, 62.4375em=999, 62.5em=1000, 63.9375em=1023,
+  79.9375em=1279, 112.5em=1800.
+*/
+
+/* ---------------------------------------------------------------------------
+   HubSpot drag-and-drop wrappers.
+   On this template the rows sit flush: the measured page (header row 262→552, cards at 672 = 552 + 120px
+   row margin) only works if `.dnd-section` carries no default padding, so the theme's 80px/20px rhythm is
+   neutralised here and each row gets its own exact margins/paddings.
+--------------------------------------------------------------------------- */
+.service-page .dnd-section { padding: 0; }
+.service-page .row-fluid-wrapper { padding: 0; }
+/* Row-specific paddings below are written as `.service-page .service-*` so they outrank this reset
+   (the original relies on `!important`). */
+
+/* theme-main.css: `.p, div:not(:has(p)), p { letter-spacing: -.5px }`. Only the div half is missing from
+   the global base; it is what gives the FAQ title (an h2 in a div without a <p>) its -0.5px tracking while
+   the page header, cards, R&D and CTA headings (all beside a <p>) stay at 0. Scoped to this template. */
+.service-page div:not(:has(p)) { letter-spacing: -0.5px; }
+
+/* `.hs_cos_wrapper_type_rich_text h1…h6 { margin-bottom: 2rem }` (theme-main.css) */
+.service-rich-text h1,
+.service-rich-text h2,
+.service-rich-text h3,
+.service-rich-text h4,
+.service-rich-text h5,
+.service-rich-text h6 { margin-bottom: 2rem; }
+
+/* HubSpot "flexbox positioning" wrappers around the button modules */
+.service-flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.service-flex-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.service-flex-center > div,
+.service-flex-start > div { max-width: 100%; flex-shrink: 0; }
+
+/* `a.cta_button` (service-inline.css) – kept for parity, no element on the template uses it */
+a.cta_button { box-sizing: content-box !important; vertical-align: middle; }
+
+/* ---------------------------------------------------------------------------
+   Primary button fill + hover (base.css .hs-button:before rules). The global stylesheet only defines the
+   button frame, so the fill is scoped here until the shared header/footer builder adds it globally.
+--------------------------------------------------------------------------- */
+.service-page .hs-button:before {
+  background: #308bf5;
+  bottom: 0;
+  content: "";
+  height: calc(100% + 2px);
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  transform: scaleY(1);
+  transform-origin: 50%;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  width: calc(100% + 2px);
+  z-index: -1;
+}
+.service-page .hs-button:focus,
+.service-page .hs-button:hover { border: 2px solid #308bf5; color: #308bf5; outline: 0; }
+.service-page .hs-button:focus:before,
+.service-page .hs-button:hover:before { transform: scaleY(0); }
+.service-page .hs-button:focus { border-radius: 0; }
+
+/* ---------------------------------------------------------------------------
+   1. Page header row  (.dnd_area-row-0-margin / -padding, #hs_cos_wrapper_widget_1771529919502,
+      #hs_cos_wrapper_widget_1771530069602)
+--------------------------------------------------------------------------- */
+.service-page .service-header-row {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.service-header-module {
+  display: block;
+  padding-left: 120px;
+  padding-right: 120px;
+  text-align: center;
+}
+.service-header-cta { border-radius: 100px; display: block; }
+@media screen and (max-width: 47.9375em) {
+  .service-header-module { padding-left: 0; padding-right: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   Background decorator (row 5, zero height; the bird sits behind the page header)
+--------------------------------------------------------------------------- */
+.bg-section-decorator {
+  left: -250px;
+  opacity: 0.4;
+  position: absolute;
+  top: 16%;
+  width: 70%;
+  z-index: -1;
+}
+.bg-section-decorator img,
+.bg-section-decorator svg { display: block; width: 100%; height: auto; will-change: transform; }
+@media screen and (max-width: 47.9375em) {
+  .bg-section-decorator { left: -100px !important; top: 20%; width: 100% !important; }
+}
+@media screen and (max-width: 62.4375em) {
+  .bg-section-decorator { left: -200px; width: 60%; }
+}
+@media screen and (min-width: 112.5em) {
+  .bg-section-decorator { left: -400px; top: 8%; width: 70%; }
+}
+/* The 1440 reference shows no decorator (it is covered on desktop); the 390 reference shows it faintly. */
+@media screen and (min-width: 48em) {
+  .service-page .bg-section-decorator { display: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   2. Sub-service cards (.subservices-grid)
+--------------------------------------------------------------------------- */
+.subservices-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  margin: 60px auto;
+  max-width: 1400px;
+  padding: 0 20px;
+  width: 100%;
+}
+@media screen and (max-width: 63.9375em) {
+  .subservices-grid { flex-wrap: wrap; padding: 0; }
+}
+.subservices-grid .subservice-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex: 1 1 0px;
+  padding: 24px 13px;
+  border: 4px solid transparent;
+  cursor: default;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+@media screen and (max-width: 79.9375em) {
+  .subservices-grid .subservice-card { flex: 1 1 calc(50% - 24px); }
+}
+@media screen and (max-width: 63.9375em) {
+  .subservices-grid .subservice-card { flex: 1 1 calc(50% - 24px); }
+}
+@media screen and (max-width: 62.4375em) {
+  .subservices-grid .subservice-card { flex: 1 1 100%; }
+}
+.subservices-grid .subservice-card:hover {
+  border: 4px solid #fff;
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+}
+.subservices-grid .subservice-card:hover .card-icon-wrapper {
+  background-color: #308bf5;
+  border: 4px solid #308bf5;
+  transform: scale(1.1);
+}
+.subservices-grid .subservice-card .card-icon-wrapper {
+  border-radius: 12px;
+  display: flex;
+  background: #425f80;
+  border: 4px solid transparent;
+  height: 55px;
+  padding: 10px;
+  width: 55px;
+  /* the theme's `align-items:left; justify-content:left` are invalid values and have no effect */
+}
+.subservices-grid .subservice-card .card-icon-wrapper img,
+.subservices-grid .subservice-card .card-icon-wrapper svg {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.subservices-grid .subservice-card .card-title {
+  color: #2f2f34;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+.subservices-grid .subservice-card .card-description {
+  color: #2f2f34;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.subservices-grid .subservice-card .card-description p,
+.subservices-grid .subservice-card .card-description span {
+  color: #2f2f34;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+.subservices-grid .subservice-card .sub-list { list-style: none; margin: 0; padding: 0; }
+.subservices-grid .subservice-card .sub-list .sub-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.subservices-grid .subservice-card .sub-list .sub-list-item .blue-dot-icon {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+.subservices-grid .subservice-card .sub-list .sub-list-item .item-text {
+  color: #4a4a4a;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* ---------------------------------------------------------------------------
+   3. R&D Lab split row  (.dnd_area-row-3-vertical-alignment, .cell_17800018055773-*, .cell_17800018055774-*,
+      #hs_cos_wrapper_module_17800018055776 / …79 / …8)
+   The left (span7) column is content-sized: its first module is a 575px-wide empty rich-text heading that
+   HubSpot uses as a spacer, which fixes the column at 575px and pushes the card down. The right (span5)
+   column fills the rest.
+--------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .service-rd-row > .row-fluid { display: flex; flex-direction: row; }
+  .service-rd-card-column,
+  .service-rd-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .service-rd-card-column > div,
+  .service-rd-text-column > div { flex-shrink: 0; }
+}
+.service-rd-card-column { margin-top: -100px; padding-top: 0; }
+.service-rd-text-column { padding-top: 0; padding-left: 25px; }
+.service-rd-spacer-module { display: block; padding-top: 0; }
+.service-rd-spacer { width: 575px; max-width: 100%; }
+/* mimics the empty <h2> inside the spacer rich text: theme h2 sizes, line-height 1.2, rich-text 2rem margin */
+.service-rd-spacer-line {
+  font-size: 2.1875rem;
+  line-height: 1.2;
+  margin: 0 0 2rem;
+}
+@media screen and (min-width: 48em) { .service-rd-spacer-line { font-size: 2.5rem; } }
+@media screen and (min-width: 62.5em) { .service-rd-spacer-line { font-size: 2.8125rem; } }
+.service-rd-text-module { display: block; padding-left: 0; }
+.service-rd-text-module h2 {
+  color: #2f2f34;
+  line-height: 1.2;
+  background-color: #fff;
+  text-align: left;
+}
+.service-rd-text-module h2 strong { color: #fff; background-color: #ff5201; }
+.service-rd-text-module p { line-height: 28px; color: #4a4a4a; background-color: #fff; }
+.service-rd-cta { display: block; padding-left: 0; padding-top: 0; }
+
+/* ---------------------------------------------------------------------------
+   4. FAQ row (.dnd_area-row-4-padding) + .faq-split-container
+--------------------------------------------------------------------------- */
+.service-page .service-faq-row { padding-top: 30px; padding-bottom: 30px; }
+
+.faq-split-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 30px auto;
+}
+.faq-split-container .faq-intro-column {
+  flex: 0 0 35%;
+  min-width: 300px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 63.9375em) {
+  .faq-split-container .faq-intro-column { flex: 0 0 100%; }
+}
+.faq-split-container .faq-intro-column .faq-main-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 63.9375em) {
+  .faq-split-container .faq-intro-column .faq-main-title { font-size: 32px; line-height: 40px; }
+}
+.faq-split-container .faq-intro-column .faq-description,
+.faq-split-container .faq-intro-column .faq-description span {
+  color: #2f2f34;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.faq-split-container .faq-intro-column .faq-description p { margin: 0; }
+.faq-split-container .faq-accordion-column { flex: 1 1 calc(65% - 40px); }
+@media screen and (max-width: 63.9375em) {
+  .faq-split-container .faq-accordion-column { flex: 0 0 100%; }
+}
+.faq-split-container .faq-accordion-column .accordion-item {
+  border-bottom: 1px solid rgba(66, 95, 128, 0.4);
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-header {
+  display: flex;
+  padding: 24px 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: 0 0;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  transition: all 0.2s ease;
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-header:hover .icon,
+.faq-split-container .faq-accordion-column .accordion-item .accordion-header:hover .question-text {
+  color: #ff4e00;
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-header .question-text {
+  color: #2f2f34;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+}
+@media screen and (max-width: 63.9375em) {
+  .faq-split-container .faq-accordion-column .accordion-item .accordion-header .question-text {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-header .icon {
+  color: #2f2f34;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content .content-inner {
+  color: #2f2f34;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  padding-bottom: 24px;
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content .content-inner p {
+  margin-bottom: 0 !important;
+}
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content .content-inner div,
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content .content-inner p,
+.faq-split-container .faq-accordion-column .accordion-item .accordion-content .content-inner span {
+  color: #2f2f34;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.faq-split-container .faq-accordion-column .accordion-item.active .accordion-content {
+  max-height: 1000px;
+  transition: max-height 0.4s ease-in-out;
+}
+.faq-split-container .faq-accordion-column .accordion-item.active .accordion-header {
+  padding-bottom: 15px;
+}
+
+/* ---------------------------------------------------------------------------
+   5. CTA band  (.dnd_area-row-5-* : hidden/background-layers/padding/background-color/force-full-width,
+      #hs_cos_wrapper_widget_1774367543655)
+   Full-width technique from base.css: `.dnd-section[class*=-background-color][class*=-force-full-width-section]`
+--------------------------------------------------------------------------- */
+.service-page .service-cta-band {
+  display: block;
+  left: 50%;
+  margin-left: calc(-50vw + var(--scrollbar-width, 0px) / 2);
+  max-width: calc(100vw - var(--scrollbar-width, 0px));
+  position: relative;
+  width: calc(100vw - var(--scrollbar-width, 0px));
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-image: linear-gradient(rgba(241, 246, 252, 1), rgba(241, 246, 252, 1));
+  background-position: left top;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.service-cta-band > .row-fluid { max-width: none !important; }
+/* the 12-wide column inside a full-width section gets the .container box */
+.service-cta-band > .row-fluid > .dnd-column {
+  --bs-gutter-x: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+}
+@media (min-width: 768px) { .service-cta-band > .row-fluid > .dnd-column { max-width: 836px; } }
+@media (min-width: 1000px) { .service-cta-band > .row-fluid > .dnd-column { max-width: 900px; } }
+@media (min-width: 1024px) { .service-cta-band > .row-fluid > .dnd-column { max-width: 960px; } }
+@media (min-width: 1280px) { .service-cta-band > .row-fluid > .dnd-column { max-width: 1140px; } }
+@media (min-width: 1440px) { .service-cta-band > .row-fluid > .dnd-column { max-width: 1240px; } }
+.service-cta-text { display: block; padding-bottom: 0; padding-top: 50px; }
+.service-cta-text h2,
+.service-cta-text p { text-align: center; }
+@media screen and (max-width: 47.9375em) {
+  .service-page .service-cta-band { padding-left: 20px; padding-right: 20px; }
+}
