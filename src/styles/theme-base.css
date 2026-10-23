@@ -132,10 +132,8 @@
 .d-flex { display: flex !important; }
 .ml-auto { margin-left: auto !important; }
 
-/* HubSpot drag-and-drop section wrapper: 80px vertical rhythm between modules */
-.dnd-section { padding: 80px 20px; }
-.dnd-section > .row-fluid { max-width: 1240px; margin: 0 auto; }
-.dnd-section.no-padding { padding: 0; }
+/* HubSpot drag-and-drop wrappers: no padding on this site (spacing comes from explicit spacer modules and module margins) */
+.row-fluid-wrapper, .dnd-section, .row-fluid, .body-container { padding: 0; }
 .widget-type-space { display: block; }
 
 /* Modules */

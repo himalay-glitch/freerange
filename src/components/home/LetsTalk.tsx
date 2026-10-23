@@ -75,7 +75,12 @@ function validateAll(values: Values): Errors {
   return errors;
 }
 
-export function LetsTalk() {
+export interface LetsTalkProps {
+  /** Section title; the contact page uses "Contact Us" */
+  title?: string;
+}
+
+export function LetsTalk({ title = "Get a Free Consultation" }: LetsTalkProps = {}) {
   const idPrefix = useId();
   const [values, setValues] = useState<Values>(() =>
     Object.fromEntries(LETS_TALK_FIELDS.map((f) => [f.name, ""])),
@@ -115,7 +120,7 @@ export function LetsTalk() {
       <div className="container">
         <div className="lets-talk-form form">
           <h2 className="title">
-            Get a Free Consultation <span className="phone-number">{PHONE_NUMBER}</span>
+            {title} <span className="phone-number">{PHONE_NUMBER}</span>
           </h2>
           <div className="lets-talk-content-wrapper">
             {submitted ? (
