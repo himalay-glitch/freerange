@@ -17,7 +17,8 @@ export default function Home() {
       <Section n={1}><Hero /></Section>
       <Section n={3}><WorkSection /></Section>
       <Section n={5}><Approach /></Section>
-      <Section n={7}><Services /></Section>
+      {/* The original column for this module carries `padding-top:80px` (home-inline.css .cell_16118497819822-padding) */}
+      <Section n={7} columnStyle={{ paddingTop: 80 }}><Services /></Section>
       <Section n={9}><Spacer height={80} /></Section>
       <Section n={11}><PodcastSection /></Section>
       <Section n={16}><Spacer height={80} /></Section>

@@ -22,11 +22,11 @@ export function PageShell({ children, variant = "default", className = "" }: { c
 }
 
 /** One drag-and-drop section wrapper (`.row-fluid-wrapper.dnd-section`). */
-export function Section({ children, n, className = "" }: { children: ReactNode; n?: number; className?: string }) {
+export function Section({ children, n, className = "", columnStyle }: { children: ReactNode; n?: number; className?: string; columnStyle?: React.CSSProperties }) {
   return (
     <div className={`row-fluid-wrapper row-depth-1 ${n ? `row-number-${n} ` : ""}dnd-section ${className}`.trim()}>
       <div className="row-fluid">
-        <div className="span12 widget-span widget-type-cell dnd-column">{children}</div>
+        <div className="span12 widget-span widget-type-cell dnd-column" style={columnStyle}>{children}</div>
       </div>
     </div>
   );
