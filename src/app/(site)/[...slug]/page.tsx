@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllEntries, getEntry, getBodyHtml, templateFor, type ContentEntry } from "@/lib/content";
 import { PageShell, Section, Spacer } from "@/components/site/PageShell";
+import AboutPage from "@/components/templates/AboutPage";
+import JobsListingPage from "@/components/templates/JobsListingPage";
+import LegalPage from "@/components/templates/LegalPage";
 
 /** Paths that have their own route files (home, contact, podcast) or render without site chrome (quiz/results). */
 const EXPLICIT = new Set(["/", "/contact-us", "/podcast", "/archetypes", "/creator", "/leader", "/entertainer", "/guardian", "/innovator", "/sage"]);
@@ -43,6 +46,14 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   if (!entry || EXPLICIT.has(path)) notFound();
   const template = templateFor(entry);
   const bodyHtml = getBodyHtml(entry);
-  void bodyHtml; // consumed by the templates as they are wired in
-  return <PendingTemplate entry={entry} template={template} />;
+  switch (template) {
+    case "about":
+      return <AboutPage />;
+    case "jobs-listing":
+      return <JobsListingPage />;
+    case "legal":
+      return <LegalPage title={entry.title} bodyHtml={bodyHtml ?? undefined} />;
+    default:
+      return <PendingTemplate entry={entry} template={template} />;
+  }
 }
