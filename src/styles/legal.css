@@ -1,0 +1,96 @@
+/*
+  Legal / rich-text pages (/privacy-policy, /terms-and-conditions).
+  The live pages are a 20px spacer, one rich-text module and a 60px spacer inside .container
+  (docs/research/raw/privacy-modules.json). Their body is editor-generated markup with inline
+  styles, so `.legal-body` only normalises the semantic tags an owner-supplied export would use.
+  Type values: computed `ul` from privacy-modules.json (18px/24px 500, margin 0 0 24px 24px);
+  title 26px bold, "Last updated" 15px bold #7f7f7f, body copy 18px/1.5 #595959 from the page.
+*/
+
+/* Spacer module (same rule as src/styles/about.css; Bootstrap hr = faint 1px rule at 25%). */
+.horizontal-space {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid;
+  color: inherit;
+  margin: 0;
+  opacity: 0.25;
+}
+
+.legal-body { color: #4a4a4a; }
+.legal-body h1,
+.legal-body h2 {
+  color: #4a4a4a;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 35px;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+.legal-body h3,
+.legal-body h4 {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+.legal-body p {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 28px;
+  margin: 0 0 32px;
+}
+.legal-body ol,
+.legal-body ul {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  list-style-position: inside;
+  margin: 0 0 24px 24px;
+  padding: 0;
+}
+.legal-body li {
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+.legal-body a {
+  color: #308bf5;
+  fill: #308bf5;
+}
+.legal-body a:hover,
+.legal-body a:focus {
+  color: #308bf5;
+  opacity: 0.8;
+}
+.legal-body table {
+  border-collapse: collapse;
+  margin: 0 0 32px;
+  width: 100%;
+}
+.legal-body td,
+.legal-body th {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 8px;
+  vertical-align: top;
+}
+/* Placeholder-only lines; nested selectors so they outrank `.legal-body p` above. */
+.legal-body .legal-body__updated {
+  color: #7f7f7f;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin: 0 0 56px;
+}
+.legal-body .legal-body__note {
+  color: #7f7f7f;
+  font-size: 15px;
+  font-style: italic;
+  margin: 0;
+}
