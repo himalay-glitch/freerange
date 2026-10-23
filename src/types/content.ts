@@ -101,3 +101,23 @@ export interface FormField {
   /** Occupies the full row */
   full?: boolean;
 }
+
+/** Inline "tech badge" drawn by the R&D Lab logo carousels (placeholder for a technology logo). */
+export interface TechBadge {
+  /** Two- or three-letter label rendered inside the badge */
+  label: string;
+  shape: "square" | "circle" | "hexagon" | "diamond" | "pill";
+  /** Badge fill colour */
+  background: string;
+  /** Label colour */
+  color: string;
+}
+
+/** In-house product card (R&D Lab `.cta-card-list`). */
+export interface ProductCard {
+  title: string;
+  description: string;
+  /** Path under /public for the card background */
+  image: string;
+  cta: NavLink;
+}
