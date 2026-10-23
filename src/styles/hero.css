@@ -1,0 +1,231 @@
+/*
+  Homepage hero.
+  Ported from docs/research/css/hero.css (every rule, every breakpoint), plus the
+  `.hs-button::before` fill/hover rules from docs/research/css/base.css that the CTA
+  relies on. HubSpot wrapper selectors (.body-container--custom-blog-index…,
+  .dnd-section…, .hs-cta-wrapper/.hs-cta-node) were dropped; only the `.main-hero …`
+  branch of each rule is kept. Vendor-prefixed duplicates removed.
+  Breakpoints (em @16px): 47.9375em=767  62.4375em=999  78.875em=1262  79.9375em=1279
+*/
+
+.main-hero { margin-top: -60px; position: relative; z-index: 0; }
+@media screen and (max-width: 47.9375em) { .main-hero { overflow-x: hidden; } }
+.main-hero * { margin: 0; padding: 0; }
+.main-hero #hero-wrapper { height: 100%; left: 0; position: relative; top: 0; width: 100%; z-index: 0; }
+.main-hero #hero-wrapper .container { margin-left: auto; margin-right: auto; padding-left: 0; padding-right: 0; position: relative; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper .container { height: auto; width: 100vw; } }
+
+/* Cursor tooltip ("Click to see more") */
+.main-hero #hero-wrapper .container #cursor-tooltip {
+  background-color: rgba(48, 139, 245, 0.9);
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  opacity: 0;
+  padding: 12px 15px;
+  transition: opacity 0.15s ease-in-out;
+  z-index: 1;
+}
+.main-hero #hero-wrapper .container #cursor-tooltip.add-opacity { opacity: 1; }
+@media screen and (max-width: 62.4375em) { .main-hero #hero-wrapper .container #cursor-tooltip { display: none !important; } }
+
+/* Stage */
+.main-hero #hero-wrapper #hero-container {
+  height: 700px;
+  pointer-events: all !important;
+  position: relative;
+  width: 100%;
+  /* parallax.js put translate3d(0,0,0) on the scene; the stacking context it creates
+     is what keeps the z-index:1 layers inside the stage underneath #hero-text. */
+  transform: translate3d(0, 0, 0);
+}
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container { height: 67.5vw; margin-top: 60px; width: 100vw; } }
+
+/* Hidden SVG layer: the invisible click/hover target */
+.main-hero #hero-wrapper #hero-container .hidden-layer { bottom: 0; height: 100%; left: -20% !important; position: absolute; top: unset !important; width: 100%; z-index: 1; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .hidden-layer { left: 0 !important; } }
+.main-hero #hero-wrapper #hero-container .hidden-layer.show-interaction-tooltip + #cursor-tooltip { display: block; overflow: hidden; position: absolute; }
+.main-hero #hero-wrapper #hero-container .hidden-layer svg { display: none; height: 93%; margin-left: 3%; margin-top: 2%; object-fit: cover; position: absolute; width: 94%; }
+.main-hero #hero-wrapper #hero-container .hidden-layer svg > polygon { cursor: pointer; opacity: 0; transition: opacity 0.3s ease-in-out; will-change: opacity; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="0"] [hero-animation-index="0"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="1"] [hero-animation-index="1"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="2"] [hero-animation-index="2"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="3"] [hero-animation-index="3"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="4"] [hero-animation-index="4"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] { display: block; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] > polygon { fill: #fff !important; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] > polygon:hover { opacity: 0.4; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] > polygon:hover ~ polygon { opacity: 0.25; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] > polygon:hover ~ polygon ~ polygon { opacity: 0.15; }
+.main-hero #hero-wrapper #hero-container .hidden-layer[hero-animation-current-index="5"] [hero-animation-index="5"] > polygon:hover ~ polygon ~ polygon ~ polygon { opacity: 0.1; }
+
+/* Canvas layers: filled foreground + faint wireframe background */
+.main-hero #hero-wrapper #hero-container .layer-fg { bottom: 0; height: 100%; left: -20% !important; position: absolute; top: unset !important; width: 100%; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .layer-fg { left: 0 !important; } }
+.main-hero #hero-wrapper #hero-container .layer-fg .inner { height: 100%; position: relative; width: 100%; }
+/* The original also declared height:100%/width:100% without !important; the vw values win. */
+.main-hero #hero-wrapper #hero-container .layer-bg { height: 77.625vw !important; left: calc(-78.75vw + 600px) !important; position: absolute; top: -25% !important; width: 115vw !important; z-index: -1; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .layer-bg { height: 101.25vw !important; left: -25vw !important; top: -25% !important; width: 150vw !important; } }
+.main-hero #hero-wrapper #hero-container .layer-bg .inner { height: 100%; position: relative; width: 100%; }
+.main-hero #hero-wrapper #hero-container canvas { transition: transform 0.15s ease-in; }
+/* The original engine created each canvas with these inline styles. */
+.main-hero #hero-wrapper #hero-container .inner > canvas { display: block; height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
+
+/* Typewriter caption box */
+.main-hero #hero-wrapper #hero-container .typewriter-container {
+  background-color: hsla(0, 0%, 100%, 0.7);
+  bottom: 20px;
+  color: #4a4a4a;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  left: 110px;
+  max-width: 480px;
+  min-height: 110px;
+  opacity: 0;
+  padding: 16px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  z-index: 1;
+}
+@media screen and (max-width: 79.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container { bottom: 0; left: 0; max-width: 100%; } }
+@media screen and (max-width: 47.9375em) {
+  .main-hero #hero-wrapper #hero-container .typewriter-container {
+    background-color: rgba(48, 139, 245, 0.7);
+    border-radius: 4px;
+    color: #fff;
+    left: 15px;
+    max-width: none;
+    min-height: auto;
+    padding: 12px 15px;
+    width: calc(200% - 45px - 100vw);
+  }
+}
+.main-hero #hero-wrapper #hero-container .typewriter-container p { font-size: 19px; font-weight: 500; letter-spacing: 0; line-height: 24px; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container p { font-size: 12px; letter-spacing: 0; line-height: 16px; } }
+.main-hero #hero-wrapper #hero-container .typewriter-container > div:not(.mobile-info-tab) { height: 100%; overflow: hidden; position: relative; transition: max-height 0.25s ease-in-out, opacity 0.25s ease-in-out 0.15s; width: 100%; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container > div:not(.mobile-info-tab) { max-height: 0; opacity: 0; } }
+.main-hero #hero-wrapper #hero-container .typewriter-container b { font-size: 10px; line-height: 0.8; }
+.main-hero #hero-wrapper #hero-container .typewriter-container.shown { opacity: 1; }
+/* TypewriterJS injected the blinking caret styles; the theme then hides the caret. */
+.main-hero .Typewriter__cursor { animation: Typewriter-cursor 1s infinite; margin-left: 1px; }
+@keyframes Typewriter-cursor { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+.main-hero #hero-wrapper #hero-container .typewriter-container .Typewriter__cursor { display: none; }
+.main-hero #hero-wrapper #hero-container .typewriter-container .first-interaction-notice { font-size: 12px; font-style: italic; font-weight: 700; line-height: 1.3; margin-top: 0; opacity: 0; padding-top: 15px; position: absolute; top: 100%; transition: all 0.3s ease-in; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container .first-interaction-notice { display: none; } }
+.main-hero #hero-wrapper #hero-container .typewriter-container .first-interaction-notice.shown { opacity: 1; }
+
+/* Mobile "Why the <shape>?" tab */
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab { display: none; font-size: 10px; font-weight: 700; letter-spacing: 0; line-height: 11px; flex-direction: row; align-items: center; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab { display: flex; align-items: flex-start; } }
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .tab-heading { flex: 1; padding-right: 15px; }
+/* The original used white base64 SVG backgrounds (background-size: cover); inline icons here. */
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .info-icon { color: #fff; display: block; height: 12px; margin-right: 7px; overflow: hidden; width: 12px; }
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .chevron-icon { color: #fff; display: block; height: 12px; overflow: hidden; transform: rotate(-90deg); width: 19px; }
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .info-icon svg,
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .chevron-icon svg { display: block; height: 100%; width: 100%; }
+.main-hero #hero-wrapper #hero-container .typewriter-container .mobile-info-tab .chevron-icon.down,
+.main-hero #hero-wrapper #hero-container .typewriter-container.is--open .chevron-icon { transform: rotate(90deg); }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-wrapper #hero-container .typewriter-container.is--open > div:not(.mobile-info-tab) { max-height: 50vh; opacity: 1; padding-top: 15px; } }
+
+/* Headline + CTA box */
+.main-hero #hero-text { background-color: hsla(0, 0%, 100%, 0.8); bottom: 60px; display: block; height: auto; max-width: 540px; padding: 15px; position: absolute; right: 0; top: unset; width: 100%; z-index: 0; }
+@media screen and (max-width: 79.9375em) { .main-hero #hero-text { bottom: 130px; } }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-text { bottom: 0; max-width: calc(200% - 15px - 100vw); position: relative; top: 0; } }
+@media screen and (min-width: 78.875em) { .main-hero #hero-text { transform: translateY(48px); } }
+.main-hero #hero-text * { font-size: 32px; font-weight: 600; letter-spacing: 0; line-height: 48px; }
+@media screen and (max-width: 79.9375em) { .main-hero #hero-text * { font-size: 24px; line-height: 34px; } }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-text * { font-size: 28px; line-height: 36px; } }
+.main-hero #hero-text strong { padding: 0 5px; white-space: nowrap; }
+@media screen and (max-width: 47.9375em) { .main-hero #hero-text strong { white-space: normal; } }
+
+/* "Get a Free Consultation" button (HubSpot CTA wrapper spans dropped) */
+.main-hero #hero-text .hs-button {
+  background-color: transparent !important;
+  border: 2px solid #308bf5 !important;
+  border-radius: 0 !important;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-work-sans), "Work Sans", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06px;
+  line-height: 16px !important;
+  padding: 8px 15px !important;
+  position: relative;
+  right: 0;
+  text-align: center;
+  text-transform: none !important;
+  transform: none;
+  transition: 0.4s;
+  /* HubSpot's default a.cta_button rule; puts the button 9px below the <p> top like the live site */
+  vertical-align: middle;
+}
+.main-hero #hero-text .hs-button::before {
+  background: #308bf5;
+  bottom: 0;
+  content: "";
+  height: calc(100% + 2px);
+  left: -1px;
+  position: absolute;
+  right: 0;
+  top: -1px;
+  transform: scaleY(1);
+  transform-origin: 50%;
+  transition: transform 0.3s ease-out;
+  width: calc(100% + 2px);
+  z-index: -1;
+}
+.main-hero #hero-text .hs-button:focus,
+.main-hero #hero-text .hs-button:hover { background-color: transparent !important; border: 2px solid #308bf5; color: #308bf5 !important; outline: 0; padding: 8px 15px !important; }
+.main-hero #hero-text .hs-button:focus::before,
+.main-hero #hero-text .hs-button:hover::before { bottom: 0; height: 100%; left: 0; right: 0; top: 0; transform: scaleY(0); width: 100%; }
+.main-hero #hero-text .hs-button:focus { border-radius: 0; }
+
+/* Leftover demo rule from the original stylesheet. Everything it sets on the CTA is
+   overridden above except z-index (computed 9999 on the live site). */
+.main-hero a {
+  background: #f74646;
+  bottom: 20px;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+  z-index: 9999;
+}
+.main-hero a:hover { transform: scale(0.9); }
