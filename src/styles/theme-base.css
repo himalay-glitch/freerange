@@ -105,7 +105,8 @@
   ol { list-style: decimal; }
   li { line-height: 28px; margin-bottom: 0.5rem; }
   li > ol, li > ul { margin-bottom: 0; margin-left: 1.5rem; margin-top: 0.5rem; }
-  img { height: auto; max-width: 100%; display: inline; vertical-align: middle; transition: opacity 0.5s ease-in-out; }
+  /* The theme's Meyer-style reset re-applies `vertical-align: baseline` to img after the base `middle`. */
+  img { height: auto; max-width: 100%; display: inline; vertical-align: baseline; transition: opacity 0.5s ease-in-out; }
   img.lazy { opacity: 0; }
   img.lazy.loaded { opacity: 1; }
   button { font-family: inherit; font-size: inherit; line-height: inherit; margin: 0; border-radius: 0; }
@@ -138,6 +139,8 @@
 
 /* Modules */
 .module.full-width { left: 50%; margin-left: -50vw; position: relative; width: 100vw; }
+/* theme: below 836px the breakout only cancels the container gutter */
+@media screen and (max-width: 52.25em) { .module.full-width { left: -1.5rem; margin-left: 0; width: calc(100% + 3rem); } }
 .module .module-title, .module.remove-bottom-margin { margin-bottom: 0; }
 .module .module-description { margin: 1rem 0 45px; }
 .module .module-description p:last-child { margin-bottom: 0; }

@@ -315,13 +315,23 @@
 .blog-post form .inputs-list li { margin: 0; }
 .blog-post form .hs-form-required { color: inherit; }
 .blog-post form .hs-error-msgs {
-  color: #ff4e00;
+  color: #f37373;
   font-size: 12px;
   line-height: 12px;
   list-style: none;
   margin: 4px 0 0;
   padding: 0;
 }
+/* Theme: `.hs-error-msg, .hs-error-msgs label { color: #f37373 }` (beats the form's label colour). */
+.blog-post form .hs-error-msgs label,
+.blog-post form .hs-error-msg {
+  color: #f37373;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0;
+}
+.blog-post form .hs_error_rollup { margin-bottom: 12px; }
+.blog-post form .hs-input.invalid { border-color: #ff4e00; }
 .blog-post .submitted-message {
   color: #4a4a4a;
   font-size: 19px;

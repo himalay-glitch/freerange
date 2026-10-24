@@ -143,7 +143,8 @@
   z-index: 0;
 }
 .logo-carousel .slides-container {
-  animation: rdlab-marquee 40s linear infinite;
+  /* Splide autoScroll speed 0.5px per frame = 30px/s at 60fps; half the track is 16 x 156px. */
+  animation: rdlab-marquee 83.2s linear infinite;
   display: flex;
   height: 100%;
   list-style: none;
@@ -151,7 +152,7 @@
   padding: 0;
   width: max-content;
 }
-/* Marquee: the track holds the 16 slides twice and travels half its width per cycle. */
+/* Marquee: the track holds the 16 slides twice and travels half its width (2496px) per cycle. */
 @keyframes rdlab-marquee {
   from {
     transform: translateX(0);
@@ -202,6 +203,10 @@
   object-fit: contain;
   object-position: center;
   width: auto;
+}
+/* Live badge images are 59x50 boxes (contain-fitted); the placeholder svg keeps the same box. */
+.logo-carousel .slides-container .slide-item .slide-content svg {
+  width: 59px;
 }
 .logo-carousel .slides-container .slide-item .slide-content .logo-title {
   color: #676868;
@@ -542,31 +547,27 @@
   margin-bottom: 0;
 }
 
-/* Page specifics: the live text column is the taller one (it embeds a 560x315 video the clone
-   omits), so the columns top-align and the image box keeps the live 592x611 proportion. */
-.rdlab-industrial .module-content {
-  align-items: flex-start;
-}
-@media screen and (max-width: 47.9375em) {
-  .rdlab-industrial .module-content {
-    align-items: stretch;
-  }
-}
+/* Page specifics: the live image is a 592x592 photo sitting inline (baseline gap -> 600px wrapper),
+   vertically centred against the 611px text column. */
 .rdlab-industrial .image-wrapper img {
-  aspect-ratio: 592 / 611;
-  display: block;
+  aspect-ratio: 1 / 1;
+  display: inline;
   height: auto;
+  max-width: 592px;
   object-fit: cover;
+  vertical-align: baseline;
   width: 100%;
 }
 /* Partner wordmark (a 400x48 logo image inside an <h3> on the live page) rendered as type. */
 .rdlab-industrial .rdlab-partner-mark {
+  /* Live: an <h3> (32px/41.6px) holding a 400x47 inline image -> a 57px box with 16px below. */
   color: #2f2f34;
   font-size: 40px;
   font-weight: 700;
-  line-height: 48px;
-  margin-bottom: 1rem;
-  padding: 5px 0;
+  height: 57px;
+  line-height: 47px;
+  margin: 0 0 1rem;
+  padding: 0;
 }
 .rdlab-industrial .rdlab-partner-mark span {
   background-color: transparent;
@@ -575,7 +576,7 @@
   padding: 0;
 }
 /* Lead paragraphs: the CMS marks them up as <h5> (1.3125rem / 1.2, 1rem margin). */
-.rdlab-industrial .wysiwyg-content p {
+.rdlab-industrial .wysiwyg-content h5 {
   font-size: 1.3125rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -619,4 +620,45 @@
 }
 .rdlab-cta-band .rdlab-button-row {
   padding-top: 0;
+}
+
+/* Nested CardList inside the featured slot: the inner module must not add its own 40px top margin */
+.rdlab-page .card-list-container .card-list-module-container .filters-and-cards-wrapper { margin-top: 0; }
+/* Industrial-design image is 592px square on the live page; the text column (with its embed) sets the 611px row */
+
+/* Live slides inherit a 24px line box from the slide list. */
+.logo-carousel .slides-container,
+.logo-carousel .slides-container .slide-item { line-height: 24px; }
+/* Placeholder for the live column's embedded 560x315 video (original art, no third-party frame). */
+.rdlab-video-placeholder {
+  align-items: center;
+  background: linear-gradient(135deg, #1f2a3a, #0b1320);
+  border: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.rdlab-video-placeholder__play {
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 18px 0 18px 30px;
+  display: block;
+  height: 0;
+  margin-left: 6px;
+  width: 0;
+}
+.rdlab-video-placeholder__label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 20px;
+  opacity: 0.8;
+  text-transform: uppercase;
 }

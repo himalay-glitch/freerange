@@ -107,7 +107,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
         <Suspense fallback={<main id="main-content" className="body-container-wrapper" />}>
           <ListingPage
             variant="blog"
-            headline={<><strong>We imagine</strong> what comes next and bring new ideas to life, combining product thinking with the craft of creative storytelling.</>}
+            headline={<><strong>We imagine</strong> what comes next and bring new ideas to life, combining product thinking with the craft of creative storytelling for the teams behind them.</>}
             filterGroups={FILTER_GROUPS.blog}
             items={listingItems("blog")}
           />
@@ -127,7 +127,11 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       );
     case "rd-lab": {
       const featured = getCollection("case-study").slice(0, 3).map((e, i) => ({ ...toCaseStudyCard(e), wide: i === 2 }));
-      return <RdLabPage featured={<CardList variant="case-study" rows={[featured]} />} />;
+      return (
+        <main id="main-content" className="body-container-wrapper">
+          <RdLabPage featured={<CardList variant="case-study" rows={[featured]} />} />
+        </main>
+      );
     }
     case "about":
       return <AboutPage />;

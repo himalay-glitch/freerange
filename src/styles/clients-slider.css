@@ -38,6 +38,7 @@
 /* Prev/next buttons: 48px blue squares hugging the outer edges of .slides */
 .flickity-enabled .flickity-button {
   background-color: #308bf5;
+  font-weight: 400;
   display: flex;
   height: 48px;
   position: absolute;

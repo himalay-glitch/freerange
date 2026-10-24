@@ -95,7 +95,7 @@
   border-radius: 0;
   box-shadow: none;
   box-sizing: border-box;
-  color: #4a4a4a;
+  color: #494a52;
   font-family: var(--font-work-sans), "Work Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -255,15 +255,26 @@
   height: 100%;
   position: relative;
 }
+/* On the live page the wrapper's `height: 100%` resolves against the stretched 62px row, so the inline
+   image's baseline gap overflows instead of growing the row; pin the same height above the mobile
+   breakpoint (below it the row is auto and the gap shows, 57px with the 50px image). */
+@media screen and (min-width: 48em) {
+  .site-footer .footer__container .footer-bottom > .container .footer-logo .widget-type-linked_image .hs_cos_wrapper_type_linked_image {
+    height: 62px;
+  }
+  .site-footer .footer__container .footer-bottom > .container .footer-logo .widget-type-linked_image .hs_cos_wrapper_type_linked_image img {
+    display: block;
+  }
+}
 .site-footer .footer__container .footer-bottom > .container .footer-logo .widget-type-linked_image .hs_cos_wrapper_type_linked_image img {
   /* Original: height:100%. On the live site that percentage resolves against the row's stretched
      67.49px only because the SVG finishes loading after the first flex pass; with the image already
      available Chrome uses its intrinsic 124×114 and the row grows to 122px. Pinning the height gives
      the reference 73.4×67.5 deterministically (same aspect ratio as the original mark). */
-  height: 67.5px;
+  height: 62px;
   width: auto !important;
   display: inline;
-  vertical-align: middle;
+  vertical-align: baseline; /* live computed value (theme reset) */
 }
 .site-footer .footer__container .footer-bottom > .container .footer-logo .site-name {
   align-self: center;
@@ -404,3 +415,7 @@
     letter-spacing: 3px;
   }
 }
+
+/* Live site: the footer email field inherits the theme-override text colour */
+/* Live submit keeps the UA button weight (400) while the body is 500. */
+.site-footer .footer__container .footer-top form .hs-submit [type="submit"] { font-weight: 400; }

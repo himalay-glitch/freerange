@@ -33,7 +33,9 @@ export function Testimonials({
   const sliderRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const indexRef = useRef(index);
-  indexRef.current = index;
+  useEffect(() => {
+    indexRef.current = index;
+  }, [index]);
 
   const go = useCallback(
     (delta: number) => {

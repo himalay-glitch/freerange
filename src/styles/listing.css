@@ -29,8 +29,7 @@
 }
 .body-container--custom-blog-index.blog .blog-header .blog-header__inner {
   max-width: 784px;
-  padding-bottom: 30px;
-  padding-top: 100px;
+  padding: 100px 0 30px;
 }
 .hero-no-animation {
   margin-left: auto;
@@ -154,12 +153,12 @@
    overrides. The original's `min-height:42px` applies to a content-box input, so the field renders
    62px tall (52px on mobile); that height is written out here. */
 .card-list-module-container .card-list-filters-search .search-filters .search-input-container form .search-input {
+  color: #494a52;
   appearance: none;
   background-color: transparent;
   border: none;
   border-radius: 0;
   box-shadow: none;
-  color: #4a4a4a;
   font-family: var(--font-work-sans), "Work Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -307,6 +306,8 @@
   top: auto;
 }
 .card-list-module-container .filters-and-cards-wrapper .card-list-search-filters form ul.filters li label {
+  color: #494a52;
+  font-weight: 400;
   margin-bottom: 0;
 }
 /* Option text: the theme's global `label` rule (16px 400 #6e6e6e, block) + the module's spacing */
@@ -328,7 +329,7 @@
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: 400;
   letter-spacing: normal;
   line-height: inherit;
   margin-top: 15px;
@@ -406,13 +407,16 @@
 
 /* ---------------------------------------------------------------------------------------------
    Load More
-   The original keeps this `visibility:hidden` and loads the next page on scroll; the clone shows
-   the button (40px below the last row) and hides it once every item is on the page.
+   Like the original: the button stays `visibility:hidden` and the next page loads when the
+   sentinel scrolls into view (the button remains keyboard-focusable as a fallback).
    ------------------------------------------------------------------------------------------- */
 .body-container--custom-blog-index .content-wrapper .blog-index .load-more-button {
-  margin-top: 40px;
   text-align: center;
+  visibility: hidden;
   width: 100%;
+}
+.body-container--custom-blog-index .content-wrapper .blog-index .load-more-button button:focus-visible {
+  visibility: visible;
 }
 .body-container--custom-blog-index .content-wrapper .blog-index .load-more-button.hide button,
 .body-container--custom-blog-index .content-wrapper .blog-index .load-more-button.no-more-posts button {

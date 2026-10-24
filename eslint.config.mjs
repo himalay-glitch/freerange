@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scraped reference material and agent worktrees are not application code.
+    "docs/**",
+    ".claude/**",
   ]),
 ]);
 

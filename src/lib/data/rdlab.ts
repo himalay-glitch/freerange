@@ -78,21 +78,21 @@ export const RDLAB_TECH_ROW_2: TechBadge[] = [
 /** Three hover-expanding product cards. */
 export const RDLAB_PRODUCTS: ProductCard[] = [
   {
-    title: "Theme Starter",
+    title: "Starter Theme Foundation Kit",
     description:
       "A modular website theme with ready-made sections, sensible defaults, and a content model editors actually enjoy. Starter and Pro editions ship with documentation, a demo site, and an upgrade path that never locks you in.",
     image: "/placeholders/card-6.svg",
     cta: { label: "Learn more", href: "/contact-us" },
   },
   {
-    title: "Page Builder",
+    title: "Composable Page Builder",
     description:
       "Drag, drop, and publish. The builder gives marketing teams full control over layouts without touching code, while performance budgets and accessibility checks run quietly in the background on every save.",
     image: "/placeholders/card-7.svg",
     cta: { label: "Learn more", href: "/contact-us" },
   },
   {
-    title: "Sprinkle Kit",
+    title: "Addon Kit",
     description:
       "A lightweight review layer for any web page: drop a marker, write a note, and hand it straight to the person who can fix it. Works on staging and production alike, with no plugin for reviewers to install.",
     image: "/placeholders/card-8.svg",
@@ -117,12 +117,12 @@ export const RDLAB_INDUSTRIAL = {
   partner: "northforge",
   heading: "Building something physical?",
   paragraphs: [
-    "Take a concept from napkin sketch to production-ready hardware with a design partner that speaks both circuits and code.",
+    "Take a concept from napkin sketch to production-ready hardware with a partner fluent in circuits and code.",
   ],
   partnerSentence: {
     before: "We team up with ",
     link: { label: "Northforge", href: "/contact-us" },
-    after: " for industrial design and mechanical engineering, so the app and the object it controls are built under one roof.",
+    after: " for industrial design and mechanical engineering, so the app and the object it controls ship together.",
   },
 };
 

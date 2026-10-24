@@ -175,8 +175,19 @@ export function ListingPage({ variant, headline, filterGroups, items, pageSize =
   }, [items, query, selected]);
 
   const visible = useMemo(() => filtered.slice(0, page * pageSize), [filtered, page, pageSize]);
-  const rows = useMemo(() => chunkRows(visible), [visible]);
   const hasMore = visible.length < filtered.length;
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+  // Original behaviour: the hidden Load More sentinel triggers the next page when scrolled into view.
+  useEffect(() => {
+    const el = loadMoreRef.current;
+    if (!el || !hasMore) return;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) setPage((current) => current + 1);
+    }, { rootMargin: "200px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, visible.length]);
+  const rows = useMemo(() => chunkRows(visible), [visible]);
 
   return (
     <div className={`body-container body-container--blog-index body-container--custom-blog-index ${variant}`}>
@@ -277,7 +288,7 @@ export function ListingPage({ variant, headline, filterGroups, items, pageSize =
             </div>
           </div>
 
-          <div className={hasMore ? "load-more-button enabled" : "load-more-button no-more-posts"}>
+          <div ref={loadMoreRef} className={hasMore ? "load-more-button enabled" : "load-more-button no-more-posts"}>
             {hasMore && (
               <button type="button" className="hs-button" onClick={() => setPage((current) => current + 1)}>
                 Load More

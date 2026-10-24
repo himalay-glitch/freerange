@@ -68,9 +68,7 @@ const PLACEHOLDER_PARAGRAPHS = [
 export function PlaceholderBody({ variant }: { variant?: "job" }) {
   const heading =
     variant === "job" ? (
-      <h4 style={{ fontSize: 24 }}>
-        <span style={{ color: "#308bf5" }}>Section heading</span>
-      </h4>
+      <h3 style={{ fontSize: 24, lineHeight: "32px", fontWeight: 400, color: "#308bf5" }}>Section heading</h3>
     ) : (
       <h3>Section heading</h3>
     );

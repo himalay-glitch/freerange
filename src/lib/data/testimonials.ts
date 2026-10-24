@@ -10,7 +10,7 @@ import type { Testimonial } from "@/types/content";
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Working with this team turned a vague wish list into a clear, well-sequenced plan that our whole staff could get behind from the very first workshop. They listened carefully to what our members actually needed, challenged a few of our long-held assumptions in the kindest possible way, and then delivered a site that is simpler to use, faster to load and far easier for us to maintain. Every milestone arrived on time, with thoughtful documentation and a quick walkthrough so nobody on our side felt left behind as the new tools rolled out. The result has been embraced by visitors, members and staff alike, and after a year of working together we already consider them a long-term partner rather than a vendor.",
+      "Working with this team turned a vague wish list into a clear, well-sequenced plan that our whole staff could get behind from the very first workshop. They listened carefully to what our members actually needed, challenged a few of our long-held assumptions in the kindest possible way, and then delivered a site that is far simpler to use, faster to load and far easier for us to maintain. Every milestone arrived on time, with thoughtful documentation and a quick, friendly walkthrough so that nobody on our side felt left behind as the new tools rolled out. The result has been embraced by visitors, members and staff alike, and after a year of working together we already consider them a trusted long-term partner rather than a vendor.",
     name: "Jordan Lee",
     title: "Director of Programs, Sample Organization",
     image: "/placeholders/headshot-1.svg",

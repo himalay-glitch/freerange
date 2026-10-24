@@ -161,19 +161,32 @@ export default function RdLabPage({ featured }: RdLabPageProps) {
                 <img src={RDLAB_INDUSTRIAL.image} alt="" />
               </div>
               <div className="wysiwyg-content">
-                <h2 className="rdlab-partner-mark">
+                {/* Live column: <h3><img 400x48/></h3>, <h3>, two <h5> leads, then a 560x315 responsive
+                    video embed (inline-block). The wordmark is set as type; the video is a placeholder frame. */}
+                <h3 className="rdlab-partner-mark">
                   {RDLAB_INDUSTRIAL.partner}
                   <span>.</span>
-                </h2>
+                </h3>
                 <h3>{RDLAB_INDUSTRIAL.heading}</h3>
                 {RDLAB_INDUSTRIAL.paragraphs.map((text) => (
-                  <p key={text}>{text}</p>
+                  <h5 key={text}>{text}</h5>
                 ))}
-                <p>
+                <h5>
                   {RDLAB_INDUSTRIAL.partnerSentence.before}
                   <Link href={RDLAB_INDUSTRIAL.partnerSentence.link.href}>{RDLAB_INDUSTRIAL.partnerSentence.link.label}</Link>
                   {RDLAB_INDUSTRIAL.partnerSentence.after}
-                </p>
+                </h5>
+                <div
+                  className="hs-responsive-embed-wrapper hs-responsive-embed"
+                  style={{ width: "100%", height: "auto", position: "relative", overflow: "hidden", padding: 0, maxWidth: 560, maxHeight: 315, minWidth: 256, margin: 0, display: "inline-block" }}
+                >
+                  <div className="hs-responsive-embed-inner-wrapper" style={{ position: "relative", overflow: "hidden", maxWidth: "100%", paddingBottom: "56.25%", margin: 0 }}>
+                    <div className="hs-responsive-embed-iframe rdlab-video-placeholder" role="img" aria-label="Video placeholder">
+                      <span className="rdlab-video-placeholder__play" aria-hidden="true" />
+                      <span className="rdlab-video-placeholder__label">Video</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

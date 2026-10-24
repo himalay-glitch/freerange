@@ -17,7 +17,7 @@ export interface JobValue {
 
 /** Hero copy above the listing. The highlighted tail is wrapped in <strong> by the template. */
 export const JOBS_HEADLINE = {
-  lead: "We want the diverse perspectives that help us see clearly and create work that",
+  lead: "We are looking for people with varied backgrounds, skills and points of view who help us see clearly, test assumptions and create work that",
   highlight: "changes lives",
 };
 

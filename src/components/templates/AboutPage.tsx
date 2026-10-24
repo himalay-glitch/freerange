@@ -69,7 +69,7 @@ export default function AboutPage({ members = TEAM_MEMBERS }: { members?: TeamMe
               desktop width.
             </p>
             <p>
-              <Link href="/jobs" className="hs-button">
+              <Link href="/jobs" className="hs-button" style={{ padding: "18.5px 21px" }}>
                 Browse Job Openings
               </Link>
             </p>

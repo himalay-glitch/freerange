@@ -1,19 +1,21 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";
+import { useId, useState } from "react";
+import { ErrorRollup, FieldError, useHubSpotValidation } from "./hubspot-form-validation";
+
+const RULES = { firstname: {}, lastname: {}, phone: {}, email: { required: true, email: true } };
 
 /**
  * Stub of the HubSpot "download the resource" form that sits in the resource sidebar.
- * Submitting shows a thank-you message; nothing is sent anywhere.
+ * Client-side validation mirrors HubSpot's inline messages; submitting shows a thank-you
+ * message and nothing is sent anywhere.
  */
 export function ResourceDownloadForm({ id }: { id?: string }) {
   const uid = useId();
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-  };
+  const { values, errorFor, handleChange, handleBlur, handleSubmit, showRollup } = useHubSpotValidation(RULES, () =>
+    setSubmitted(true),
+  );
 
   if (submitted) {
     return (
@@ -23,40 +25,43 @@ export function ResourceDownloadForm({ id }: { id?: string }) {
     );
   }
 
+  const field = (name: keyof typeof RULES, label: string, type: string, placeholder: string, autoComplete: string, required = false) => {
+    const error = errorFor(name);
+    const errorId = `${uid}-${name}-error`;
+    return (
+      <div className={`hs-form-field hs-fieldtype-${type === "tel" ? "phonenumber" : "text"} field`}>
+        <label htmlFor={`${uid}-${name}`}>
+          {label}
+          {required && <span className="hs-form-required">*</span>}
+        </label>
+        <div className="input">
+          <input
+            id={`${uid}-${name}`}
+            name={name}
+            type={type}
+            className={error ? "hs-input invalid error" : "hs-input"}
+            placeholder={placeholder}
+            autoComplete={autoComplete}
+            value={values[name]}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? errorId : undefined}
+          />
+        </div>
+        <FieldError id={errorId} message={error} />
+      </div>
+    );
+  };
+
   return (
-    <form id={id} className="hs-form hs-custom-form" onSubmit={handleSubmit}>
+    <form id={id} className="hs-form hs-custom-form" noValidate onSubmit={handleSubmit}>
       <fieldset className="form-columns-2">
-        <div className="hs-form-field hs-fieldtype-text field">
-          <label htmlFor={`${uid}-firstname`}>First name</label>
-          <div className="input">
-            <input id={`${uid}-firstname`} name="firstname" type="text" className="hs-input" placeholder="First name" autoComplete="given-name" />
-          </div>
-        </div>
-        <div className="hs-form-field hs-fieldtype-text field">
-          <label htmlFor={`${uid}-lastname`}>Last name</label>
-          <div className="input">
-            <input id={`${uid}-lastname`} name="lastname" type="text" className="hs-input" placeholder="Last name" autoComplete="family-name" />
-          </div>
-        </div>
+        {field("firstname", "First name", "text", "First name", "given-name")}
+        {field("lastname", "Last name", "text", "Last name", "family-name")}
       </fieldset>
-      <fieldset className="form-columns-1">
-        <div className="hs-form-field hs-fieldtype-phonenumber field">
-          <label htmlFor={`${uid}-phone`}>Phone number</label>
-          <div className="input">
-            <input id={`${uid}-phone`} name="phone" type="tel" className="hs-input" placeholder="+1 123456789" autoComplete="tel" />
-          </div>
-        </div>
-      </fieldset>
-      <fieldset className="form-columns-1">
-        <div className="hs-form-field hs-fieldtype-text field">
-          <label htmlFor={`${uid}-email`}>
-            Email<span className="hs-form-required">*</span>
-          </label>
-          <div className="input">
-            <input id={`${uid}-email`} name="email" type="email" className="hs-input" placeholder="mail@domain.com" autoComplete="email" required />
-          </div>
-        </div>
-      </fieldset>
+      <fieldset className="form-columns-1">{field("phone", "Phone number", "tel", "+1 123456789", "tel")}</fieldset>
+      <fieldset className="form-columns-1">{field("email", "Email", "email", "mail@domain.com", "email", true)}</fieldset>
       <fieldset className="form-columns-1">
         <div className="hs-form-field hs-fieldtype-booleancheckbox field">
           <div className="input">
@@ -71,6 +76,7 @@ export function ResourceDownloadForm({ id }: { id?: string }) {
           </div>
         </div>
       </fieldset>
+      <ErrorRollup show={showRollup} />
       <div className="hs-submit">
         <div className="actions">
           <input type="submit" className="hs-button primary large" value="Download" />
