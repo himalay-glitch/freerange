@@ -1,0 +1,1083 @@
+---
+// Mirrored from https://freerange.com/blog — markup, styles and scripts are the live page's own.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ListingCards from '../components/ListingCards.astro';
+import { selectCards } from '../lib/listings';
+// Rendered per request: HubSpot's theme script fetches this page with ?page=, ?tags= and ?posts= for filters,
+// search and "Load More", exactly as it did against HubSpot.
+export const prerender = false;
+const { rows, total, selected } = selectCards('blog', Astro.url.searchParams);
+---
+<BaseLayout lang="en-us" bodyClass="init">
+<Fragment slot="head">
+	
+	
+	
+	<link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+	<meta name="description" content="">
+  <meta name="og:description" content="">
+  
+    <meta property="og:image" content="https://freerange.com/hubfs/Free-Range-Default-OG-Image.jpg">
+  
+  
+	
+<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062825709/1780409843297/template__blog.min.css">
+
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062542278/1780409848093/template_theme-overrides.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062592081/1782374964884/template_main.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+
+    
+
+    
+
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/186812980546/1777019437237/module_notification-banner.min.css">
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/41062592070/1777019199967/module_social-follow.min.css">
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+    
+
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+<link rel="next" href="/blog/page/2">
+<meta property="og:url" content="https://freerange.com/blog">
+<meta property="og:type" content="blog">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" href="https://freerange.com/blog/rss.xml">
+<meta name="twitter:domain" content="freerange.com">
+<script src="//platform.linkedin.com/in.js" type="text/javascript" is:inline>
+    lang: en_US
+</script>
+
+<meta http-equiv="content-language" content="en-us">
+
+
+
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="HubSpot"></Fragment>
+
+		
+	
+
+	<div class="body-wrapper   hs-content-id-185251942705 hs-blog-listing hs-blog-id-41225079395">
+		<div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/header.html"><Header /></div>
+		
+
+		
+
+<main id="main-content" class="body-container-wrapper">
+
+    <div class="body-container body-container--blog-index body-container--custom-blog-index blog">
+
+        
+        <div class="blog-header">
+            <div class="blog-header__inner">
+
+                
+                
+                    <div id="hs_cos_wrapper_blog_hero" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="hero-no-animation container blog-hero-module">
+    
+
+    
+
+    
+
+    <h1><strong>We think</strong> the future and bring new ideas to life, combining product innovation with the principles of creative storytelling.</h1>
+</div></div>
+
+                
+
+            </div>
+        </div>
+        
+
+        <div class="content-wrapper container">
+            
+
+            
+
+
+            
+
+            
+
+            
+
+
+
+            
+
+            
+            
+            
+            
+
+			
+
+			
+
+            
+            
+            
+            
+
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            
+            
+            
+
+            
+
+
+            
+            
+
+
+
+            
+            
+
+
+            
+            
+
+
+            
+
+
+            
+
+            
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+
+                
+
+                    
+
+                    
+
+                
+
+
+                
+                
+
+                    
+
+                
+
+
+                
+
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+                    
+                    
+                    
+
+                
+
+            
+
+
+            
+            <section class="blog-index" data-posts-per-page="10" data-total-posts={total}>
+
+                <div id="hs_cos_wrapper_card_list" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="module card-list-module-container">
+	
+	
+	
+	<div class="card-list-filters-search">
+		<div class="search-filters">
+			
+			<div class="filters-toggle">
+				<div class="filters-toggle-button"><span data-show-filters="true">Hide Filters</span></div>
+			</div>
+			
+			<div class="search-input-container">
+				<form class="search-form" action="/blog">
+					<input type="submit" value="">
+					<input type="text" class="search-input" placeholder="Search">
+					<input type="hidden" name="domain" value="freerange.com">
+					<input type="hidden" name="id" value="2211982">
+					<input type="hidden" name="blog" value="41225079395">
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<div class="filters-and-cards-wrapper show-filters">
+		
+			<div class="card-list-search-filters">
+
+				<form method="get" action="/blog">
+
+					
+					
+					
+
+					
+
+					
+						
+					
+
+					
+						
+						
+						
+
+						
+							
+						
+
+						<h2 class="title">Services</h2>
+						<ul class="filters">
+							
+								
+
+								
+									
+								
+									
+										
+										
+										<li>
+											<input type="checkbox" tag-slug="storytelling" name="services-1" id="services-1" value="Storytelling" checked={selected.has('storytelling')}>
+											<label for="services-1">Storytelling</label>
+										</li>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							
+								
+
+								
+									
+										
+										
+										<li>
+											<input type="checkbox" tag-slug="design" name="services-2" id="services-2" value="Design" checked={selected.has('design')}>
+											<label for="services-2">Design</label>
+										</li>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							
+								
+
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+										<li>
+											<input type="checkbox" tag-slug="workshops" name="services-3" id="services-3" value="Workshops" checked={selected.has('workshops')}>
+											<label for="services-3">Workshops</label>
+										</li>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							
+								
+
+								
+									
+								
+									
+								
+									
+								
+									
+										
+										
+										<li>
+											<input type="checkbox" tag-slug="product-innovation" name="services-4" id="services-4" value="Product Innovation" checked={selected.has('product-innovation')}>
+											<label for="services-4">Product Innovation</label>
+										</li>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							
+						</ul>
+					
+
+
+					
+
+					
+
+
+					
+
+					
+
+					<button type="button" class="d-none" id="apply-filters">Apply Filters</button>
+					<button type="button" id="clear-filters">Clear Filters</button>
+				</form>
+
+			</div>
+		
+
+		<div class="card-list-container">
+
+			
+			
+
+			<div class="no-results-container">
+				
+				<h2>No results found</h2>
+				
+			</div>
+
+			
+
+			
+				
+			
+
+			
+
+			
+				
+			
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+					<ListingCards rows={rows} />
+					
+					
+					
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+					
+					
+					
+					
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+					
+					
+					
+					
+				
+
+				
+
+			
+
+		</div>
+	</div>
+
+	
+	
+</div></div>
+
+                <div class="load-more-button hide">
+                    <button class="hs-button">Load More</button>
+                </div>
+
+            </section>
+            
+
+        </div>
+
+    </div>
+
+</main>
+
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/footer.html"><Footer /></div>
+		
+	</div>
+
+	
+	<script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+	
+	<script src="/hubfs/hub_generated/template_assets/1/41475616604/1781076103474/template_main.min.js" is:inline></script>
+
+	
+	
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '813869e3-962c-4ab5-ab56-61c5e7a1c663',
+            formInstanceId: '3192',
+            
+            pageId: '41225079395',
+            
+            region: 'na1',
+            
+            
+            
+            
+            
+            
+            inlineMessage: "Thank your for subscribing!",
+            
+            
+            rawInlineMessage: "Thank your for subscribing!",
+            
+            
+            hsFormKey: "a48753c5db6d064c65131493d2f350bc",
+            
+            
+            css: '',
+            target: '#hs_form_target_footer_subscribe_form',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "listing-page",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+<div id="fb-root"></div>
+  <script is:inline>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script> <script is:inline>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+
+
+	<div id="sizer"></div>
+
+
+
+</BaseLayout>

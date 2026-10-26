@@ -1,0 +1,1710 @@
+---
+// Mirrored from https://freerange.com/rd-lab — markup, styles and scripts are the live page's own.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout lang="en" bodyClass="init">
+<Fragment slot="head">
+	
+	<title>Free Range Research &amp; Development Lab</title>
+	
+	<link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+	<meta name="description" content="">
+  <meta name="og:description" content="">
+  
+    <meta property="og:image" content="https://freerange.com/hubfs/Free-Range-Default-OG-Image.jpg">
+  
+  
+	
+	
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062542278/1780409848093/template_theme-overrides.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062592081/1782374964884/template_main.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Free Range Research &amp; Development Lab">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Free Range Research &amp; Development Lab">
+
+    
+
+    
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/186812980546/1777019437237/module_notification-banner.min.css">
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/41062592070/1777019199967/module_social-follow.min.css">
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css" is:inline>
+#hs_cos_wrapper_widget_1742570805707  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742571145517  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742587068945  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742570910410  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742572606139  { display: block !important; padding-top: 40px !important }
+#hs_cos_wrapper_widget_1742575174190  { display: block !important; padding-bottom: 25px !important; padding-top: 25px !important }
+#hs_cos_wrapper_widget_1742590259659  { display: block !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1740938241245  { background-color: #FFFFFF !important; background-image: none !important; display: block !important }
+#hs_cos_wrapper_widget_1742570805707  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742571145517  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742587068945  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742570910410  { display: block !important; padding-bottom: 20px !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1742572606139  { display: block !important; padding-top: 40px !important }
+#hs_cos_wrapper_widget_1742575174190  { display: block !important; padding-bottom: 25px !important; padding-top: 25px !important }
+#hs_cos_wrapper_widget_1742590259659  { display: block !important; padding-top: 20px !important }
+#hs_cos_wrapper_widget_1740938241245  { background-color: #FFFFFF !important; background-image: none !important; display: block !important }
+.dnd_area-row-17-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.widget_1742572606139-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1742572606139-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+.widget_1740938241245-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1740938241245-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+/* HubSpot Non-stacked Media Query Styles */
+@media (min-width:768px) {
+  .dnd_area-row-10-vertical-alignment > .row-fluid {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: row;
+    display: flex !important;
+    flex-direction: row;
+  }
+  .cell_17425709105152-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .cell_17425709105152-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+  .cell_1742572995865-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .cell_1742572995865-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+}
+/* HubSpot Styles (default) */
+.dnd_area-row-10-hidden {
+  display: block !important;
+}
+.dnd_area-row-17-padding {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+.dnd_area-row-17-background-layers {
+  background-image: linear-gradient(rgba(223, 246, 255, 0.3), rgba(223, 246, 255, 0.3)) !important;
+  background-position: left top !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+}
+</style>
+    
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+    <link rel="canonical" href="https://freerange.com/rd-lab">
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+<meta property="og:url" content="https://freerange.com/rd-lab">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="HubSpot"></Fragment>
+
+		
+	
+
+	<div class="body-wrapper   hs-content-id-186510101394 hs-site-page page ">
+		<div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/header.html"><Header /></div>
+		
+
+		
+
+<main id="main-content" class="body-container-wrapper">
+    
+    <div class="container">
+        <div class="container-fluid body-container body-container--default">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div class="cell-wrapper layout-widget-wrapper">
+<span id="hs_cos_wrapper_widget_1742578024334" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget"><div class="background-image" style="background-image: url(/hubfs/AI-Generated-Media/Images/small-office-space-with-45-computer-programmers-solving-problems-1.jpeg);">
+    <div class="section--hero section section--md section--black" style="background-color: rgba(0, 0, 0, .6);">
+        <div class="container">
+            <div class="row-fluid hubstrap-row">
+                
+                    <div class="span8 hubstrap-col">
+                        <h1></h1>
+                        <h1>&nbsp;</h1>
+<h1><span style="color: #ffffff; background-color: rgba(0, 0, 0, 0);">R&amp;D Lab</span></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</span></div><!--end layout-widget-wrapper -->
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742494075544" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1742494075544_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="line-height: 1.5; text-align: right; font-size: 29px; margin-bottom: 0;">Chewing on web development challenges—<br><span style="background-color: #ff5201;">one byte at a time.</span></h2>
+<p>&nbsp;</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740352694663" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+<h2 class="module custom-heading" style="color: #FF4E00; border-color: #4A4A4A; border-width: 2px">Tech Stack</h2>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740354737864" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+    
+  
+  
+  
+
+
+<div class="d-none">&#123;"carousel_direction":"left-to-right","carousel_style":"scrolling","logos":[&#123;"add_link":false,"image":&#123;"alt":"Android","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Android.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Android"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Angular","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Angular.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Angular"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Apple","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Apple.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Apple"&#125;,&#123;"add_link":false,"image":&#123;"alt":"AWS-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/AWS-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"AWS"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Azure-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Azure-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Azure"&#125;,&#123;"add_link":false,"image":&#123;"alt":"C++-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/C-1.png","width":53&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"C++"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Flutter-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Flutter-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Flutter"&#125;,&#123;"add_link":false,"image":&#123;"alt":"GCP-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/GCP-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"GCP"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Heroku-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Heroku-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Heroku"&#125;,&#123;"add_link":false,"image":&#123;"alt":"HubL","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/HubL.png","width":109&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"HubL"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Javascript","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Javascript.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Javascript"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Kubernetes","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Kubernetes.png","width":61&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Kubernetes"&#125;],"type":"module"&#125;</div>
+
+<div class="module logo-carousel ">
+  
+	<section class="splide" aria-label="Logo Carousel" splide-init="" splide-autoscroll="" data-splide="{&quot;arrows&quot;:false,&quot;autoScroll&quot;:{&quot;autoStart&quot;:true,&quot;speed&quot;:-0.5},&quot;drag&quot;:&quot;free&quot;,&quot;fixedHeight&quot;:156,&quot;fixedWidth&quot;:156,&quot;focus&quot;:&quot;center&quot;,&quot;pagination&quot;:false,&quot;type&quot;:&quot;loop&quot;}">
+    
+		<div class="splide__track">
+			<ul class="splide__list slides-container">
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Android.0304af78.png" alt="Android" width="59" height="59" srcset="/hs-fs/hubfs/Android.012656ab.png 30w, /hs-fs/hubfs/Android.0304af78.png 59w, /hs-fs/hubfs/Android.804a14dd.png 89w, /hs-fs/hubfs/Android.3a088070.png 118w, /hs-fs/hubfs/Android.1d485046.png 148w, /hs-fs/hubfs/Android.1e070a2e.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Angular.2d12e28b.png" alt="Angular" width="59" height="59" srcset="/hs-fs/hubfs/Angular.ab39cd64.png 30w, /hs-fs/hubfs/Angular.2d12e28b.png 59w, /hs-fs/hubfs/Angular.316ea174.png 89w, /hs-fs/hubfs/Angular.f60acd73.png 118w, /hs-fs/hubfs/Angular.1600c868.png 148w, /hs-fs/hubfs/Angular.f5b63f39.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Apple.03e2adb3.png" alt="Apple" width="59" height="59" srcset="/hs-fs/hubfs/Apple.883282e3.png 30w, /hs-fs/hubfs/Apple.03e2adb3.png 59w, /hs-fs/hubfs/Apple.df07b1f5.png 89w, /hs-fs/hubfs/Apple.a31afa18.png 118w, /hs-fs/hubfs/Apple.a4435fec.png 148w, /hs-fs/hubfs/Apple.38c0ae45.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/AWS-1.cf4d98d1.png" alt="AWS-1" width="59" height="59" srcset="/hs-fs/hubfs/AWS-1.adfa8bee.png 30w, /hs-fs/hubfs/AWS-1.cf4d98d1.png 59w, /hs-fs/hubfs/AWS-1.081c8a21.png 89w, /hs-fs/hubfs/AWS-1.f8c4f441.png 118w, /hs-fs/hubfs/AWS-1.25e83d07.png 148w, /hs-fs/hubfs/AWS-1.fd598a9a.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Azure-1.d8b28c1d.png" alt="Azure-1" width="59" height="59" srcset="/hs-fs/hubfs/Azure-1.72d71b7e.png 30w, /hs-fs/hubfs/Azure-1.d8b28c1d.png 59w, /hs-fs/hubfs/Azure-1.01acf2e7.png 89w, /hs-fs/hubfs/Azure-1.2c2fe052.png 118w, /hs-fs/hubfs/Azure-1.74b1d7c8.png 148w, /hs-fs/hubfs/Azure-1.8ecfb984.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/C-1.d326da1b.png" alt="C++-1" width="53" height="59" srcset="/hs-fs/hubfs/C-1.37fc73de.png 27w, /hs-fs/hubfs/C-1.d326da1b.png 53w, /hs-fs/hubfs/C-1.951c8480.png 80w, /hs-fs/hubfs/C-1.82ba319a.png 106w, /hs-fs/hubfs/C-1.820bb801.png 133w, /hs-fs/hubfs/C-1.4be76432.png 159w" sizes="(max-width: 53px) 100vw, 53px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Flutter-1.4acab8d6.png" alt="Flutter-1" width="59" height="59" srcset="/hs-fs/hubfs/Flutter-1.dc6d0378.png 30w, /hs-fs/hubfs/Flutter-1.4acab8d6.png 59w, /hs-fs/hubfs/Flutter-1.048fc740.png 89w, /hs-fs/hubfs/Flutter-1.d9300ae1.png 118w, /hs-fs/hubfs/Flutter-1.e99da381.png 148w, /hs-fs/hubfs/Flutter-1.6a2e0911.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/GCP-1.b21dbced.png" alt="GCP-1" width="59" height="59" srcset="/hs-fs/hubfs/GCP-1.5bff069d.png 30w, /hs-fs/hubfs/GCP-1.b21dbced.png 59w, /hs-fs/hubfs/GCP-1.da8e3c42.png 89w, /hs-fs/hubfs/GCP-1.38ce831e.png 118w, /hs-fs/hubfs/GCP-1.2cdf6d90.png 148w, /hs-fs/hubfs/GCP-1.c9ade2a7.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Heroku-1.4234de05.png" alt="Heroku-1" width="59" height="59" srcset="/hs-fs/hubfs/Heroku-1.fe204d1f.png 30w, /hs-fs/hubfs/Heroku-1.4234de05.png 59w, /hs-fs/hubfs/Heroku-1.fd5d3ac1.png 89w, /hs-fs/hubfs/Heroku-1.5adae08e.png 118w, /hs-fs/hubfs/Heroku-1.de3ea95e.png 148w, /hs-fs/hubfs/Heroku-1.a1c27d80.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/HubL.7bc83d82.png" alt="HubL" width="109" height="59" srcset="/hs-fs/hubfs/HubL.758a3342.png 55w, /hs-fs/hubfs/HubL.7bc83d82.png 109w, /hs-fs/hubfs/HubL.dba7f4eb.png 164w, /hs-fs/hubfs/HubL.bee72186.png 218w, /hs-fs/hubfs/HubL.926450b2.png 273w, /hs-fs/hubfs/HubL.ea5bb051.png 327w" sizes="(max-width: 109px) 100vw, 109px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Javascript.6c544050.png" alt="Javascript" width="59" height="59" srcset="/hs-fs/hubfs/Javascript.59e2cea6.png 30w, /hs-fs/hubfs/Javascript.6c544050.png 59w, /hs-fs/hubfs/Javascript.cd6cbe07.png 89w, /hs-fs/hubfs/Javascript.83f7d0d4.png 118w, /hs-fs/hubfs/Javascript.30274b2d.png 148w, /hs-fs/hubfs/Javascript.0cf84081.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Kubernetes.79334905.png" alt="Kubernetes" width="61" height="59" srcset="/hs-fs/hubfs/Kubernetes.980cf63c.png 31w, /hs-fs/hubfs/Kubernetes.79334905.png 61w, /hs-fs/hubfs/Kubernetes.acfa97ba.png 92w, /hs-fs/hubfs/Kubernetes.a75cc743.png 122w, /hs-fs/hubfs/Kubernetes.005ae444.png 153w, /hs-fs/hubfs/Kubernetes.e7725d14.png 183w" sizes="(max-width: 61px) 100vw, 61px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+			</ul>
+		</div>
+	</section>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742570805707" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740354886497" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+    
+  
+  
+  
+
+
+<div class="d-none">&#123;"carousel_direction":"right-to-left","carousel_style":"scrolling","logos":[&#123;"add_link":false,"image":&#123;"alt":"Laravel","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Laravel.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Laravel"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Learndash","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Learndash.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Learndash"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Node.JS-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Node.JS-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Node.JS"&#125;,&#123;"add_link":false,"image":&#123;"alt":"php-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/php-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"php"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Python-1","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Python-1.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Python"&#125;,&#123;"add_link":false,"image":&#123;"alt":"React","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/React.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"React"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Ruby","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Ruby.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Ruby"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Rust","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Rust.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Rust"&#125;,&#123;"add_link":false,"image":&#123;"alt":"SaaS","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/SaaS.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"SaaS"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Scala","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Scala.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Scala"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Swift","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Swift.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Swift"&#125;,&#123;"add_link":false,"image":&#123;"alt":"Vue JS","height":59,"loading":"lazy","size_type":"exact","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Vue-JS.png","width":59&#125;,"link":&#123;"no_follow":false,"open_in_new_tab":true,"rel":"noopener","sponsored":false,"url":&#123;"content_id":null,"href":"https://google.com","href_with_scheme":"https://google.com","type":"EXTERNAL"&#125;,"user_generated_content":false&#125;,"title":"Vue JS"&#125;],"type":"module"&#125;</div>
+
+<div class="module logo-carousel ">
+  
+	<section class="splide" aria-label="Logo Carousel" splide-init="" splide-autoscroll="" data-splide="{&quot;arrows&quot;:false,&quot;autoScroll&quot;:{&quot;autoStart&quot;:true,&quot;speed&quot;:0.5},&quot;drag&quot;:&quot;free&quot;,&quot;fixedHeight&quot;:156,&quot;fixedWidth&quot;:156,&quot;focus&quot;:&quot;center&quot;,&quot;pagination&quot;:false,&quot;type&quot;:&quot;loop&quot;}">
+    
+		<div class="splide__track">
+			<ul class="splide__list slides-container">
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Laravel.09a28470.png" alt="Laravel" width="59" height="59" srcset="/hs-fs/hubfs/Laravel.895f838f.png 30w, /hs-fs/hubfs/Laravel.09a28470.png 59w, /hs-fs/hubfs/Laravel.9bd687a7.png 89w, /hs-fs/hubfs/Laravel.7d6e7907.png 118w, /hs-fs/hubfs/Laravel.fee439e6.png 148w, /hs-fs/hubfs/Laravel.de82f8d1.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Learndash.6c3a714b.png" alt="Learndash" width="59" height="59" srcset="/hs-fs/hubfs/Learndash.cb8c67ef.png 30w, /hs-fs/hubfs/Learndash.6c3a714b.png 59w, /hs-fs/hubfs/Learndash.4bf1274b.png 89w, /hs-fs/hubfs/Learndash.fc373311.png 118w, /hs-fs/hubfs/Learndash.ead624d6.png 148w, /hs-fs/hubfs/Learndash.9a4400fc.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Node.JS-1.1691f740.png" alt="Node.JS-1" width="59" height="59" srcset="/hs-fs/hubfs/Node.JS-1.e61fc210.png 30w, /hs-fs/hubfs/Node.JS-1.1691f740.png 59w, /hs-fs/hubfs/Node.JS-1.fe8354d7.png 89w, /hs-fs/hubfs/Node.JS-1.c1a6586e.png 118w, /hs-fs/hubfs/Node.JS-1.6ad3ed12.png 148w, /hs-fs/hubfs/Node.JS-1.5f6f8da7.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/php-1.c27f68ed.png" alt="php-1" width="59" height="59" srcset="/hs-fs/hubfs/php-1.8c844631.png 30w, /hs-fs/hubfs/php-1.c27f68ed.png 59w, /hs-fs/hubfs/php-1.a28a57e3.png 89w, /hs-fs/hubfs/php-1.9cd68445.png 118w, /hs-fs/hubfs/php-1.60f7b961.png 148w, /hs-fs/hubfs/php-1.b3d5b98f.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Python-1.0625f4d1.png" alt="Python-1" width="59" height="59" srcset="/hs-fs/hubfs/Python-1.13227abf.png 30w, /hs-fs/hubfs/Python-1.0625f4d1.png 59w, /hs-fs/hubfs/Python-1.f8434356.png 89w, /hs-fs/hubfs/Python-1.3045b1f2.png 118w, /hs-fs/hubfs/Python-1.e8806d08.png 148w, /hs-fs/hubfs/Python-1.db882c90.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/React.5d5b938f.png" alt="React" width="59" height="59" srcset="/hs-fs/hubfs/React.baec69c1.png 30w, /hs-fs/hubfs/React.5d5b938f.png 59w, /hs-fs/hubfs/React.139ffa40.png 89w, /hs-fs/hubfs/React.cd151353.png 118w, /hs-fs/hubfs/React.eee2046b.png 148w, /hs-fs/hubfs/React.4bb8b741.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Ruby.c2f134a5.png" alt="Ruby" width="59" height="59" srcset="/hs-fs/hubfs/Ruby.ca40add8.png 30w, /hs-fs/hubfs/Ruby.c2f134a5.png 59w, /hs-fs/hubfs/Ruby.c65b9222.png 89w, /hs-fs/hubfs/Ruby.84d487e7.png 118w, /hs-fs/hubfs/Ruby.a4921841.png 148w, /hs-fs/hubfs/Ruby.daca7fe9.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Rust.134831ba.png" alt="Rust" width="59" height="59" srcset="/hs-fs/hubfs/Rust.5dc1cec7.png 30w, /hs-fs/hubfs/Rust.134831ba.png 59w, /hs-fs/hubfs/Rust.7218dba7.png 89w, /hs-fs/hubfs/Rust.d249940c.png 118w, /hs-fs/hubfs/Rust.dc486a01.png 148w, /hs-fs/hubfs/Rust.939b2eb1.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/SaaS.cf6d1b97.png" alt="SaaS" width="59" height="59" srcset="/hs-fs/hubfs/SaaS.67f283a8.png 30w, /hs-fs/hubfs/SaaS.cf6d1b97.png 59w, /hs-fs/hubfs/SaaS.e99f16f4.png 89w, /hs-fs/hubfs/SaaS.6a34f170.png 118w, /hs-fs/hubfs/SaaS.87786353.png 148w, /hs-fs/hubfs/SaaS.bda68185.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Scala.b41170bf.png" alt="Scala" width="59" height="59" srcset="/hs-fs/hubfs/Scala.efe1767a.png 30w, /hs-fs/hubfs/Scala.b41170bf.png 59w, /hs-fs/hubfs/Scala.8f13cfe2.png 89w, /hs-fs/hubfs/Scala.ea091a8a.png 118w, /hs-fs/hubfs/Scala.ccf2e2ac.png 148w, /hs-fs/hubfs/Scala.57c6c81d.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Swift.fa5bb999.png" alt="Swift" width="59" height="59" srcset="/hs-fs/hubfs/Swift.7e2dd27e.png 30w, /hs-fs/hubfs/Swift.fa5bb999.png 59w, /hs-fs/hubfs/Swift.6f93a3d8.png 89w, /hs-fs/hubfs/Swift.71766689.png 118w, /hs-fs/hubfs/Swift.ee6eb1d8.png 148w, /hs-fs/hubfs/Swift.b67a8b20.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+				<div class="splide__slide slide-item">
+          
+          
+
+          
+
+					
+					<div class="slide-content ">
+						
+            <img src="/hs-fs/hubfs/Vue-JS.918a29aa.png" alt="Vue JS" width="59" height="59" srcset="/hs-fs/hubfs/Vue-JS.6827824a.png 30w, /hs-fs/hubfs/Vue-JS.918a29aa.png 59w, /hs-fs/hubfs/Vue-JS.5e70f44a.png 89w, /hs-fs/hubfs/Vue-JS.d4e393b6.png 118w, /hs-fs/hubfs/Vue-JS.a5c78a66.png 148w, /hs-fs/hubfs/Vue-JS.b9025bb0.png 177w" sizes="(max-width: 59px) 100vw, 59px">
+            
+            
+          
+					</div>
+					
+          
+				</div>
+				
+			</ul>
+		</div>
+	</section>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742571145517" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1742583619659" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+<h2 class="module custom-heading" style="color: #FF4E00; border-color: #4A4A4A; border-width: 2px">In-House Products</h2>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742584219383" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<!-- {"cards":[{"background_image":{"alt":"Ripple Effect Portrait Looking Right","height":713,"loading":"disabled","max_height":713,"max_width":859,"size_type":"auto","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/Ripple-Effect-Portrait-Looking-Right.jpg","width":859},"cta":{"content_id":null,"href":"https://homebasetheme.com/","href_with_scheme":"https://homebasetheme.com/","type":"EXTERNAL"},"cta_label":"Get the Theme","description":"Our expertly designed HubSpot sites integrate seamlessly with your marketing, sales, and service tools. We create intuitive, data-driven websites that enhance user experience, capture leads, and drive growth. Homebase Starter and Pro themes are available for download on the HubSpot Marketplace.","title":"Homebase Theme for HubSpot"},{"background_image":{"alt":"A middle aged marketing women is on her computer at her desk She is very pleased with her work Through the window behind her are chickens and a chicken coup-1","height":1024,"loading":"disabled","max_height":1024,"max_width":1024,"size_type":"auto","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/AI-Generated-Media/Images/A-middle-aged-marketing-women-is-on-her-computer-at-her-desk-She-is-very-pleased-with-her-work-Through-the-window-behind-her-are-chickens-and-a-chicken-coup-1.jpeg","width":1024},"cta":{"content_id":null,"href":"","href_with_scheme":"","type":"EXTERNAL"},"cta_label":"","description":"We specialize in creating dynamic, user-friendly WordPress sites tailored to your audience's needs. Our team designs visually appealing, SEO-optimized, and responsive websites. Our Wordpress Starter theme is flexible, scalable, with complete control and performance. With the most pleasant backend experience imaginable, you can now focus on what matters - your visitors. ","title":"Wordpress Page Builder"},{"background_image":{"alt":"computer on a desk with sprinkles flying in the air-1","height":763,"loading":"disabled","max_height":763,"max_width":1024,"size_type":"auto","src":"/ext/2211982.fs1.hubspotusercontent-na1.net/hubfs/2211982/AI-Generated-Media/Images/computer-on-a-desk-with-sprinkles-flying-in-the-air-1.jpeg","width":1024},"cta":{"content_id":null,"href":"","href_with_scheme":"","type":"EXTERNAL"},"cta_label":"Coming Soon","description":"Leave comments, AKA \"Sprinkles\", and start threads on any website live or staging. Just turn on comment mode and click anywhere to start a conversation precisely where it needs to be. Easily tag team members with a Sprinkle to solve bugs and make updates faster than ever.","title":"Sprinkles"}],"type":"module"} -->
+
+
+    <div class="cta-card-list items-3">
+        
+            
+            <div class="cta-card-list-item">
+                
+                    <img src="/hubfs/Ripple-Effect-Portrait-Looking-Right.jpg" alt="">
+                
+                <div class="card-content">
+                    <h4 class="card-title">Homebase Theme for HubSpot</h4>
+                </div>
+                <div class="card-expanded-content">
+                    <h4 class="card-title">Homebase Theme for HubSpot</h4>
+                    <p class="description">Our expertly designed HubSpot sites integrate seamlessly with your marketing, sales, and service tools. We create intuitive, data-driven websites that enhance user experience, capture leads, and drive growth. Homebase Starter and Pro themes are available for download on the HubSpot Marketplace.</p>
+					
+                    	<a href="https://homebasetheme.com/?utm_source=freerange&amp;utm_term=homebase+theme+for+hubspot" class="cta" target="_blank">Get the Theme</a>
+					
+                </div>
+            </div>
+        
+            
+            <div class="cta-card-list-item">
+                
+                    <img src="/hubfs/AI-Generated-Media/Images/A-middle-aged-marketing-women-is-on-her-computer-at-her-desk-She-is-very-pleased-with-her-work-Through-the-window-behind-her-are-chickens-and-a-chicken-coup-1.jpeg" alt="">
+                
+                <div class="card-content">
+                    <h4 class="card-title">Wordpress Page Builder</h4>
+                </div>
+                <div class="card-expanded-content">
+                    <h4 class="card-title">Wordpress Page Builder</h4>
+                    <p class="description">We specialize in creating dynamic, user-friendly WordPress sites tailored to your audience's needs. Our team designs visually appealing, SEO-optimized, and responsive websites. Our Wordpress Starter theme is flexible, scalable, with complete control and performance. With the most pleasant backend experience imaginable, you can now focus on what matters - your visitors. </p>
+					
+                </div>
+            </div>
+        
+            
+            <div class="cta-card-list-item">
+                
+                    <img src="/hubfs/AI-Generated-Media/Images/computer-on-a-desk-with-sprinkles-flying-in-the-air-1.jpeg" alt="">
+                
+                <div class="card-content">
+                    <h4 class="card-title">Sprinkles</h4>
+                </div>
+                <div class="card-expanded-content">
+                    <h4 class="card-title">Sprinkles</h4>
+                    <p class="description">Leave comments, AKA "Sprinkles", and start threads on any website live or staging. Just turn on comment mode and click anywhere to start a conversation precisely where it needs to be. Easily tag team members with a Sprinkle to solve bugs and make updates faster than ever.</p>
+					
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-18 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-19 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742587068945" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-20 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-21 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740353637538" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+<h2 class="module custom-heading" style="color: #FF4E00; border-color: #4A4A4A; border-width: 2px">Featured Case Studies</h2>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-22 dnd-section dnd_area-row-10-hidden dnd_area-row-10-vertical-alignment">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-cell cell_1742572995865-vertical-alignment dnd-column" style="" data-widget-type="cell" data-x="0" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-23 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742572995722" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1742572995722_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h3 style="line-height: 1; text-align: left; margin-bottom: 0;">Breaking down requirements—</h3>
+<h3 style="line-height: 1; text-align: left; margin-bottom: 0;">and building up <span style="color: #3497ff; background-color: #ffffff; font-weight: bold; padding: 0;">great products</span>.</h3></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-cell cell_17425709105152-vertical-alignment dnd-column" style="" data-widget-type="cell" data-x="6" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-24 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742570910410" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-25 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-26 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740353725762" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="module card-list-module-container">
+	
+	
+	
+	<div class="filters-and-cards-wrapper show-filters">
+		
+
+		<div class="card-list-container">
+
+			
+			
+
+			<div class="no-results-container">
+				
+				<h2>No results found</h2>
+				
+			</div>
+
+			
+
+			
+
+			
+
+			
+				
+			
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+					<div class="card-list items-per-row-3">
+				
+
+				
+
+				<div class="card-list-item">
+
+					<a class="card-list-item-link" href="/case-studies/stanford-solutions-science-lab-an-easy-to-use-platform-for-a-childhood-obesity-program">
+						
+							<img class="card-bg" src="/hubfs/CORD-Stanford-case-study-image-1.png" alt="">
+						
+
+						<div class="collapsed-info">
+							
+								<div class="logo">
+
+									
+
+									
+
+										<img src="/hubfs/CASE_StanfordCORD_Logo.svg" alt="Stanford Solutions Science Lab: An Easy-to-Use Platform for a Childhood Obesity Program" title="Stanford Solutions Science Lab: An Easy-to-Use Platform for a Childhood Obesity Program">
+
+									
+
+								</div>
+							
+
+							
+
+							<p class="category impact-statement">
+									
+									
+									An Easy-to-Use Platform for a Childhood Obesity Program
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+							
+
+								<img src="/hubfs/CASE_StanfordCORD_Logo.svg" alt="Stanford Solutions Science Lab: An Easy-to-Use Platform for a Childhood Obesity Program" title="Stanford Solutions Science Lab: An Easy-to-Use Platform for a Childhood Obesity Program">
+
+							
+
+						
+
+						<p>
+							
+								
+									An Easy-to-Use Platform for a Childhood Obesity Program
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/case-studies/stanford-solutions-science-lab-an-easy-to-use-platform-for-a-childhood-obesity-program">View Case Study</a>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+
+				
+
+				<div class="card-list-item">
+
+					<a class="card-list-item-link" href="/case-studies/work/goelegido">
+						
+							<img class="card-bg" src="/hubfs/Go-card.jpg" alt="">
+						
+
+						<div class="collapsed-info">
+							
+								<div class="logo">
+
+									
+
+									
+
+										<img src="/hubfs/GOelegido.png" alt="GOelegido" title="GOelegido">
+
+									
+
+								</div>
+							
+
+							
+
+							<p class="category impact-statement">
+									
+									
+									Helping a Ride-Hailing Startup Scale by 1000%
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+							
+
+								<img src="/hubfs/GOelegido.png" alt="GOelegido" title="GOelegido">
+
+							
+
+						
+
+						<p>
+							
+								
+									Helping a Ride-Hailing Startup Scale by 1000%
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/case-studies/work/goelegido">View Case Study</a>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+
+				
+
+				<div class="card-list-item">
+
+					<a class="card-list-item-link" href="/case-studies/work/globalfootprintnetwork">
+						
+							<img class="card-bg" src="/hubfs/Imported_Blog_Media/GFN-half-world-panarama-906x418.jpg" alt="">
+						
+
+						<div class="collapsed-info">
+							
+								<div class="logo">
+
+									
+
+									
+
+										<img src="/hubfs/Global-Footprint-network.png" alt="Global Footprint Network" title="Global Footprint Network">
+
+									
+
+								</div>
+							
+
+							
+
+							<p class="category impact-statement">
+									
+									
+									Reaching Millions Online
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+							
+
+								<img src="/hubfs/Global-Footprint-network.png" alt="Global Footprint Network" title="Global Footprint Network">
+
+							
+
+						
+
+						<p>
+							
+								
+									Reaching Millions Online
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/case-studies/work/globalfootprintnetwork">View Case Study</a>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+					</div>
+					
+					
+					
+				
+
+				
+
+			
+
+		</div>
+	</div>
+
+	
+	
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-27 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-28 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1742572606139-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742572606139" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/case-studies?filter=product-innovation" id="hs-button_widget_1742572606139" target="_blank" rel="noopener ">
+  View More Product Case Studies
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-29 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-30 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742575174190" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-31 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-32 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740595518264" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+<h2 class="module custom-heading" style="color: #FF4E00; border-color: #4A4A4A; border-width: 2px">Industrial Design</h2>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-33 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-34 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742494934135" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+<div class="half-image-half-wysiwyg">
+	<div class="module-content">
+		<div class="image-wrapper">
+			<img src="/hubfs/sketches.avif" alt="sketches">
+		</div>
+		<div class="wysiwyg-content">
+			<h3><img src="/hs-fs/hubfs/General-Populace_Logo_dark.b9f412ea.png" width="400" height="48" loading="lazy" alt="General Populace_Logo_dark" style="height: auto; max-width: 100%; width: 400px;" srcset="/hs-fs/hubfs/General-Populace_Logo_dark.b2b97929.png 200w, /hs-fs/hubfs/General-Populace_Logo_dark.b9f412ea.png 400w, /hs-fs/hubfs/General-Populace_Logo_dark.1d88fd4e.png 600w, /hs-fs/hubfs/General-Populace_Logo_dark.b7166240.png 800w, /hs-fs/hubfs/General-Populace_Logo_dark.c8cb6c90.png 1000w, /hs-fs/hubfs/General-Populace_Logo_dark.51fdde45.png 1200w" sizes="(max-width: 400px) 100vw, 400px"></h3>
+<h3>Need more than software?</h3>
+<h5>Take your idea from blueprint to finished product with the best industrial designers for startups.</h5>
+<h5>We partner with <a href="https://www.generalpopulace.com/" rel="noopener" target="_blank">General Populace</a> for industrial design and engineering to connect software and hardware all under one roof.&nbsp;</h5>
+<div class="hs-responsive-embed-wrapper hs-responsive-embed" style="width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px; display: inline-block;">
+<div class="hs-responsive-embed-inner-wrapper" style="position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;"><iframe class="hs-responsive-embed-iframe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" xml="lang" src="https://www.youtube.com/embed/yn-PRzPEYLs?si=Svat31kUB7-miX5D" width="560" height="315" data-service="youtube" frameborder="0" allowfullscreen=""></iframe></div>
+</div>
+		</div>
+	</div>
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-35 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-36 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742590259659" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-space" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span class="hs-horizontal-spacer"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-37 dnd_area-row-17-padding dnd_area-row-17-background-color dnd_area-row-17-force-full-width-section dnd-section dnd_area-row-17-background-layers">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-38 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1742571850615" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1742571850615_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h3 style="text-align: center;">Got a web development challenge or Project we can help with?</h3></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-39 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1740938241245-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1740938241245" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/contact-us" id="hs-button_widget_1740938241245" rel="">
+  Get a Free Consultation
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+    </div>
+</main>
+
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/footer.html"><Footer /></div>
+		
+	</div>
+
+	
+	<script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+	
+	<script src="/hubfs/hub_generated/template_assets/1/41475616604/1781076103474/template_main.min.js" is:inline></script>
+
+	
+	
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '813869e3-962c-4ab5-ab56-61c5e7a1c663',
+            formInstanceId: '928',
+            
+            pageId: '186510101394',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "Free Range Research & Development Lab",
+            
+            
+            
+            inlineMessage: "Thank your for subscribing!",
+            
+            
+            rawInlineMessage: "Thank your for subscribing!",
+            
+            
+            hsFormKey: "8b30ac23d03e8ae4ce06fdd4e082f325",
+            
+            
+            css: '',
+            target: '#hs_form_target_footer_subscribe_form',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "standard-page",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+
+
+	<div id="sizer"></div>
+
+
+
+</BaseLayout>

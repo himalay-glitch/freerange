@@ -1,0 +1,24 @@
+---
+// Document shell shared by every page. Each page passes its own <head> contents (title, meta, stylesheets) through
+// the "head" slot and its body markup through the default slot, exactly as freerange.com serves them.
+import Tracking from '../components/Tracking.astro';
+import HubSpotWidgets from '../components/HubSpotWidgets.astro';
+
+interface Props {
+  lang?: string;
+  bodyClass?: string;
+}
+const { lang = 'en', bodyClass = '' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+	<meta charset="utf-8">
+	<slot name="head" />
+	<Tracking />
+	<HubSpotWidgets />
+</head>
+<body class={bodyClass || undefined}>
+<slot />
+</body>
+</html>

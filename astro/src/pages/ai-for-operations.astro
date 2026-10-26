@@ -1,0 +1,934 @@
+---
+// Mirrored from https://freerange.com/ai-for-operations — markup, styles and scripts are the live page's own.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout lang="en" bodyClass="init">
+<Fragment slot="head">
+	
+	<title>AI for Operations</title>
+	
+	<link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+	<meta name="description" content="Automate routine tasks with custom AI agents, freeing your team to focus on high-value work while enhancing operational efficiency and customer service. Book a consultation today.">
+  <meta name="og:description" content="Automate routine tasks with custom AI agents, freeing your team to focus on high-value work while enhancing operational efficiency and customer service. Book a consultation today.">
+  
+    <meta property="og:image" content="https://freerange.com/hubfs/Free-Range-Default-OG-Image.jpg">
+  
+  
+	
+	
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062542278/1780409848093/template_theme-overrides.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062592081/1782374964884/template_main.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="Automate routine tasks with custom AI agents, freeing your team to focus on high-value work while enhancing operational efficiency and customer service. Book a consultation today.">
+    <meta property="og:title" content="AI for Operations">
+    <meta name="twitter:description" content="Automate routine tasks with custom AI agents, freeing your team to focus on high-value work while enhancing operational efficiency and customer service. Book a consultation today.">
+    <meta name="twitter:title" content="AI for Operations">
+
+    
+
+    
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/186812980546/1777019437237/module_notification-banner.min.css">
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/41062592070/1777019199967/module_social-follow.min.css">
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css" is:inline>
+#hs_cos_wrapper_widget_1771529919502  { display: block !important; padding-left: 120px !important; padding-right: 120px !important; text-align: center !important }
+#hs_cos_wrapper_widget_1771530069602  { border-radius: 100px !important; display: block !important }
+#hs_cos_wrapper_widget_1774367543655  { display: block !important; padding-bottom: 0px !important; padding-top: 50px !important }
+#hs_cos_wrapper_widget_1771529919502  { display: block !important; padding-left: 120px !important; padding-right: 120px !important; text-align: center !important }
+#hs_cos_wrapper_widget_1771530069602  { border-radius: 100px !important; display: block !important }
+#hs_cos_wrapper_widget_1774367543655  { display: block !important; padding-bottom: 0px !important; padding-top: 50px !important }
+.dnd_area-row-5-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.widget_1771530069602-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1771530069602-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+.widget_1779999382231-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1779999382231-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+.widget_1774367709659-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1774367709659-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+/* HubSpot Non-stacked Media Query Styles */
+@media (min-width:768px) {
+  .dnd_area-row-3-vertical-alignment > .row-fluid {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: row;
+    display: flex !important;
+    flex-direction: row;
+  }
+  .cell_17799993232522-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .cell_17799993232522-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+  .cell_1779999699527-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  .cell_1779999699527-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+}
+/* HubSpot Styles (default) */
+.dnd_area-row-0-margin {
+  margin-top: 80px !important;
+  margin-bottom: 120px !important;
+}
+.dnd_area-row-0-padding {
+  padding-top: 30px !important;
+  padding-bottom: 20px !important;
+}
+.dnd_area-row-4-padding {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+.dnd_area-row-5-padding {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+}
+.dnd_area-row-5-hidden {
+  display: block !important;
+}
+.dnd_area-row-5-background-layers {
+  background-image: linear-gradient(rgba(241, 246, 252, 1), rgba(241, 246, 252, 1)) !important;
+  background-position: left top !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+}
+.cell_17799993232522-padding {
+  padding-left: 25px !important;
+}
+</style>
+    
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+    <link rel="canonical" href="https://freerange.com/ai-for-operations">
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+<meta property="og:url" content="https://freerange.com/ai-for-operations">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+<style is:inline>
+.subservices-grid .subservice-card {
+    cursor: default !important;
+}
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="HubSpot"></Fragment>
+
+		
+	
+
+	<div class="body-wrapper   hs-content-id-213208913219 hs-site-page page ">
+		<div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/header.html"><Header /></div>
+		
+
+		
+
+<main id="main-content" class="body-container-wrapper">
+    
+    <div class="container">
+        <div class="container-fluid body-container body-container--default">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd_area-row-0-margin dnd-section dnd_area-row-0-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1771529919502" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-section_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1771529919502_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_section_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="section_header"><div class="page-header section-header"><h1>AI for Operations</h1><p class="secondary-header"><span id="hs_cos_wrapper_subheader" class="section-subheader">Routine tasks using up hours each week? Free your team to focus on high-level work by automating your repeatable processes with our custom AI agents.</span></p></div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1771530069602-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1771530069602" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/contact-us" id="hs-button_widget_1771530069602" rel="">
+  Book A Consultation
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774349348510" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+<div id="bg-decorator-widget_1774349348510" class="bg-section-decorator">
+  <img src="/hubfs/bird_5-1-.svg" alt="bird_5 (1)" width="717" height="484" loading="lazy" class="decorator-img-element">
+</div>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_17743351979153" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="subservices-grid">
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hs-fs/hubfs/astroid-white.15f658d0.png" alt="astroid white" width="96" height="96" srcset="/hs-fs/hubfs/astroid-white.be568bb4.png 48w, /hs-fs/hubfs/astroid-white.15f658d0.png 96w, /hs-fs/hubfs/astroid-white.0ef7c7bb.png 144w, /hs-fs/hubfs/astroid-white.178e4e74.png 192w, /hs-fs/hubfs/astroid-white.a618d8bd.png 240w, /hs-fs/hubfs/astroid-white.17bb7af5.png 288w" sizes="(max-width: 96px) 100vw, 96px">
+        </div>
+      
+
+      <h3 class="card-title">Core Agents</h3>
+      
+      <div class="card-description">
+        <p><span>Address universal front-desk and customer service pain points.</span><span><br></span></p>
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Voice Receptionist</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">SMS / Chat Front Desk</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Appointment Orchestration</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Review &amp; Reputation</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Intake &amp; Forms</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Owner Reporting</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hs-fs/hubfs/brain-cog.dc35e001.png" alt="Brain cog white" width="96" height="96" srcset="/hs-fs/hubfs/brain-cog.064458a7.png 48w, /hs-fs/hubfs/brain-cog.dc35e001.png 96w, /hs-fs/hubfs/brain-cog.4ab5ebe6.png 144w, /hs-fs/hubfs/brain-cog.1818f921.png 192w, /hs-fs/hubfs/brain-cog.2f771a12.png 240w, /hs-fs/hubfs/brain-cog.540b6864.png 288w" sizes="(max-width: 96px) 100vw, 96px">
+        </div>
+      
+
+      <h3 class="card-title">Layered Customized Agents</h3>
+      
+      <div class="card-description">
+        <p><span>Automate key revenue and operations levers.</span></p>
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Insurance Verification</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Treatment Plan / Quote Follow-up</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Recall / Recare</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Lead Response</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">New Customer Onboarding</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Loyalty &amp; Referral</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Knowledge Base (internal)</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Multilingual Layer</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hs-fs/hubfs/brain-circuit.01aa173c.png" alt="Brain circuit white" width="96" height="96" srcset="/hs-fs/hubfs/brain-circuit.8f9e00c5.png 48w, /hs-fs/hubfs/brain-circuit.01aa173c.png 96w, /hs-fs/hubfs/brain-circuit.d0e0b6e9.png 144w, /hs-fs/hubfs/brain-circuit.a08a0c11.png 192w, /hs-fs/hubfs/brain-circuit.dec2feaf.png 240w, /hs-fs/hubfs/brain-circuit.6d6461eb.png 288w" sizes="(max-width: 96px) 100vw, 96px">
+        </div>
+      
+
+      <h3 class="card-title">Specialty Agents</h3>
+      
+      <div class="card-description">
+        <p><span>Revenue accelerators for specific business types</span><span><br></span></p>
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Compliance Auditor </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Sales Coach </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Pricing Optimization </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Inventory &amp; Supply </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Marketing Content </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">HR / Hiring </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Outbound Sales </span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Custom</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-section dnd_area-row-3-vertical-alignment">
+<div class="row-fluid ">
+<div class="span6 widget-span widget-type-cell cell_1779999699527-vertical-alignment dnd-column" style="" data-widget-type="cell" data-x="0" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1779999699425" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1779999699425_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="width: 575px;">
+<h2>&nbsp;</h2>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1780409722291" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="subservices-grid">
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hubfs/rd-lab-icon-white.svg" alt="rd lab icon white" width="24" height="24">
+        </div>
+      
+
+      <h3 class="card-title">R&amp;D Lab</h3>
+      
+      <div class="card-description">
+        Prototype and validate new ideas.
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Design Thinking Workshops</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Business Model Canvas</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Rapid Prototyping (MVPs)</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Product-Market Fit Analysis</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Innovation Roadmap</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span6 widget-span widget-type-cell cell_17799993232522-padding cell_17799993232522-vertical-alignment dnd-column" style="" data-widget-type="cell" data-x="6" data-w="6">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1779999322785" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1779999322785_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="color: #2f2f34; line-height: 1.2; background-color: #ffffff;">Check Out the Free Range <span style="color: #ffffff; background-color: #ff5201;">R&amp;D Lab</span></h2>
+<p style="line-height: 28px; color: #4a4a4a; background-color: #ffffff;">Sometimes, out-of-the-box tools just don't cut it.</p>
+<p style="line-height: 28px; color: #4a4a4a; background-color: #ffffff;">We've built a range of custom digital products to help organizations big and small address complex technical needs—and we're always tinkering with something new.</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module widget_1779999382231-flexbox-positioning" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1779999382231" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/rd-lab" id="hs-button_widget_1779999382231" rel="">
+  Learn More
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 dnd-section dnd_area-row-4-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774253817079" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="faq-split-container">
+  
+  <div class="faq-intro-column">
+    <h2 class="faq-main-title">Frequently Asked Questions</h2>
+    <div class="faq-description">
+      <span>&nbsp;</span>
+    </div>
+  </div>
+    <div class="faq-accordion-column">
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">Will this AI system replace my staff?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span style="color: #1f1f1f; background-color: #ffffff;">It will not. Our agents are designed to remove the high-friction, repetitive work, allowing your human team to focus on high-value tasks like building relationships with clients. </span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">What about security, HIPAA, and compliance?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span style="color: #1f1f1f; background-color: #ffffff;">We operate a secure system on HIPAA-covered infrastructure and sign a Business Associate Agreement (BAA). Every transcript is scanned by a Compliance Auditor agent, and a Security Loop ensures PII/PHI is redacted at the model boundary. Your data is safer with our system than with the average front-desk laptop.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">What is the difference between your multi-agent system and a standard chatbot?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span style="color: #1f1f1f; background-color: #ffffff;">Unlike a single agent with a static script, we deliver a team of specialist agents that operate as one Unified Closed-Loop System. This means the agents have a shared memory, hand off work to each other, learn from every conversation, and are reviewed weekly for quality, security, compliance, and accessibility.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">What if the AI makes an error or is unsure about a complex question?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span style="color: #1f1f1f; background-color: #ffffff;">The system is built to know when to ask for help. A "Human-in-the-Loop" layer includes defined escalation triggers for low model confidence, mentions of safety/sensitive topics, or repeated callbacks from the same caller. We target a hallucination rate of less than 1% and an intent-classification accuracy above 95%.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">How your agents work with my existing vertical-specific software?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span style="color: #1f1f1f; background-color: #ffffff;">Our agents connect data sources and include integrations to your practice management or scheduling system, phone, calendar, CRM, and review platforms.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">How do your agents securely connect to the tools we already use?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>Through a modern open standard called MCP (Model Context Protocol). Think of it as a universal, secure adapter that lets our agents talk to your scheduling system, CRM, phone, calendar, and review platforms without us building fragile one-off connections for each. Because access is standardized and permissioned, your agents only ever see the data they're scoped to — and every connection is logged and auditable.<br><br></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">What is MCP, and how do you use it?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p>MCP (Model Context Protocol) is an open standard for connecting AI agents to external systems through a consistent, secure interface—the AI equivalent of a standard port instead of a tangle of custom wiring. We use MCP to connect your agents to your practice management or scheduling software, phone, calendar, CRM, and review platforms. We can add a new integration in days rather than rebuilding from scratch.<br><br><br></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">Who owns our data, and where it is stored?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">
+<div style="color: #1d1c1d;">You do. Your data remains yours.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 dnd_area-row-5-hidden dnd-section dnd_area-row-5-background-layers dnd_area-row-5-padding dnd_area-row-5-background-color dnd_area-row-5-force-full-width-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-18 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774367543655" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1774367543655_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="text-align: center;">Let’s Talk About Your Project</h2>
+<p style="text-align: center;">Whether you have a clear plan or just an early idea, a conversation can bring clarity. We'll help you think it through and see what's possible.</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-19 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1774367709659-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774367709659" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/contact-us" id="hs-button_widget_1774367709659" target="_blank" rel="noopener ">
+  Book a Consultation
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+    </div>
+</main>
+
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/footer.html"><Footer /></div>
+		
+	</div>
+
+	
+	<script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+	
+	<script src="/hubfs/hub_generated/template_assets/1/41475616604/1781076103474/template_main.min.js" is:inline></script>
+
+	
+	
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '813869e3-962c-4ab5-ab56-61c5e7a1c663',
+            formInstanceId: '9183',
+            
+            pageId: '213208913219',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "AI for Operations",
+            
+            
+            
+            inlineMessage: "Thank your for subscribing!",
+            
+            
+            rawInlineMessage: "Thank your for subscribing!",
+            
+            
+            hsFormKey: "8b30ac23d03e8ae4ce06fdd4e082f325",
+            
+            
+            css: '',
+            target: '#hs_form_target_footer_subscribe_form',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "standard-page",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+
+
+	<div id="sizer"></div>
+
+
+
+</BaseLayout>

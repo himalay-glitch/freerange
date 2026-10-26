@@ -1,0 +1,1404 @@
+---
+// Mirrored from https://freerange.com/archetypes — markup, styles and scripts are the live page's own.
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="en" bodyClass="init">
+<Fragment slot="head">
+        
+        <title>Archetype Quiz</title>
+        <link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+        <meta name="description" content="">
+        
+        
+        
+        <link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/160541169794/1742556064832/template_theme-overrides.min.css">
+        
+        <link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/161106422625/1737370639330/template_main.min.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Archetype Quiz">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Archetype Quiz">
+
+    
+
+    
+
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+
+<style is:inline>
+    #hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url('/hs-fs/hubfs/Cover-image-1-1-1-.61d9e9f1.png'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url(/hubfs/Archetype-Images/Tablet/bg-1-1.jpeg); }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .main-container { background-image:url(/hubfs/Archetype-Images/Mobile/intro-screen.jpeg); }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.1-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(2)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.2-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(3)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.3-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(4)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.4-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(5)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.5-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(6)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.6-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7)>.outer-container-mobile>.question-container {
+    background:rgba(0,0,0,65%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(7)>.prev-next-buttons { background-color:#000; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:url('/hubfs/Archetype-Images/Desktop/Q-0.7-16_9-.jpeg'); }
+
+@media (min-width:540px) and (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:unset; }
+}
+
+@media (max-width:540px) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8) { background-image:unset; }
+}
+
+@media (orientation:portrait) {
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8)>.outer-container-mobile>.question-container {
+    background:rgba(255,255,255,83%);
+    backdrop-filter:blur(7px);
+  }
+
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8),
+  #hs_cos_wrapper_dnd_area-module-2 .questions-slider:nth-child(8)>.prev-next-buttons { background-color:#fff; }
+}
+
+#hs_cos_wrapper_dnd_area-module-2 .image-container { background-image:url(/hubfs/Archetype-Images/Desktop/result-image.jpg); }
+
+#hs_cos_wrapper_dnd_area-module-2 .result-image { background-image:url(); }
+
+</style>
+
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css" is:inline>
+.dnd_area-row-0-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+</style>
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+    
+
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+    <link rel="canonical" href="https://freerange.com/archetypes">
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+<meta property="og:url" content="https://freerange.com/archetypes">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="generator" content="HubSpot"></Fragment>
+
+        
+        <div style="display: none;">2026-10-26 02:12:03</div>
+        <div class="body-wrapper   hs-content-id-166613191704 hs-site-page page ">
+            <div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+             
+ 
+
+
+             
+<main id="main-content" class="body-container-wrapper">
+  <div class="container-fluid body-container body-container--quiz">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd_area-row-0-force-full-width-section dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_dnd_area-module-2" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html -->
+  <div class="loader-container">
+    <div class="loader"><div></div><div></div><div></div></div>
+  </div>
+<div class="module quiz-slider">
+    <div class="slides">
+        <div class="slide main-container" data-flickity-bg-lazyload="false" tabindex="-1">
+            <div class="module-quiz-intro">
+                <div class="logo-container">
+                  
+
+<span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hubfs/freerange-logo-white.svg" class="hs-image-widget " height="47" style="height: auto;width:250px;border-width:0px;border:0px;" width="250" alt="Free Range" title="Free Range" loading=""></a></span>
+                </div>
+                <div class="bottom-container">
+                    <div class="title-container">
+                        <div id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_inline_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="inline_rich_text" data-hs-cos-field="headline"><p style="text-align: center;"><span style="color: #308bf5;">Welcome! Discover your brand archetype. </span></p></div>
+                    </div>
+                    <div class="cta-button">
+                        <button class="cta-next-btn start">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide questions-slider" id="slide-1" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/owl.82ddb2b7.jpeg" alt="owl" width="1500" height="1500" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/owl.e3764743.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/owl.82ddb2b7.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/owl.0122dc41.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/owl.53c78e6b.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/owl.579d38e7.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/owl.4af76dce.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.ae366cdf.jpeg" alt="Q1-Tablet" loading="" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.0031f3b6.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.ae366cdf.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.f5643e0b.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.c95c86ec.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.13c8e818.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q1-Tablet.cbd59af2.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        1
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        1
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        If your brand was a character at a party, what would it be doing?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="innovator_q1" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Mixing up an unheard-of cocktail, exciting guests with new flavors.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="guardian_q1" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Ensuring everyone is safe and having a good time, perhaps even enforcing party rules.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="entertainer_q1" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Telling captivating stories or jokes, keeping everyone entertained.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="sage_q1" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Leading insightful discussions in a quiet corner.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="leader_q1" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Encouraging everyone to participate and feel included.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_character_at_a_party__what_would_it_be_doing_" data-type="radio" data-value="creator_q1" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Creating an impromptu art piece that captures the party's essence.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-1">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-2" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/lion.822616f4.jpeg" alt="lion" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/lion.4e0906d8.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/lion.822616f4.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/lion.a6752b7b.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/lion.f88ca58c.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/lion.8f43f2e5.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/lion.2f049b2d.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.9bdd79e1.jpeg" alt="Q2-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.8e741d20.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.9bdd79e1.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.e998f068.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.db0b5c1d.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.1ab11a68.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q2-Tablet.94e333e2.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        2
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        2
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        Imagine your brand as a superhero. What is your brand’s superpower when facing a business challenge?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="innovator_q2" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Time travel to predict and adapt to future market trends.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="sage_q2" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A 'wisdom shield' to protect and guide based on deep insights.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="leader_q2" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Healing touch, fixing customer problems with a caring approach.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="creator_q2" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Transforming any object into something new and useful.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="guardian_q2" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Calming any conflict or stress with a peaceful aura.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="imagine_your_brand_as_a_superhero__what_s_its_superpower_when_facing_a_business_challenge_" data-type="radio" data-value="entertainer_q2" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Making everyone laugh and relax, even in tense situations.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-2">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-3" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/fox.f8ae9cd6.jpeg" alt="fox" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/fox.6b92f64a.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/fox.f8ae9cd6.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/fox.1a8ddedb.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/fox.f1fc4cbe.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/fox.df8ff3c3.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/fox.16c3b1b5.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.25266ecd.jpeg" alt="Q3-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.86a443fd.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.25266ecd.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.ac9efee5.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.68ad3b5a.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.ac713036.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q3-Tablet.34cb0990.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        3
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        3
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        Your brand is planning a team retreat. What's the main activity?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="creator_q3" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A creative workshop for painting or building something unique.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="sage_q3" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A strategic game that teaches teamwork and problem-solving.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="innovator_q3" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">An adventurous excursion to a new and exciting place.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="guardian_q3" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A seminar on ethical leadership and community service.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="entertainer_q3" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A comedy show or fun team-building activity.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_planning_a_team_retreat__what_s_the_main_activity_" data-type="radio" data-value="leader_q3" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A group volunteering event to help a local charity.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-3">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-4" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.ef0e2d99.jpeg" alt="elepahnt" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.c61ba6c7.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.ef0e2d99.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.ea44beca.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.20944c04.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.8b8371e3.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/elepahnt.f6157648.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.33ea2ad8.jpeg" alt="Q4-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.4d649509.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.33ea2ad8.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.aa43b6b8.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.dffa8542.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.0a74984b.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q4-Tablet.630d0630.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        4
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        4
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        If your brand was a mentor, how would it guide its protégé?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="guardian_q4" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">By providing a structured plan and clear direction for success.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="creator_q4" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Through inspiring stories and encouraging self-expression and creativity.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="entertainer_q4" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">With a focus on fun and learning from everyday experiences.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="innovator_q4" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">By teaching them to think ahead and innovate.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="sage_q4" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">With wisdom and advice based on experience and knowledge.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="if_your_brand_was_a_mentor__how_would_it_guide_its_protege_" data-type="radio" data-value="leader_q4" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">By fostering empathy and a deep understanding of others.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-4">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-5" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/eagle.10f065fb.jpeg" alt="eagle" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/eagle.fe418a8e.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/eagle.10f065fb.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/eagle.cff18b75.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/eagle.8a350c26.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/eagle.68279c17.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/eagle.370dd2bd.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.2a631911.jpeg" alt="Q5-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.3c8c1a40.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.2a631911.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.4bdc9ae4.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.7940f9f8.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.d1755f35.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q5-Tablet.f61626db.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        5
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        5
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        Your brand is facing a challenge with retaining top talent and several key employees have left. How does your brand address this issue?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="entertainer_q8" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Focus on making the workplace more fun and engaging.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="guardian_q8" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Actively engaging with employees to understand their concerns and aspirations.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="leader_q8" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Reinforce the core values and stability of the company by enhancing employee benefits.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="innovator_q8" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Introduce cutting-edge employee programs to foster a culture of innovation and freedom.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="sage_q8" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Conduct in-depth exit interviews and surveys to understand the root causes of the issue.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="your_brand_is_facing_a_challenge_with_retaining_top_talent__several_key_employees_have_left__and_th" data-type="radio" data-value="creator_q8" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">Encourage creative freedom and personal project time, allowing employees to explore their passions within the company.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-5">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-6" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/tortoise.a150359f.jpeg" alt="tortoise" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/tortoise.46bd2b4d.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/tortoise.a150359f.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/tortoise.8d836114.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/tortoise.d50e2e53.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/tortoise.c927aeed.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/tortoise.80733d80.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.92302c7d.jpeg" alt="Q6-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.64ba0042.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.92302c7d.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.e8f1e4af.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.e5e02932.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.31f1972a.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q6-Tablet.d80f97eb.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        6
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        6
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        Think about your brand's legacy. What impact would you like your brand to have in the next decade?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="innovator_q6" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To be recognized as a pioneering force pushing boundaries with groundbreaking innovations.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="creator_q6" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To be celebrated for artistic and creative contributions that have revolutionized the industry.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="guardian_q6" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To be remembered as a trusted guardian upholding values, traditions, and ethical practices.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="sage_q6" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To leave a legacy of being a respected source of wisdom in solving complex challenges.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="leader_q6" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To be honored as an exemplary leader who empowered others and fostered a culture of integrity and resilience.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="think_about_your_brand_s_legacy__what_kind_of_impact_would_you_like_your_brand_to_have_on_society__" data-type="radio" data-value="entertainer_q6" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">To be remembered for bringing joy, laughter, and light-heartedness, enriching lives through entertainment, and creating a more positive environment.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-6">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        <div class="slide questions-slider" id="slide-7" data-flickity-bg-lazyload="true" tabindex="-1">
+          <div class="image-container-mobile">
+            
+            <div class="image-mobile">
+              
+            
+            
+            
+    
+    
+        
+    
+    
+    <img src="/hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.1b2bfb1e.jpeg" alt="fox campaign" width="1500" height="1500" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.f1e59fc1.jpeg 750w, /hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.1b2bfb1e.jpeg 1500w, /hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.4b03e42d.jpeg 2250w, /hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.d2735495.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.df209da0.jpeg 3750w, /hs-fs/hubfs/Archetype-Images/Mobile/fox-campaign.5b374403.jpeg 4500w" sizes="(max-width: 1500px) 100vw, 1500px">
+
+              </div>
+            <div class="image-tablet">
+               
+        
+        
+            
+        
+        
+        <img src="/hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.532f6e4c.jpeg" alt="Q7-Tablet" width="2000" style="max-width: 100%; height: auto;" srcset="/hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.75bf2559.jpeg 1000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.532f6e4c.jpeg 2000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.e0519ea3.jpeg 3000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.a9c7e60b.jpeg 4000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.26f03874.jpeg 5000w, /hs-fs/hubfs/Archetype-Images/Tablet/Q7-Tablet.54ffb1a0.jpeg 6000w" sizes="(max-width: 2000px) 100vw, 2000px">
+    
+            </div>
+            
+
+          </div>
+          <div class="outer-container-mobile">
+            
+          
+            <div class="question-number-mobile">
+                    <p>
+                        7
+                    </p>
+                  </div>
+            <div class="question-container" tabindex="-1">
+              <div class="que-header">
+                
+                  <div class="question-number">
+                    <p>
+                        7
+                    </p>
+                  </div>
+                  <div class="question-label">
+                        When launching a new product, how does your brand grab attention?
+                    </div>
+                </div>
+                <div class="inner-container">
+                  <div class="answers-container">
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="innovator_q5" aria-labelledby="answer-choice-1">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A revolutionary and bold campaign that no one has seen before.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="guardian_q5" aria-labelledby="answer-choice-2">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A trustworthy and reliable message emphasizing quality and safety.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="entertainer_q5" aria-labelledby="answer-choice-3">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">An engaging, humorous ad that goes viral.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="creator_q5" aria-labelledby="answer-choice-4">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">An aesthetically beautiful and artistically rich campaign.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="sage_q5" aria-labelledby="answer-choice-5">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A campaign that highlights expert endorsements and data-backed claims.
+                            </div>
+                        </button>
+                        
+
+                        <button class="answers-radio" tabindex="0" data-property="when_launching_a_new_product__how_does_your_brand_grab_attention_" data-type="radio" data-value="leader_q5" aria-labelledby="answer-choice-6">
+                            <div class="pseudo-radio">
+                            </div>
+                            <div class="answer-label">A message that emphasizes community impact and ethical practices.
+                            </div>
+                        </button>
+                        
+                    </div>    
+                    </div>
+             
+                    
+                </div>
+           </div>
+            <div class="site-logo">
+              
+              <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png" class="hs-image-widget " height="556" style="height: auto;width:600px;border-width:0px;border:0px;" width="600" alt="Free Range" title="Free Range" loading="" srcset="/hs-fs/hubfs/Free-Range/Chicken.bd2dbdd9.png 300w, /hs-fs/hubfs/Free-Range/Chicken.28e7f8a6.png 600w, /hs-fs/hubfs/Free-Range/Chicken.1f3f7722.png 900w, /hs-fs/hubfs/Free-Range/Chicken.ebcb9d0a.png 1200w, /hs-fs/hubfs/Free-Range/Chicken.a2708131.png 1500w, /hs-fs/hubfs/Free-Range/Chicken.1bb6a3b8.png 1800w" sizes="(max-width: 600px) 100vw, 600px"></a></span>
+            </div>
+          <div class="prev-next-buttons">
+                        <button class="cta-button flickity-button flickity-prev-next-button previous" tabindex="0">
+                          <svg class="cta-prev-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+<!--                         <button class="cta-prev-btn">
+                            <
+                        </button> -->
+                        </button>
+                        <button class="cta-button flickity-button flickity-prev-next-button next index-7">
+<!--                         <button class="cta-next-btn">
+                            >
+                        </button> -->
+<svg class="cta-next-btn flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+                        </button>
+                    </div>
+        </div>       
+        
+        
+        <div class="slide last-slide">
+         <div class="site-logo">
+                 <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"><a href="/" id="hs-link-dnd_area-module-2_" style="border-width:0px;border:0px;"><img src="/hubfs/Chicken.svg" class="hs-image-widget " height="114" style="height: auto;width:124px;border-width:0px;border:0px;" width="124" alt="Chicken" title="Chicken"></a></span>
+            </div>
+          <div class="image-container">
+          </div>
+          <div class="form-container-outer">
+          <div class="form-container-inner">
+            <div class="form-title">
+            The End.
+<p>To discover your brand archetype and learn more, please complete the form below.</p>
+            </div>
+             <div class="form">
+               <span id="hs_cos_wrapper_dnd_area-module-2_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_form_231788394_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_form_231788394"></div>
+
+
+
+
+
+
+
+
+
+</span>
+            </div>
+            </div>
+          </div>
+      </div>
+</div>
+<div class="progress-bar"></div>
+</div>
+
+
+
+
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+
+</main>
+
+
+            
+   
+
+        </div>
+
+        
+        <script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+        
+        <script src="/hubfs/hub_generated/template_assets/1/161106094091/1737380593796/template_main.min.js" is:inline></script>
+        
+        
+        
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '202ffd68-4e00-4896-bea1-db03e41651af',
+            formInstanceId: '8190',
+            
+            pageId: '166613191704',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "Archetype Quiz",
+            
+            
+            redirectUrl: "\/archetype",
+            
+            
+            
+            
+            
+            css: '',
+            target: '#hs_form_target_form_231788394',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "standard-page",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<script is:inline>
+  var redirection = {};
+  
+    answerChosen= "innovator";
+    testTanmay = "/innovator";
+        redirection["innovator"] = "/innovator";
+
+    
+
+
+    answerChosen= "creator";
+    testTanmay = "/creator";
+        redirection["creator"] = "/creator";
+
+    
+
+
+    answerChosen= "sage";
+    testTanmay = "/sage";
+        redirection["sage"] = "/sage";
+
+    
+
+
+    answerChosen= "leader";
+    testTanmay = "/leader";
+        redirection["leader"] = "/leader";
+
+    
+
+
+    answerChosen= "guardian";
+    testTanmay = "/guardian";
+        redirection["guardian"] = "/guardian";
+
+    
+
+
+    answerChosen= "entertainer";
+    testTanmay = "/entertainer";
+        redirection["entertainer"] = "/entertainer";
+
+    
+
+
+
+</script>
+
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+
+
+        <div id="sizer"></div>
+    
+
+</BaseLayout>

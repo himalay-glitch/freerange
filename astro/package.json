@@ -1,0 +1,19 @@
+{
+  "name": "freerange-astro",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "mirror": "node scripts/mirror.mjs"
+  },
+  "dependencies": {
+    "@astrojs/node": "^11.1.9",
+    "astro": "7.3.8"
+  },
+  "devDependencies": {
+    "cheerio": "1.1.2"
+  }
+}

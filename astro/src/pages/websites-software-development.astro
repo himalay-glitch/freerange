@@ -1,0 +1,898 @@
+---
+// Mirrored from https://freerange.com/websites-software-development — markup, styles and scripts are the live page's own.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout lang="en" bodyClass="init">
+<Fragment slot="head">
+	
+	<title>Websites &amp; Software Development</title>
+	
+	<link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+	<meta name="description" content="Transform your digital presence with expert web development, software solutions, and ongoing support tailored to enhance user experience and drive results. Book a consultation today.">
+  <meta name="og:description" content="Transform your digital presence with expert web development, software solutions, and ongoing support tailored to enhance user experience and drive results. Book a consultation today.">
+  
+    <meta property="og:image" content="https://freerange.com/hubfs/Free-Range-Default-OG-Image.jpg">
+  
+  
+	
+	
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062542278/1780409848093/template_theme-overrides.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062592081/1782374964884/template_main.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="Transform your digital presence with expert web development, software solutions, and ongoing support tailored to enhance user experience and drive results. Book a consultation today.">
+    <meta property="og:title" content="Websites &amp; Software Development">
+    <meta name="twitter:description" content="Transform your digital presence with expert web development, software solutions, and ongoing support tailored to enhance user experience and drive results. Book a consultation today.">
+    <meta name="twitter:title" content="Websites &amp; Software Development">
+
+    
+
+    
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/186812980546/1777019437237/module_notification-banner.min.css">
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/41062592070/1777019199967/module_social-follow.min.css">
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+<!-- Editor Styles -->
+<style id="hs_editor_style" type="text/css" is:inline>
+#hs_cos_wrapper_widget_1771529919502  { display: block !important; padding-left: 120px !important; padding-right: 120px !important; text-align: center !important }
+#hs_cos_wrapper_widget_1771530069602  { border-radius: 100px !important; display: block !important }
+#hs_cos_wrapper_module_17800018055776  { display: block !important; padding-top: 0px !important }
+#hs_cos_wrapper_module_17800018055779  { display: block !important; padding-left: 0px !important }
+#hs_cos_wrapper_module_1780001805578  { display: block !important; padding-left: 0px !important; padding-top: 0px !important }
+#hs_cos_wrapper_widget_1774367543655  { display: block !important; padding-bottom: 0px !important; padding-top: 50px !important }
+#hs_cos_wrapper_widget_1771529919502  { display: block !important; padding-left: 120px !important; padding-right: 120px !important; text-align: center !important }
+#hs_cos_wrapper_widget_1771530069602  { border-radius: 100px !important; display: block !important }
+#hs_cos_wrapper_module_17800018055779  { display: block !important; padding-left: 0px !important }
+#hs_cos_wrapper_module_1780001805578  { display: block !important; padding-left: 0px !important; padding-top: 0px !important }
+#hs_cos_wrapper_module_17800018055776  { display: block !important; padding-top: 0px !important }
+#hs_cos_wrapper_widget_1774367543655  { display: block !important; padding-bottom: 0px !important; padding-top: 50px !important }
+.dnd_area-row-5-force-full-width-section > .row-fluid {
+  max-width: none !important;
+}
+.widget_1771530069602-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1771530069602-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+.module_1780001805578-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: start !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start;
+}
+.module_1780001805578-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+.widget_1774367709659-flexbox-positioning {
+  display: -ms-flexbox !important;
+  -ms-flex-direction: column !important;
+  -ms-flex-align: center !important;
+  -ms-flex-pack: start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start;
+}
+.widget_1774367709659-flexbox-positioning > div {
+  max-width: 100%;
+  flex-shrink: 0 !important;
+}
+/* HubSpot Non-stacked Media Query Styles */
+@media (min-width:768px) {
+  .dnd_area-row-3-vertical-alignment > .row-fluid {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: row;
+    display: flex !important;
+    flex-direction: row;
+  }
+  .cell_17800018055774-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  .cell_17800018055774-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+  .cell_17800018055773-vertical-alignment {
+    display: -ms-flexbox !important;
+    -ms-flex-direction: column !important;
+    -ms-flex-pack: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+  .cell_17800018055773-vertical-alignment > div {
+    flex-shrink: 0 !important;
+  }
+}
+/* HubSpot Styles (default) */
+.dnd_area-row-0-margin {
+  margin-top: 80px !important;
+  margin-bottom: 120px !important;
+}
+.dnd_area-row-0-padding {
+  padding-top: 30px !important;
+  padding-bottom: 20px !important;
+}
+.dnd_area-row-4-padding {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+.dnd_area-row-5-padding {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+}
+.dnd_area-row-5-hidden {
+  display: block !important;
+}
+.dnd_area-row-5-background-layers {
+  background-image: linear-gradient(rgba(241, 246, 252, 1), rgba(241, 246, 252, 1)) !important;
+  background-position: left top !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+}
+.cell_17800018055774-padding {
+  padding-top: 0px !important;
+  padding-left: 25px !important;
+}
+.cell_17800018055773-margin {
+  margin-top: -100px !important;
+}
+.cell_17800018055773-padding {
+  padding-top: 0px !important;
+}
+</style>
+    
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+    <link rel="canonical" href="https://freerange.com/websites-software-development">
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+<meta property="og:url" content="https://freerange.com/websites-software-development">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="HubSpot"></Fragment>
+
+		
+	
+
+	<div class="body-wrapper   hs-content-id-210781853077 hs-site-page page ">
+		<div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/header.html"><Header /></div>
+		
+
+		
+
+<main id="main-content" class="body-container-wrapper">
+    
+    <div class="container">
+        <div class="container-fluid body-container body-container--default">
+<div class="row-fluid-wrapper">
+<div class="row-fluid">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-1 dnd_area-row-0-margin dnd-section dnd_area-row-0-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1771529919502" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-section_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1771529919502_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_section_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="section_header"><div class="page-header section-header"><h1>Websites &amp; Software Development</h1><p class="secondary-header"><span id="hs_cos_wrapper_subheader" class="section-subheader">First impressions matter. Whether you’re launching a new website, rebranding an existing page, or building a handy app, our experienced web developers and designers will help you create an intuitive, engaging digital experience that delights your stakeholders.</span></p></div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-4 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1771530069602-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1771530069602" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/contact-us" id="hs-button_widget_1771530069602" rel="">
+  Book A Consultation
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-5 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-6 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774349348510" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+<div id="bg-decorator-widget_1774349348510" class="bg-section-decorator">
+  <img src="/hubfs/bird_0-1-.svg" alt="bird_0 (1)" width="717" height="484" loading="lazy" class="decorator-img-element">
+</div>
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-7 dnd-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-8 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_17743351979153" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="subservices-grid">
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hubfs/website-icon-white.svg" alt="website icon white" width="24" height="24">
+        </div>
+      
+
+      <h3 class="card-title">Web Development</h3>
+      
+      <div class="card-description">
+        <p>Deliver scalable, mission-driven platforms.</p>
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Discovery &amp; Requirements Planning</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Sitemap &amp; Navigation Strategy</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Responsive UX/UI Design</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">CMS Configuration &amp; Development</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Content Strategy, Search, &amp; Taxonomies</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Content Migration</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">SEO &amp; Analytics Setup</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">QA, Accessibility, &amp; Training</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hubfs/software-apps-icon-white.svg" alt="software apps icon white" width="24" height="24">
+        </div>
+      
+
+      <h3 class="card-title">Software &amp; Apps</h3>
+      
+      <div class="card-description">
+        <p>Build digital tools that extend impact.</p>
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Product Strategy &amp; Feature Definition</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Technical Architecture Design</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Front-End &amp; Back-End Development</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">API &amp; CRM Integrations</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Authentication Systems (SSO/MFA)</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Testing &amp; Iteration Cycles</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Deployment &amp; DevOps Setup</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hubfs/hosting-icon-white.svg" alt="hosting icon white" width="24" height="24">
+        </div>
+      
+
+      <h3 class="card-title">Hosting &amp; Maintenance</h3>
+      
+      <div class="card-description">
+        Ensure stability, security, and performance.
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Managed Hosting Setup</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">SSL &amp; Security Monitoring</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Core &amp; Plugin Updates</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Backup &amp; Restore Management</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Uptime &amp; Performance Monitoring</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Malware Scanning</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Ongoing Support &amp; Reporting</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-9 dnd-section dnd_area-row-3-vertical-alignment">
+<div class="row-fluid ">
+<div class="span7 widget-span widget-type-cell cell_17800018055773-vertical-alignment cell_17800018055773-margin cell_17800018055773-padding dnd-column" style="" data-widget-type="cell" data-x="0" data-w="7">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-10 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_17800018055776" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_17800018055776_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><div style="width: 575px;">
+<h2>&nbsp;</h2>
+</div></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-11 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_17800106963393" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="subservices-grid">
+  
+    <div class="subservice-card">
+      
+      
+        <div class="card-icon-wrapper">
+          <img src="/hubfs/rd-lab-icon-white.svg" alt="rd lab icon white" width="24" height="24">
+        </div>
+      
+
+      <h3 class="card-title">R&amp;D Lab</h3>
+      
+      <div class="card-description">
+        Prototype and validate new ideas.
+      </div>
+
+      <ul class="sub-list">
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Design Thinking Workshops</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Business Model Canvas</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Rapid Prototyping (MVPs)</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Product-Market Fit Analysis</span>
+          </li>
+        
+          <li class="sub-list-item">
+            <img class="blue-dot-icon" src="/hubfs/raw_assets/public/FreeRange/src/icons/mingcute_egg-fill.svg" alt="icon" width="16" height="16">
+            <span class="item-text">Innovation Roadmap</span>
+          </li>
+        
+      </ul>
+
+    </div>
+  
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+<div class="span5 widget-span widget-type-cell cell_17800018055774-padding cell_17800018055774-vertical-alignment dnd-column" style="" data-widget-type="cell" data-x="7" data-w="5">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-12 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1780409375441" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1780409375441_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-13 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_17800018055779" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_17800018055779_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="color: #2f2f34; line-height: 1.2; background-color: #ffffff; text-align: left;">Explore the Free Range <span style="color: #ffffff; background-color: #ff5201;">R&amp;D Lab</span></h2>
+<p style="line-height: 28px; color: #4a4a4a; background-color: #ffffff;">Sometimes, out-of-the-box tools just don't cut it.</p>
+<p style="line-height: 28px; color: #4a4a4a; background-color: #ffffff;">We've built a range of custom digital products to help organizations big and small address complex technical needs—and we're always tinkering with something new.</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-14 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module module_1780001805578-flexbox-positioning" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_module_1780001805578" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/rd-lab" id="hs-button_module_1780001805578" rel="">
+  Learn More
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-15 dnd-section dnd_area-row-4-padding">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-16 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774253817079" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="faq-split-container">
+  
+  <div class="faq-intro-column">
+    <h2 class="faq-main-title">Frequently Asked Questions</h2>
+    <div class="faq-description">
+      <span>&nbsp;</span>
+    </div>
+  </div>
+    <div class="faq-accordion-column">
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">Which CMS platforms do you recommend?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span>We specialize in WordPress, HubSpot, Drupal, and custom builds. Recommendations are based on scalability, governance, integrations, and long-term sustainability.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">How do you ensure compliance with accessibility standards?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span>We design and develop in alignment with WCAG 2.1 AA standards and conduct accessibility validation during QA prior to launch.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">How do you approach security and data protection?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span>We follow industry-recognized security frameworks, implement secure hosting environments, and apply best practices for encryption, access control, and vulnerability monitoring.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">Can you integrate with existing government systems and platforms?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span>Yes. We routinely integrate with CRM systems, payment processors, authentication tools, GIS platforms, and other third-party applications.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">What post-launch support is available?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          <p><span>We provide structured hosting, maintenance, monitoring, and service-level response commitments to ensure long-term reliability and performance.</span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="question-text">How do you use AI in website and software development?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <div class="content-inner">
+          We use AI tools at several points during our development process, mainly during initial discovery and prototyping. Final code is always reviewed by a senior developer before client review.
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</div></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-17 dnd_area-row-5-hidden dnd-section dnd_area-row-5-background-layers dnd_area-row-5-padding dnd_area-row-5-background-color dnd_area-row-5-force-full-width-section">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell dnd-column" style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-18 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774367543655" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1774367543655_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="text-align: center;">Let’s Talk About Your Project</h2>
+<p style="text-align: center;">Whether you have a clear plan or just an early idea, a conversation can bring clarity. We'll help you think it through and see what's possible.</p></span></div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+<div class="row-fluid-wrapper row-depth-1 row-number-19 dnd-row">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-custom_widget widget_1774367709659-flexbox-positioning dnd-module" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
+<div id="hs_cos_wrapper_widget_1774367709659" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+  
+
+
+
+  
+    
+  
+
+
+
+<a class="hs-button" href="/contact-us" id="hs-button_widget_1774367709659" target="_blank" rel="noopener ">
+  Book a Consultation
+</a>
+
+</div>
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div>
+</div>
+</div>
+    </div>
+</main>
+
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/footer.html"><Footer /></div>
+		
+	</div>
+
+	
+	<script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+	
+	<script src="/hubfs/hub_generated/template_assets/1/41475616604/1781076103474/template_main.min.js" is:inline></script>
+
+	
+	
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '813869e3-962c-4ab5-ab56-61c5e7a1c663',
+            formInstanceId: '1591',
+            
+            pageId: '210781853077',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "Websites & Software Development",
+            
+            
+            
+            inlineMessage: "Thank your for subscribing!",
+            
+            
+            rawInlineMessage: "Thank your for subscribing!",
+            
+            
+            hsFormKey: "8b30ac23d03e8ae4ce06fdd4e082f325",
+            
+            
+            css: '',
+            target: '#hs_form_target_footer_subscribe_form',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "standard-page",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+
+
+	<div id="sizer"></div>
+
+
+
+</BaseLayout>

@@ -1,0 +1,7 @@
+---
+// Card rows of a listing page, as HubSpot rendered them for the current ?page / ?tags / ?posts query.
+import type { Row } from '../lib/listings';
+interface Props { rows: Row[] }
+const { rows } = Astro.props;
+---
+{rows.map((row) => <div {...row.attrs}><Fragment set:html={row.html} /></div>)}

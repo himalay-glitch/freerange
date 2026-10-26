@@ -1,0 +1,1007 @@
+---
+// Mirrored from https://freerange.com/blog/if-data-could-speak-how-design-choices-change-stories — markup, styles and scripts are the live page's own.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+<BaseLayout lang="en-us" bodyClass="init">
+<Fragment slot="head">
+	
+	<title>If Data Could Speak: How Design Choices Change Stories</title>
+	
+	<link rel="shortcut icon" href="/hubfs/Free-Range/Chicken.svg">
+	<meta name="description" content="Maria Kahale explores the big impact of small design choices in data visualization.">
+  <meta name="og:description" content="Maria Kahale explores the big impact of small design choices in data visualization.">
+  
+    <meta property="og:image" content="https://freerange.com/hubfs/Data-Visualization.png">
+  
+  
+	
+<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062825709/1780409843297/template__blog.min.css">
+
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062542278/1780409848093/template_theme-overrides.min.css">
+	
+	<link type="text/css" rel="stylesheet" href="/hubfs/hub_generated/template_assets/1/41062592081/1782374964884/template_main.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="Maria Kahale explores the big impact of small design choices in data visualization.">
+    <meta property="og:title" content="If Data Could Speak: How Design Choices Change Stories">
+    <meta name="twitter:description" content="Maria Kahale explores the big impact of small design choices in data visualization.">
+    <meta name="twitter:title" content="If Data Could Speak: How Design Choices Change Stories">
+
+    
+
+    
+    <style is:inline>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/186812980546/1777019437237/module_notification-banner.min.css">
+<link rel="stylesheet" href="/hubfs/hub_generated/module_assets/1/41062592070/1777019199967/module_social-follow.min.css">
+<style is:inline>
+  @font-face {
+    font-family: "Lato";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Lato";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Lato/700.woff2") format("woff2"), url("/_hcms/googlefonts/Lato/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Merriweather/700.woff2") format("woff2"), url("/_hcms/googlefonts/Merriweather/700.woff") format("woff");
+  }
+</style>
+
+    
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+
+
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+
+<!-- Hotjar Tracking Code for Free Range -->
+
+
+
+
+<meta property="og:image" content="https://freerange.com/hubfs/Data-Visualization.png">
+<meta property="og:image:width" content="1216">
+<meta property="og:image:height" content="390">
+
+<meta name="twitter:image" content="https://freerange.com/hubfs/Data-Visualization.png">
+
+
+<meta property="og:url" content="https://freerange.com/blog/if-data-could-speak-how-design-choices-change-stories">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://freerange.com/blog/if-data-could-speak-how-design-choices-change-stories">
+
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" href="https://freerange.com/blog/rss.xml">
+<meta name="twitter:domain" content="freerange.com">
+<script src="//platform.linkedin.com/in.js" type="text/javascript" is:inline>
+    lang: en_US
+</script>
+
+<meta http-equiv="content-language" content="en-us">
+
+
+
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="HubSpot"></Fragment>
+
+		
+	
+
+	<div class="body-wrapper   hs-content-id-69664796674 hs-blog-post hs-blog-id-41225079395">
+		<div id="hs_cos_wrapper_loading" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+<div class="loading-module"><div></div><div></div><div></div></div></div>
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/header.html"><Header /></div>
+		
+
+		
+
+
+
+
+
+<main id="main-content" class="body-container-wrapper">
+    <div class="body-container body-container--blog-post body-container--custom-post-template body-container--default-blog-post">
+
+        
+        <div class="content-wrapper container">
+            <article class="blog-post default-blog-post">
+                <div class="custom-post-template-featured-image default-blog-post-featured-image">
+
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    
+                    <img class="featured-image
+                            
+                            " src="/hubfs/Data-Visualization.png" alt="">
+                </div>
+                <div class="blog-post__body row">
+                    <div class="custom-post-template-sidebar default-blog-post-sidebar col-4">
+                        <div class="custom-post-template-title default-blog-post-title">
+                            <h1>
+                                <span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">If Data Could Speak: How Design Choices Change Stories</span>
+                            </h1>
+                            <div class="autor-and-date">
+                                
+                                <span class="author">Maria Kahale</span>
+                                <span class="date">Mar 28, 2022</span>
+                                
+                            </div>
+                        </div>
+                        <div class="custom-post-template-info default-blog-post-info">
+                            <table>
+                                <tbody>
+                                    
+                                    
+
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                                    
+
+                                    
+
+
+
+
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+
+
+
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+
+                                    
+
+
+                                    <tr>
+                                        <td>Share</td>
+                                        <td class="social-sharing-links">
+                                            <span id="hs_cos_wrapper_project_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Facebook" loading="lazy"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on LinkedIn" loading="lazy"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;source=tweetbutton&amp;text=If%20Data%20Could%20Speak%3A%20How%20Design%20Choices%20Change%20Stories" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Twitter" loading="lazy"></a>&nbsp;<a href="mailto:?subject=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Demail%20&amp;body=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fif-data-could-speak-how-design-choices-change-stories%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Email" loading="lazy"></a></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="custom-post-template-body default-blog-post-body col-8">
+                        
+                        <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><p>It’s a regular Tuesday morning. You wake up at 8:00 AM, brew yourself a fresh cup of coffee, and sip it to the melody of your kids screaming in the background. You look outside, trying to find some inner peace.&nbsp;</p>
+<!--more-->
+<p>Instead, you find a huge oval-shaped object hovering a few feet off the earth.&nbsp;</p>
+<p>Your phone vibrates. You quickly scan the headlines. There are twelve of these things, all around the world. Investigators say they’re extraterrestrial spaceships, with aliens inside. The aliens have all the answers humankind has been looking for, but investigators can’t seem to make sense of the sounds and shapes they’re making.&nbsp;</p>
+<p>Imagine that (or just watch <a href="https://www.youtube.com/watch?v=tFMo3UJ4B4g"><em><span>Arrival</span></em></a>).</p>
+<p>This is exactly what it feels like to look at large datasets. At first, they seem like gibberish—even when we know that they contain valuable information. And just like the governments of Earth sent in an interpreter to understand what the aliens were saying in <em>Arrival</em>, we use “interpreters” every day to make data more comprehensible.</p>
+<p>Our interpreters just happen to take the shape of KPIs, graphs, and dashboards.&nbsp;</p>
+<p>As one of the most powerful tools available to marketers and storytellers of all kinds, data visualizations are a vital part of communicating a clear and impactful story. Visualizations offer a medium through which we can readily access and understand the objective truths within our data. We use them to design products or services, send out marketing campaigns, and conduct outreach.&nbsp;</p>
+<p>But creating data visualizations is much more complicated than one might think. With a few small design changes, the same dataset can be used to create visualizations that communicate radically different messages...</p>
+<h3>Wake-Up Call</h3>
+<p>In 2011, information graphic producer Simon Scarr designed the following data visualization for an <a href="https://www.scmp.com/infographics/article/1284683/iraqs-bloody-toll"><span>article</span></a> published in the <em>South China Morning Post</em>.&nbsp;</p>
+<p><img src="/hs-fs/hubfs/iraqs-bloody-toll.65c33171.png" alt="iraqs bloody toll" loading="lazy" style="width: 500px; margin-left: auto; margin-right: auto; display: block;" width="500" srcset="/hs-fs/hubfs/iraqs-bloody-toll.5cc92dee.png 250w, /hs-fs/hubfs/iraqs-bloody-toll.65c33171.png 500w, /hs-fs/hubfs/iraqs-bloody-toll.d81171f9.png 750w, /hs-fs/hubfs/iraqs-bloody-toll.66ee8a66.png 1000w, /hs-fs/hubfs/iraqs-bloody-toll.6865aaf7.png 1250w, /hs-fs/hubfs/iraqs-bloody-toll.2ecd8189.png 1500w" sizes="(max-width: 500px) 100vw, 500px"></p>
+<p><span style="font-family: 'Work Sans'; font-size: 19px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500;">Considered one of the most iconic data visualizations published in recent years, it offers a perfect example of how visualizations can lead the viewer to interpret objective data in very particular ways—that is, how data visualization can be used to tell a story.</span></p>
+<p>The United States’ war in Iraq had been going on for eight years when Scarr's visualization was first published. He felt that the world was getting desensitized to the number of people being killed daily. He wanted his visualization to act as a reminder of the suffering and death of over 100,000 people.</p>
+<p>The three main elements that set the tone of his visualization: the title, the color, and the orientation of the chart.<span style="font-family: 'Work Sans'; font-size: 19px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500;"></span></p>
+<p>By using a negative title like “Iraq’s bloody toll,” Scarr is telling the viewer how to interpret the dataset—in this case, the number of deaths in Iraq during the time of US occupation. He sees the number of deaths as alarming, which is also transferred to us, the viewers. A more neutral title, such as “Number of Deaths in Iraq,” would likely not induce such an emotional response.</p>
+<p>But what is most striking about the graph is the intense color of the bars. Red is a powerful color: it catches our attention easily and is often associated with warning or danger. In this case, it was also used to make it appear as if blood were running down the graph.</p>
+<p>Lastly, the bars point down, which is not common for bar charts. As previously mentioned, the shape the bars create, especially when colored red, makes it look like there is blood dripping down the page. However, this is not the only reason why the bars were flipped. <a href="https://ieeexplore.ieee.org/abstract/document/9451590"><span>Studies show</span></a> that we tend to associate “down” with “bad” and “up” with “good”. In this example, Scarr wants viewers to think of the number of deaths in Iraq with horror—and so the bars point down.&nbsp;</p>
+<p>These three elements combined result in a strong emotive response from the viewer.</p>
+<p>Would the dataset have the same impact if there were some slight changes to the graph? If the bars had a different color or were placed differently on the page?&nbsp;</p>
+<p>To illustrate the power that design choices can have on the way a given dataset is interpreted, <a href="https://gravyanecdote.com/uncategorized/should-you-trust-a-data-visualisation/"><span>journalist Andy Cotgreave</span></a> took Scarr’s graph and presented viewers with an updated version of it, keeping the numbers and scale exactly the same while changing three key design elements:</p>
+<ol>
+<li>Rewrote the title</li>
+<li>Changed the color of the bars from red to blue</li>
+<li>Flipped the graph vertically so that the bars point up</li>
+</ol>
+<p><img src="/hs-fs/hubfs/Iraq3.6d2b33c3.png" alt="Iraq3" loading="lazy" style="width: 606px; margin-left: auto; margin-right: auto; display: block;" width="606" srcset="/hs-fs/hubfs/Iraq3.b03b555d.png 303w, /hs-fs/hubfs/Iraq3.6d2b33c3.png 606w, /hs-fs/hubfs/Iraq3.aff84a5b.png 909w, /hs-fs/hubfs/Iraq3.0c7de523.png 1212w, /hs-fs/hubfs/Iraq3.cd657c1b.png 1515w, /hs-fs/hubfs/Iraq3.1d3c2f09.png 1818w" sizes="(max-width: 606px) 100vw, 606px"></p>
+<p>The new title, “Iraq: Deaths on the Decline,” is much more positive. It primes viewers to look at the overall decreasing trend in the number of deaths, rather than focus on the total number of lives lost. The color blue is one that is associated with the feeling of calmness. In its own way, the color tells viewers: “You can relax, the war is almost over.” Finally, when the graphs point up, the downward trend becomes more apparent.</p>
+<p>Cotgreave’s point is clear: small changes in the way numbers are presented can have a big impact on the way people feel about them. The same dataset, in other words, can tell many different stories.</p>
+<h3>Scale Matters</h3>
+<p>Sometimes, subtler cues can cause a difference in how we perceive data. At the start of the pandemic, the BBC released the <a href="https://gravyanecdote.com/visual-analytics/coronavirus-be-wary-how-we-visualise-data/"><span>graph below</span></a> based on data from the Chinese Center for Disease Control and Prevention. It showed the percentage of deaths caused by COVID-19 based on age, pre-existing health conditions, and sex.&nbsp;</p>
+<img src="/hs-fs/hubfs/death-varies.de6bf2ed.png" alt="death varies" loading="lazy" style="width: 2666px;" width="2666" srcset="/hs-fs/hubfs/death-varies.f8b1b35d.png 1333w, /hs-fs/hubfs/death-varies.de6bf2ed.png 2666w, /hs-fs/hubfs/death-varies.81ba3868.png 3999w, /hs-fs/hubfs/death-varies.f455bd32.png 5332w, /hs-fs/hubfs/death-varies.79339f05.png 6665w, /hs-fs/hubfs/death-varies.ca2eae6b.png 7998w" sizes="(max-width: 2666px) 100vw, 2666px">
+<p>&nbsp;</p>
+<p>This graph received some <a href="https://youtu.be/GmWPKUlH7Ig?t=10" rel="noopener">backlash.</a> Readers were shocked to see that so many people aged 80 years and older died after contracting the virus. This reaction was due to the readers’ predisposition to think that the length of the x-axis represents 100%. In the case of this graph, the x-axis represents 15%. The visualization below shows what this graph would look like if the scale was changed.&nbsp;</p>
+<p><img src="/hs-fs/hubfs/coronavirus-correct-cropped.77104163.jpg" alt="coronavirus correct cropped" loading="lazy" style="width: 542px; margin-left: auto; margin-right: auto; display: block;" width="542" srcset="/hs-fs/hubfs/coronavirus-correct-cropped.2cd81be8.jpg 271w, /hs-fs/hubfs/coronavirus-correct-cropped.77104163.jpg 542w, /hs-fs/hubfs/coronavirus-correct-cropped.811cfa37.jpg 813w, /hs-fs/hubfs/coronavirus-correct-cropped.c6167a1b.jpg 1084w, /hs-fs/hubfs/coronavirus-correct-cropped.a7834344.jpg 1355w, /hs-fs/hubfs/coronavirus-correct-cropped.2d130eaf.jpg 1626w" sizes="(max-width: 542px) 100vw, 542px"></p>
+<p>Experts at Tableau, a leading data visualization software company, even <a href="https://www.tableau.com/about/blog/2020/3/covid-19-resources-data-viz-best-practices"><span>suggested</span></a> adding in the percentage of those who recovered. They then took it a step further and flipped the graph to place more emphasis on the percentage of people who survived. The title of the graph also varied between the three iterations to match the message behind the visualization.</p>
+<p><img src="/hs-fs/hubfs/percentage-dead.ebd675bb.png" alt="percentage dead" loading="lazy" style="width: 534px; margin-left: auto; margin-right: auto; display: block;" width="534" srcset="/hs-fs/hubfs/percentage-dead.937701a5.png 267w, /hs-fs/hubfs/percentage-dead.ebd675bb.png 534w, /hs-fs/hubfs/percentage-dead.9361cf8b.png 801w, /hs-fs/hubfs/percentage-dead.d23b4657.png 1068w, /hs-fs/hubfs/percentage-dead.114f991b.png 1335w, /hs-fs/hubfs/percentage-dead.360d1813.png 1602w" sizes="(max-width: 534px) 100vw, 534px"></p>
+<p><img src="/hs-fs/hubfs/percentage-survived.cefbffc3.png" alt="percentage survived" loading="lazy" style="width: 534px; margin-left: auto; margin-right: auto; display: block;" width="534" srcset="/hs-fs/hubfs/percentage-survived.81701121.png 267w, /hs-fs/hubfs/percentage-survived.cefbffc3.png 534w, /hs-fs/hubfs/percentage-survived.ace19ac1.png 801w, /hs-fs/hubfs/percentage-survived.e51715d5.png 1068w, /hs-fs/hubfs/percentage-survived.63ed54b2.png 1335w, /hs-fs/hubfs/percentage-survived.3492edfe.png 1602w" sizes="(max-width: 534px) 100vw, 534px"></p>
+<p>Although all iterations show the exact same numbers, changing the scale of the graph and adding in complementary information communicates a different message.&nbsp;</p>
+<h3>The Big Picture</h3>
+<p>What’s more, the impact of our design choices on the stories we tell isn’t limited to single visualizations alone. Data visualizations also have an impact on <em>each other</em>, when they are presented as part of a larger whole.</p>
+<p>At certain white-collar jobs, for instance, we often combine multiple graphs to create dashboards, which are then used together to form larger presentations. We use these dashboards to tell our audience—boss, clients, or coworkers—everything they need to know about a particular project at a given point in time.&nbsp;</p>
+<p>However, putting multiple graphs together adds layers of complexity. We need to make sure each graph is effective on its own, but also create connections between the graphs to help the viewer see the bigger picture.</p>
+<p>A consulting firm <a href="https://www.storytellingwithdata.com/blog/2016/1/26/connecting-the-dots"><span>submitted the below dashboard</span></a> to Storytelling With Data (SWD), a company that works on making data visualizations more effective. The consulting company created this dashboard to understand why they are not winning projects they submitted proposals for. They wanted to use this data to determine where to focus their resources in the coming year.</p>
+<p><img src="/hs-fs/hubfs/Connecting-the-dots-BEFORE.659e9be2.jpg" alt="Connecting-the-dots---BEFORE" loading="lazy" style="width: 781px; margin-left: auto; margin-right: auto; display: block;" width="781" srcset="/hs-fs/hubfs/Connecting-the-dots-BEFORE.8dc69313.jpg 391w, /hs-fs/hubfs/Connecting-the-dots-BEFORE.659e9be2.jpg 781w, /hs-fs/hubfs/Connecting-the-dots-BEFORE.8140fefd.jpg 1172w, /hs-fs/hubfs/Connecting-the-dots-BEFORE.78dc24a4.jpg 1562w, /hs-fs/hubfs/Connecting-the-dots-BEFORE.32a3d31b.jpg 1953w, /hs-fs/hubfs/Connecting-the-dots-BEFORE.d2e30a19.jpg 2343w" sizes="(max-width: 781px) 100vw, 781px"></p>
+<p>At first glance, we notice a color-coded pie chart and a table. Since they’re placed together, we can assume they’re related. It’s also easy to spot the 37 wins in both graphs, and we assume that the sum of all projects in the pie chart amounts to 340, as stated in the table.&nbsp;</p>
+<p>Apart from that, though, the connection between the two charts is not clear. Since there is no legend, it is difficult to know what the colors in the pie chart represent. To make sense of the dashboard, we are required to find the sum of all projects in the same color category, and then compare that total with what is found on the table. By the time we go through all of these steps, we may not even want to continue the analysis and extract insight!</p>
+<p>To fix this problem for the client, SWD redesigned the dashboard and connected all of the dots.</p>
+<p><img src="/hs-fs/hubfs/connecting-the-dots-FIXED.3bb5b856.jpeg" alt="connecting the dots  FIXED" loading="lazy" style="width: 799px; margin-left: auto; margin-right: auto; display: block;" width="799" srcset="/hs-fs/hubfs/connecting-the-dots-FIXED.5a4beb80.jpeg 400w, /hs-fs/hubfs/connecting-the-dots-FIXED.3bb5b856.jpeg 799w, /hs-fs/hubfs/connecting-the-dots-FIXED.91bff35a.jpeg 1199w, /hs-fs/hubfs/connecting-the-dots-FIXED.30e71a6e.jpeg 1598w, /hs-fs/hubfs/connecting-the-dots-FIXED.5330f0b1.jpeg 1998w, /hs-fs/hubfs/connecting-the-dots-FIXED.d80b6942.jpeg 2397w" sizes="(max-width: 799px) 100vw, 799px"></p>
+<p>The main change we see is that the two graphs were broken down and replaced with three bar graphs.&nbsp;</p>
+<p>The one on the right represents the data previously found in the table. By using bars, we are able to compare different categories without reading the numbers.&nbsp;</p>
+<p>SWD also added a dotted box to make more sense of the white space in the graph. It tells us that the difference between the “In Scope” and “Proposals” bars are the cases where no proposals were submitted. This may seem obvious to some, but explicitly outlining this area provides additional context. The color orange used also makes it easy for us to associate this area with the top chart on the right, which explains the reasons why proposals were not submitted. This data was previously put in the pie chart. The same thing was done for “Lost” projects.</p>
+<p>Another main change is the title. "Global Competitive Summary" was replaced with “Time &amp; resources are top reasons we aren’t submitting/winning proposals.” This tells us what the insight is, and shifts our focus from trying to figure out what the graph says to thinking about ways to increase resources.</p>
+<h3>What to Keep in Mind</h3>
+<p>While data visualizations can sometimes be created with a simple click, they also require us to pay careful attention to the stories we are trying to tell through data, and make sure that our design choices support what we’re trying to communicate. Here are a few things worth keeping in mind to design effective graphs.</p>
+<h4>Set a Goal</h4>
+<p>We saw in this post that while data is objective, visualizations can be used to make the viewers feel certain emotions. What is the purpose of the graph you are putting together? Let this objective guide your work.</p>
+<h4>Know Your Audience</h4>
+<p>Who is going to see this data visualization and what expectations and biases do they already have? Some of these expectations are almost universally shared. One example of this is the association of “down” with “bad” and “up” with “good,” as we saw in Scarr’s graph. Another common association is that dotted lines represent estimates or reference lines, as was the case in the dashboard. Some expectations can be more specific to the industry or background of your intended audience.</p>
+<h4>Identify the Information You Need to Include</h4>
+<p>What information will help the viewer come to a well-informed conclusion? As in the final two iterations of the BBC graph, will including additional information be helpful for your audienceto understand the full picture?&nbsp;</p>
+<h4>Consider the Visual Elements</h4>
+<p>In the same way branding can affect how people perceive a product, visual cues such as colors, titles, captions, annotations, and page layout affect how viewers perceive your data visualizations. Having “Amount of Funding Raised” as a title will tell a different story from the same graph with the title “We Have Been Receiving More Funding.”</p>
+<h4>Get Someone's Opinion</h4>
+<p>Show your visualization to someone with a similar background as that of your intended audience. What are their initial thoughts or reactions? What follow-up questions do they have? Taking notes of these comments will help you understand if you are going in the right direction, and how you can improve.</p></span>
+                        
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+
+        
+        
+
+        <!-- Related Posts -->
+
+        
+
+        
+        
+        
+
+        
+  
+
+            
+
+            
+
+        
+
+  
+
+            
+
+            
+
+        
+
+  
+
+            
+
+            
+
+        
+
+  
+
+            
+
+            
+
+        
+
+
+        
+
+
+        
+            <section class="blog-related-posts">
+                <div class="content-wrapper container">
+                    <h2 class="title">Related Posts</h2>
+                    <div class="blog-related-posts__list">
+                        <div id="hs_cos_wrapper_card_list" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><!-- module html  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="module card-list-module-container">
+	
+	
+	
+	<div class="filters-and-cards-wrapper show-filters">
+		
+
+		<div class="card-list-container">
+
+			
+			
+
+			<div class="no-results-container">
+				
+				<h2>No results found</h2>
+				
+			</div>
+
+			
+
+			
+				
+			
+
+			
+
+			
+				
+			
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+					<div class="card-list items-per-row-4">
+				
+
+				
+
+				<div class="card-list-item blog-post-card">
+
+					<a class="card-list-item-link" href="/blog/free-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards">
+						
+							<img class="card-bg" src="/hubfs/Anthem-5th-Winner-wewon_silver_4x5-2.png" alt="">
+						
+
+						<div class="collapsed-info">
+							
+
+							
+								<h2 class="title">Free Range Wins Silver for Ecological Footprint Calculator at 2025 Anthem Awards</h2>
+							
+
+							<p class="category ">
+									
+									
+									Storytelling, 
+									
+									Articles, 
+									
+									Branding, 
+									
+									Blog, 
+									
+									R&amp;D Lab
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+						<p>
+							
+								
+									<a href="/blog?tags=storytelling" rel="tag">Storytelling</a>, 
+								
+									<a href="/blog?tags=articles" rel="tag">Articles</a>, 
+								
+									<a href="/blog?tags=branding" rel="tag">Branding</a>, 
+								
+									<a href="/blog?tags=blog" rel="tag">Blog</a>, 
+								
+									<a href="/blog?tags=rd-lab" rel="tag">R&amp;D Lab</a>
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+									<a href="/blog/free-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards">
+										<h2 class="title">Free Range Wins Silver for Ecological Footprint Calculator at 2025 Anthem Awards</h2>
+									</a>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/blog/free-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards">View Post</a>
+								
+									<div class="social-share">
+										<span>Share</span>
+										<span id="hs_cos_wrapper_card_list_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Facebook" loading="lazy"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on LinkedIn" loading="lazy"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;source=tweetbutton&amp;text=If%20Data%20Could%20Speak%3A%20How%20Design%20Choices%20Change%20Stories" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Twitter" loading="lazy"></a>&nbsp;<a href="mailto:?subject=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Demail%20&amp;body=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Ffree-range-wins-silver-for-ecological-footprint-calculator-at-2025-anthem-awards%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Email" loading="lazy"></a></span>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+
+				
+
+				<div class="card-list-item blog-post-card">
+
+					<a class="card-list-item-link" href="/blog/donor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing">
+						
+							<img class="card-bg" src="/hubfs/Jeff-Bezos.png" alt="">
+						
+
+						<div class="collapsed-info">
+							
+
+							
+								<h2 class="title">Donor Experience: Cribbing For-Profit Design Techniques for Nonprofit Success</h2>
+							
+
+							<p class="category ">
+									
+									
+									Storytelling, 
+									
+									Design, 
+									
+									Nonprofits + Social, 
+									
+									Product Innovation, 
+									
+									Articles, 
+									
+									UX/UI Design, 
+									
+									Branding, 
+									
+									Blog
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+						<p>
+							
+								
+									<a href="/blog?tags=storytelling" rel="tag">Storytelling</a>, 
+								
+									<a href="/blog?tags=design" rel="tag">Design</a>, 
+								
+									<a href="/blog?tags=nonprofits-social" rel="tag">Nonprofits + Social</a>, 
+								
+									<a href="/blog?tags=product-innovation" rel="tag">Product Innovation</a>, 
+								
+									<a href="/blog?tags=articles" rel="tag">Articles</a>, 
+								
+									<a href="/blog?tags=ux-ui-design" rel="tag">UX/UI Design</a>, 
+								
+									<a href="/blog?tags=branding" rel="tag">Branding</a>, 
+								
+									<a href="/blog?tags=blog" rel="tag">Blog</a>
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+									<a href="/blog/donor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing">
+										<h2 class="title">Donor Experience: Cribbing For-Profit Design Techniques for Nonprofit Success</h2>
+									</a>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/blog/donor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing">View Post</a>
+								
+									<div class="social-share">
+										<span>Share</span>
+										<span id="hs_cos_wrapper_card_list_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Facebook" loading="lazy"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on LinkedIn" loading="lazy"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;source=tweetbutton&amp;text=If%20Data%20Could%20Speak%3A%20How%20Design%20Choices%20Change%20Stories" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Twitter" loading="lazy"></a>&nbsp;<a href="mailto:?subject=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Demail%20&amp;body=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fdonor-experience-how-to-use-for-profit-design-techniques-in-nonprofit-marketing%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Email" loading="lazy"></a></span>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+
+				
+
+				<div class="card-list-item blog-post-card">
+
+					<a class="card-list-item-link" href="/blog/the-power-of-innovation-and-storytelling">
+						
+							<img class="card-bg" src="/hubfs/pexels-stacey-gabrielle-koenitz-rozells-2425011-1.jpg" alt="">
+						
+
+						<div class="collapsed-info">
+							
+
+							
+								<h2 class="title">The Power of Innovation and Storytelling</h2>
+							
+
+							<p class="category ">
+									
+									
+									Storytelling, 
+									
+									Product Innovation, 
+									
+									Articles, 
+									
+									Blog
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+						<p>
+							
+								
+									<a href="/blog?tags=storytelling" rel="tag">Storytelling</a>, 
+								
+									<a href="/blog?tags=product-innovation" rel="tag">Product Innovation</a>, 
+								
+									<a href="/blog?tags=articles" rel="tag">Articles</a>, 
+								
+									<a href="/blog?tags=blog" rel="tag">Blog</a>
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+									<a href="/blog/the-power-of-innovation-and-storytelling">
+										<h2 class="title">The Power of Innovation and Storytelling</h2>
+									</a>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/blog/the-power-of-innovation-and-storytelling">View Post</a>
+								
+									<div class="social-share">
+										<span>Share</span>
+										<span id="hs_cos_wrapper_card_list_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Facebook" loading="lazy"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on LinkedIn" loading="lazy"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;source=tweetbutton&amp;text=If%20Data%20Could%20Speak%3A%20How%20Design%20Choices%20Change%20Stories" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Twitter" loading="lazy"></a>&nbsp;<a href="mailto:?subject=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Demail%20&amp;body=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fthe-power-of-innovation-and-storytelling%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Email" loading="lazy"></a></span>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+
+				
+
+			
+
+				
+
+				
+
+				
+					
+				
+
+				
+
+				
+
+				<div class="card-list-item blog-post-card">
+
+					<a class="card-list-item-link" href="/blog/identify-a-change-agent-for-digital-transformation">
+						
+							<img class="card-bg" src="/hubfs/Change-Agent.jpg" alt="">
+						
+
+						<div class="collapsed-info">
+							
+
+							
+								<h2 class="title">Identify a Change Agent for Digital Transformation</h2>
+							
+
+							<p class="category ">
+									
+									
+									Design, 
+									
+									Product Innovation, 
+									
+									Articles, 
+									
+									Blog
+									
+									
+							</p>
+						</div>
+					</a>
+
+					<div class="card-list-item-expanded-info expanded-info" style="opacity: 0;">
+
+						
+
+						<p>
+							
+								
+									<a href="/blog?tags=design" rel="tag">Design</a>, 
+								
+									<a href="/blog?tags=product-innovation" rel="tag">Product Innovation</a>, 
+								
+									<a href="/blog?tags=articles" rel="tag">Articles</a>, 
+								
+									<a href="/blog?tags=blog" rel="tag">Blog</a>
+								
+							
+						</p>
+
+						<div class="description">
+							<div>
+								
+									<a href="/blog/identify-a-change-agent-for-digital-transformation">
+										<h2 class="title">Identify a Change Agent for Digital Transformation</h2>
+									</a>
+								
+								<p class="summary"></p>
+							</div>
+
+							<a href="/blog/identify-a-change-agent-for-digital-transformation">View Post</a>
+								
+									<div class="social-share">
+										<span>Share</span>
+										<span id="hs_cos_wrapper_card_list_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="social_sharing"><a href="http://www.facebook.com/share.php?u=https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Dfacebook" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/facebook-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Facebook" loading="lazy"></a>&nbsp;<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Dlinkedin" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on LinkedIn" loading="lazy"></a>&nbsp;<a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;url=https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Dtwitter&amp;source=tweetbutton&amp;text=If%20Data%20Could%20Speak%3A%20How%20Design%20Choices%20Change%20Stories" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/twitter-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Twitter" loading="lazy"></a>&nbsp;<a href="mailto:?subject=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Demail%20&amp;body=Check%20out%20https%3A%2F%2Ffreerange.com%2Fblog%2Fidentify-a-change-agent-for-digital-transformation%3Futm_medium%3Dsocial%26utm_source%3Demail" target="_blank" rel="noopener" style="width:24px;border-width:0px;border:0px;"><img src="/ext/static.hubspot.com/final/img/common/icons/social/email-24x24.png" class="hs-image-widget hs-image-social-sharing-24" style="max-height:24px;max-width:24px;border-width:0px;border:0px;" width="24" hspace="0" alt="Share on Email" loading="lazy"></a></span>
+									</div>
+								
+							</div>
+
+						</div>
+					</div>
+
+				
+
+				
+					</div>
+					
+					
+					
+				
+
+				
+
+			
+
+		</div>
+	</div>
+
+	
+	
+</div></div>
+                    </div>
+                </div>
+            </section>
+        
+
+    </div>
+</main>
+
+
+		
+		<div data-global-resource-path="FreeRange/templates/partials/footer.html"><Footer /></div>
+		
+	</div>
+
+	
+	<script src="/ext/cdnjs.cloudflare.com/ajax/libs/cash/8.1.0/cash.min.js" is:inline></script><script is:inline>(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);</script>
+
+	
+	<script src="/hubfs/hub_generated/template_assets/1/41475616604/1781076103474/template_main.min.js" is:inline></script>
+
+	
+	
+<!-- HubSpot performance collection script -->
+
+
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js" is:inline></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script data-hs-allowed="true" src="/_hcms/forms/v2.js" is:inline></script>
+
+    <script data-hs-allowed="true" is:inline>
+        var options = {
+            portalId: '2211982',
+            formId: '813869e3-962c-4ab5-ab56-61c5e7a1c663',
+            formInstanceId: '344',
+            
+            pageId: '69664796674',
+            
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "If Data Could Speak: How Design Choices Change Stories",
+            
+            
+            
+            inlineMessage: "Thank your for subscribing!",
+            
+            
+            rawInlineMessage: "Thank your for subscribing!",
+            
+            
+            hsFormKey: "8b30ac23d03e8ae4ce06fdd4e082f325",
+            
+            
+            css: '',
+            target: '#hs_form_target_footer_subscribe_form',
+            
+            
+            
+            
+            
+            
+            
+            contentType: "blog-post",
+            
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+
+<!-- Start of HubSpot Analytics Code -->
+
+
+
+<!-- End of HubSpot Analytics Code -->
+
+
+
+
+
+
+
+
+
+<div id="fb-root"></div>
+  <script is:inline>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script> <script is:inline>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+
+
+	<div id="sizer"></div>
+
+
+
+</BaseLayout>

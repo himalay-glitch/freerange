@@ -1,0 +1,22 @@
+{
+ "/work/unsafe-thinking": {
+  "status": 301,
+  "destination": "/blog/work/unsafe-thinking"
+ },
+ "/thrive/articles/how-a-too-nice-work-culture-can-stifle-creativity": {
+  "status": 301,
+  "destination": "/blog/thrive/articles/how-a-too-nice-work-culture-can-stifle-creativity/"
+ },
+ "/work/mindful-schools": {
+  "status": 301,
+  "destination": "/blog/work/mindful-schools"
+ },
+ "/thrive/articles/engagement-ladders-education": {
+  "status": 301,
+  "destination": "/blog/thrive/articles/engagement-ladders-education/"
+ },
+ "/archetype": {
+  "status": 301,
+  "destination": "/archetypes"
+ }
+}
