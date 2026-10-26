@@ -3,17 +3,27 @@
   "type": "module",
   "private": true,
   "version": "1.0.0",
+  "description": "freerange.com as an Astro site: a one-to-one copy of the live HubSpot site.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "mirror": "node scripts/mirror.mjs"
+    "crawl-listings": "node scripts/crawl-listings.mjs",
+    "discover": "node scripts/discover.mjs",
+    "capture-ctas": "node scripts/capture-ctas.mjs",
+    "mirror": "node scripts/mirror.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
-    "@astrojs/node": "^11.1.9",
+    "@astrojs/node": "11.1.9",
     "astro": "7.3.8"
   },
   "devDependencies": {
-    "cheerio": "1.1.2"
+    "cheerio": "1.1.2",
+    "playwright-core": "1.64.1",
+    "sharp": "0.35.5"
   }
 }

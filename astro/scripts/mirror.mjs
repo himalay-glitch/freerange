@@ -1,7 +1,10 @@
 // Mirrors live freerange.com pages into this Astro project, byte-for-byte in markup, styles, scripts and media.
 //
-//   node scripts/mirror.mjs                 -> mirror the pages listed in .mirror-cache/urls.txt
-//   node scripts/mirror.mjs / /about        -> mirror only these paths
+//   node scripts/mirror.mjs                 -> every page in scripts/pages.txt, plus the 404 page
+//   node scripts/mirror.mjs / /about        -> only these paths
+//
+// Inputs: scripts/pages.txt (page list), scripts/data/cta-renders.json (from capture-ctas.mjs) and
+// .mirror-cache/listings/*.json (from crawl-listings.mjs). Downloads are cached in .mirror-cache/.
 //
 // For every page it: downloads the live HTML (cached in .mirror-cache/pages), downloads every stylesheet, script,
 // image, font and video it references (recursively through CSS url()/@import), rewrites those URLs to local
@@ -101,6 +104,7 @@ function isAsset(u) {
 // ---------------------------------------------------------------------------------------------- downloads
 const FILES = path.join(CACHE, 'files');
 ensureDir(FILES);
+ensureDir(path.join(CACHE, 'pages'));
 const manifestPath = path.join(CACHE, 'files.json');
 const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : {};
 
@@ -213,7 +217,7 @@ function cssRefs(css, cssUrl) {
 }
 
 // Replace every URL occurrence in a text with its local path (assets) or root-relative path (site pages).
-function rewriteText(text, base, { escapeSlashes = false } = {}) {
+function rewriteText(text, base) {
   const replace = (raw, escaped) => {
     const u = toAbs(raw, base);
     if (!u) return raw;
@@ -234,7 +238,7 @@ function rewriteText(text, base, { escapeSlashes = false } = {}) {
   t = t.replace(ABS_RE, (m, offset, whole) => {
     if (whole[offset - 1] === '\\') return m;
     const raw = trimRaw(m);
-    return replace(raw, escapeSlashes) + m.slice(raw.length);
+    return replace(raw, false) + m.slice(raw.length);
   });
   t = t.replace(REL_RE, (m) => {
     const raw = trimRaw(m);
@@ -287,21 +291,16 @@ async function resolveCta(href) {
 
 const trackingSnippets = new Map();
 
-// Rendered HubSpot CTAs captured from the live pages in a browser (scripts/capture-ctas.mjs writes
-// .mirror-cache/cta-render-*.json): placement guid -> rendered node/anchor attributes, label and injected stylesheet.
-function loadCtaRenders() {
-  const out = {};
-  for (const f of fs.readdirSync(CACHE).filter((n) => /^cta-render-.*\.json$/.test(n))) {
-    let data = JSON.parse(fs.readFileSync(path.join(CACHE, f), 'utf8'));
-    if (typeof data === 'string') data = JSON.parse(data);
-    for (const [guid, r] of Object.entries(data.ctas || {})) {
-      const style = (data.styles || []).find((css) => r.aAttrs.id && css.includes(r.aAttrs.id));
-      out[guid] = { ...r, style };
-    }
-  }
-  return out;
-}
-const ctaRenders = loadCtaRenders();
+// HubSpot CTAs as the live site renders them (scripts/capture-ctas.mjs writes this file): placement id -> rendered
+// node and anchor attributes (href already set to the destination), label and the stylesheet HubSpot injects.
+const CTA_RENDERS = path.join(ROOT, 'scripts', 'data', 'cta-renders.json');
+const ctaRenders = fs.existsSync(CTA_RENDERS) ? JSON.parse(fs.readFileSync(CTA_RENDERS, 'utf8')) : {};
+
+// Load-event timing: the theme registers its window "load" listeners inside cash's ready(), which cash defers with
+// setTimeout. HubSpot pages load slowly enough that this always happens before "load"; served locally the page can
+// finish first and those listeners (form set-up, slider resize, header "init" removal, filter replay) never run.
+// This shim runs a "load" listener attached after the page has loaded, reproducing the live order of events.
+const LOAD_SHIM = "(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);";
 
 async function prepare(p) {
   const html = await fetchPage(p);
@@ -334,7 +333,7 @@ async function prepare(p) {
       for (const k of Object.keys(node.attr() || {})) node.removeAttr(k);
       for (const [k, v] of Object.entries(r.nodeAttrs)) node.attr(k, v);
       const a = $('<a></a>');
-      for (const [k, v] of Object.entries(r.aAttrs)) a.attr(k, k === 'href' ? r.aAttrs.cta_dest_link || v : v);
+      for (const [k, v] of Object.entries(r.aAttrs)) a.attr(k, v);
       a.html(r.aHtml);
       node.empty().append(a);
       if (r.style) ctaStyles.push(r.style);
@@ -354,17 +353,12 @@ async function prepare(p) {
     if (/formsBaseUrl:\s*'\/_hcms\/forms\/',/.test(js)) $(el).text(js.replace(/\s*formsBaseUrl:\s*'\/_hcms\/forms\/',/, ''));
   });
 
-  // Load-event timing: the theme registers its window "load" listeners inside cash's ready(), which cash defers with
-  // setTimeout. HubSpot pages load slowly enough that this always happens before "load"; served locally the page can
-  // finish first and those listeners (form set-up, slider resize, header "init" removal, filter replay) never run.
-  // This shim runs a "load" listener attached after the page has loaded, reproducing the live order of events.
+  // Run late "load" listeners (see LOAD_SHIM above).
   const cashTag = $('script[src*="cash.min.js"]').first();
   if (cashTag.length) cashTag.after(`<script>${LOAD_SHIM}</script>`);
 
   return $;
 }
-
-const LOAD_SHIM = "(function($){if(!$||!$.fn)return;var on=$.fn.on;$.fn.on=function(e,f){if(this[0]===window&&e==='load'&&typeof f==='function'&&document.readyState==='complete'){var self=this;setTimeout(function(){f.call(window,new Event('load'))},0);return self}return on.apply(this,arguments)}})(window.cash);";
 
 function collectFromDocument($, set) {
   for (const { abs } of findUrls($.html(), ORIGIN + '/')) if (isAsset(abs)) set.add(abs.href);
@@ -478,8 +472,6 @@ function pageFile(p) {
 
 const sharedParts = { header: new Map(), footer: new Map() };
 
-// Turn a parsed page into Astro-ready markup. Header and footer are lifted out (they become shared components) and
-// left as placeholders until every page is known, so pages with a different header get their own variant component.
 // Listing pages: card rows, the post count and the checked state of filter boxes depend on the query string, so they
 // become placeholders that the page fills on request (see src/lib/listings.ts).
 const LISTINGS = ['/blog', '/case-studies', '/resources'];
@@ -491,6 +483,8 @@ function markListing($) {
   $('input[tag-slug]').each((_, el) => { $(el).attr('data-astro-checked', $(el).attr('tag-slug')); });
 }
 
+// Turn a parsed page into Astro-ready markup. Header and footer are lifted out (they become shared components) and
+// left as placeholders until every page is known, so pages with a different header get their own variant component.
 function buildPage(p, $) {
   if (LISTINGS.includes(p)) markListing($);
   const head = $('head');
@@ -543,8 +537,7 @@ function writePage(b, names) {
     imports.push(`import ${comp} from '${relImport(file, path.join(SRC, 'components', comp + '.astro'))}';`);
     body = body.replace(`<!--@@${name.toUpperCase()}@@-->`, `<${comp} />`);
   }
-  b._body = body;
-  const extra = PAGE_HOOKS[b.p] ? PAGE_HOOKS[b.p](b, file) : { imports: [], frontmatter: '', body };
+  const extra = PAGE_HOOKS[b.p] ? PAGE_HOOKS[b.p](file, body) : { imports: [], frontmatter: '', body };
   fs.writeFileSync(file, `---
 // Mirrored from ${ORIGIN}${b.p === '/404' ? ' (its 404 page)' : b.p} — markup, styles and scripts are the live page's own.
 ${[...imports, ...extra.imports].join('\n')}
@@ -559,7 +552,7 @@ ${extra.body}
 // Per-page edits applied when writing the .astro file (listing pages plug in their server-rendered card rows).
 const PAGE_HOOKS = {};
 for (const lp of LISTINGS) {
-  PAGE_HOOKS[lp] = (b, file) => ({
+  PAGE_HOOKS[lp] = (file, body) => ({
     imports: [
       `import ListingCards from '${relImport(file, path.join(SRC, 'components', 'ListingCards.astro'))}';`,
       `import { selectCards } from '${relImport(file, path.join(SRC, 'lib', 'listings.ts')).replace(/\.ts$/, '')}';`,
@@ -569,7 +562,7 @@ for (const lp of LISTINGS) {
 export const prerender = false;
 const { rows, total, selected } = selectCards('${lp.slice(1)}', Astro.url.searchParams);
 `,
-    body: b.bodyMarkup === undefined ? '' : b._body
+    body: body
       .replace('<!--@@CARDS@@-->', '<ListingCards rows={rows} />')
       .replace('data-total-posts="@@TOTAL@@"', 'data-total-posts={total}')
       .replace(/ data-astro-checked="([^"]+)"/g, (m, slug) => ` checked={selected.has('${slug}')}`),
@@ -681,7 +674,7 @@ async function writeRobots() {
 
 // ---------------------------------------------------------------------------------------------- main
 const args = process.argv.slice(2);
-const paths = args.length ? args : fs.readFileSync(path.join(CACHE, 'urls.txt'), 'utf8').split('\n').filter(Boolean);
+const paths = args.length ? args : [...fs.readFileSync(path.join(ROOT, 'scripts', 'pages.txt'), 'utf8').split('\n').filter(Boolean), '/404'];
 
 const docs = new Map();
 const assetSet = new Set();

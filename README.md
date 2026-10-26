@@ -1,4 +1,14 @@
-# Free Range — design clone
+# Free Range
+
+**The freerange.com site is in [`astro/`](astro/README.md)**: a one-to-one Astro copy of the live site (all 177
+pages, real content, images, scripts and animations), checked element by element against freerange.com.
+
+Everything else in this repository root is an earlier Next.js prototype that rebuilt the templates with
+placeholder content. It is kept for reference only and is not the site.
+
+---
+
+## Earlier Next.js prototype (placeholder content)
 
 A pixel-accurate Next.js 16 rebuild of the page templates, layout, typography and interactions of
 freerange.com (a HubSpot CMS site), built from browser-extracted computed styles and the site's own

@@ -1,6 +1,7 @@
 // Full design cross-check: every page, live freerange.com vs this Astro build, side by side in a real browser.
 //
-//   node scripts/verify.mjs [--width 1440|390] [--only /path,/path] [--concurrency 4] [--out recheck]
+//   npm run preview -- --port 4321 &      (the built site must be running)
+//   node scripts/verify.mjs [--width 1440|768|390] [--only /path,/path] [--concurrency 4] [--out recheck]
 //
 // For each page and viewport it loads both versions, scrolls them top to bottom (so lazy images, scroll animations
 // and observers run), then compares every element: tag/classes, position and size, colours, background images,
@@ -13,22 +14,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createRequire } from 'node:module';
+import sharp from 'sharp';
+import { launch } from './lib/browser.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = path.join(ROOT, '.mirror-cache');
-const require = createRequire(path.join(CACHE, 'tools', 'package.json'));
-const { chromium } = require('playwright-core');
-const sharp = createRequire(path.join(ROOT, 'package.json'))('sharp');
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, all) => (v.startsWith('--') ? [...a, [v.slice(2), all[i + 1]]] : a), []));
 const WIDTHS = args.width ? [Number(args.width)] : [1440, 390];
 const CONCURRENCY = Number(args.concurrency || 4);
 const LIVE = 'https://freerange.com';
 const ASTRO = args.astro || 'http://127.0.0.1:4321';
-const CHROME = '/Users/uxui/Library/Caches/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
 
-let pages = fs.readFileSync(path.join(CACHE, 'urls-site.txt'), 'utf8').split('\n').filter(Boolean);
+let pages = fs.readFileSync(path.join(ROOT, 'scripts', 'pages.txt'), 'utf8').split('\n').filter(Boolean);
 pages.push('/this-page-does-not-exist-404-check');
 if (args.only) pages = args.only.split(',');
 
@@ -100,6 +98,13 @@ function align(a, b) {
   return pairs;
 }
 
+// Pseudo-element sizes come from text measurement and can differ by a fraction of a pixel between two renders of the
+// same page; compare them at whole-pixel precision like element boxes.
+const wholePx = (v) => v.replace(/(-?\d+\.\d+)px/g, (m, n) => Math.round(Number(n)) + 'px');
+
+// Images hosted without a file extension on the live site (Google Docs images) gain one when copied locally; same file.
+const sameImage = (a, b) => a === b || a.replace(/\.(jpe?g|png|gif|webp) /, ' ') === b.replace(/\.(jpe?g|png|gif|webp) /, ' ');
+
 function compareEls(L, A) {
   const diffs = [];
   let identical = 0;
@@ -116,9 +121,9 @@ function compareEls(L, A) {
       if (a.dyn && (k === 'transform' || k === 'opacity')) continue;
       if (a.style[k] !== b.style[k]) d.push(`${k} ${String(a.style[k]).slice(0, 60)}→${String(b.style[k]).slice(0, 60)}`);
     }
-    if (a.img !== b.img) d.push(`img ${a.img}→${b.img}`);
-    if (a.before !== b.before) d.push(`::before ${a.before.slice(0, 60)}→${b.before.slice(0, 60)}`);
-    if (a.after !== b.after) d.push(`::after ${a.after.slice(0, 60)}→${b.after.slice(0, 60)}`);
+    if (!sameImage(a.img, b.img)) d.push(`img ${a.img}→${b.img}`);
+    if (wholePx(a.before) !== wholePx(b.before)) d.push(`::before ${a.before.slice(0, 60)}→${b.before.slice(0, 60)}`);
+    if (wholePx(a.after) !== wholePx(b.after)) d.push(`::after ${a.after.slice(0, 60)}→${b.after.slice(0, 60)}`);
     if (d.length) diffs.push(`${a.sig.slice(0, 70)} @y${a.geo[1]}: ${d.join('; ')}`.slice(0, 400));
     else identical++;
   }
@@ -193,7 +198,7 @@ async function comparePage(browser, p, w, h, outDir) {
   }
 }
 
-const browser = await chromium.launch({ executablePath: CHROME, headless: true });
+const browser = await launch();
 for (const w of WIDTHS) {
   const h = w >= 1000 ? 900 : w >= 700 ? 1024 : 844;
   const outDir = path.join(CACHE, 'verify', args.out ? `${args.out}-${w}` : String(w));

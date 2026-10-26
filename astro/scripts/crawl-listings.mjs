@@ -16,6 +16,7 @@ const OUT = path.join(CACHE, 'listings');
 const ORIGIN = 'https://freerange.com';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
 fs.mkdirSync(path.join(OUT, 'raw'), { recursive: true });
+fs.mkdirSync(path.join(CACHE, 'pages'), { recursive: true });
 
 async function get(url) {
   const file = path.join(OUT, 'raw', url.replace(/[^a-z0-9]+/gi, '_') + '.html');
@@ -54,10 +55,11 @@ async function allPages(base, query = '') {
   return { total: first.total, cards, rows: first.rows };
 }
 
-function contentId(url) {
+// HubSpot's content id of a post (what its search API returns), read from the post page (shared cache with mirror.mjs).
+async function contentId(url) {
   const slug = url === '/' ? 'index' : url.replace(/^\//, '').replace(/\//g, '__');
   const file = path.join(CACHE, 'pages', slug + '.html');
-  if (!fs.existsSync(file)) return null;
+  if (!fs.existsSync(file)) fs.writeFileSync(file, await (await fetch(ORIGIN + url, { headers: { 'user-agent': UA } })).text());
   const m = fs.readFileSync(file, 'utf8').match(/hs-content-id-(\d+)/);
   return m ? m[1] : null;
 }
@@ -100,12 +102,12 @@ for (const listing of ['blog', 'case-studies', 'resources']) {
     total: full.total,
     groups,
     rowAttrs: full.rows.map((r) => r.attrs),
-    cards: full.cards.map((c) => ({
+    cards: await Promise.all(full.cards.map(async (c) => ({
       url: c.url,
-      id: contentId(c.url),
+      id: await contentId(c.url),
       html: c.html,
       tags: [...tagSlugs].filter((t) => membership[t].urls.includes(c.url)),
-    })),
+    }))),
     membership,
   };
   fs.writeFileSync(path.join(OUT, listing + '.json'), JSON.stringify(data, null, 1));

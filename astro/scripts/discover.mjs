@@ -1,6 +1,7 @@
 // Finds every freerange.com URL reachable from the mirrored pages that the sitemap does not list: pages (e.g. older
 // posts, paginated listings) and redirects (HubSpot URL mappings). Follows links breadth-first through new pages.
-// Output: .mirror-cache/extra-pages.txt (live 200 HTML pages) and .mirror-cache/redirects.json (path -> target, status).
+// Output: .mirror-cache/extra-pages.txt (live pages not yet in scripts/pages.txt; add them there) and
+// .mirror-cache/redirects.json (path -> target, status; copy the ones to keep into src/data/redirects.json).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,7 +15,8 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 const slug = (p) => (p === '/' ? 'index' : p.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '__'));
 const clean = (p) => (p.length > 1 ? p.replace(/\/$/, '') : p);
 
-const known = new Set(fs.readFileSync(path.join(CACHE, 'urls.txt'), 'utf8').split('\n').filter(Boolean).map(clean));
+fs.mkdirSync(path.join(CACHE, 'pages'), { recursive: true });
+const known = new Set(fs.readFileSync(path.join(ROOT, 'scripts', 'pages.txt'), 'utf8').split('\n').filter(Boolean).map(clean));
 const statusCache = path.join(CACHE, 'discover-status.json');
 const status = fs.existsSync(statusCache) ? JSON.parse(fs.readFileSync(statusCache, 'utf8')) : {};
 
@@ -49,7 +51,7 @@ while (frontier.length) {
   const next = new Set();
   for (const p of frontier) {
     const file = path.join(CACHE, 'pages', slug(p) + '.html');
-    if (!fs.existsSync(file)) continue;
+    if (!fs.existsSync(file)) fs.writeFileSync(file, await (await fetch(ORIGIN + p, { headers: { 'user-agent': UA } })).text());
     for (const l of linksOf(fs.readFileSync(file, 'utf8'))) if (!visited.has(clean(l))) next.add(l);
   }
   frontier = [];
